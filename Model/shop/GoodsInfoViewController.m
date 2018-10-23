@@ -40,8 +40,8 @@
 #import "SelectedGoodsTypeViewController.h"
 #import "JYDatePickViewController.h"
 #import "OrderServiceIntruduceViewController.h"
-#import <MeiQiaSDK/MeiQiaSDK.h>
-#import "MQChatViewManager.h"
+//#import <MeiQiaSDK/MeiQiaSDK.h>
+//#import "MQChatViewManager.h"
 #import "SeverCenterViewController.h"
 #import "NoCashApproveViewController.h"
 #import "FindInfoViewController.h"

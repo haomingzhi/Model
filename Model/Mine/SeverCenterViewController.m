@@ -17,7 +17,7 @@
 #import "ImgTableViewCell.h"
 #import "BUSystem.h"
 //#import "MQChatViewManager.h"
-#import "MQSdkManager.h"
+//#import "MQSdkManager.h"
 @interface SeverCenterViewController ()
 {
      ImgTableViewCell *_imgCell;
@@ -76,7 +76,7 @@
      [_tabsCell setCellData:@{@"tab1":@"在线客服",@"tab2":@"客服热线",@"aimg":@"kefu",@"bimg":@"rexian"}];
      [_tabsCell fitSeverCenterMode];
      [_tabsCell setTabOneCallBack:^(id o){
-          [[MQSdkManager manager] toMQChatVC:weakSelf];
+//          [[MQSdkManager manager] toMQChatVC:weakSelf];
 //          MQChatViewManager *chatViewManager = [[MQChatViewManager alloc] init];
 //          UIImage *img;
 //          if (busiSystem.agent.img.isCached) {

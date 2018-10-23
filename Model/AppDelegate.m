@@ -29,7 +29,7 @@
 //#import "HuanxinKefuManager.h"
 //#import <AMapFoundationKit/AMapFoundationKit.h>
 //#import <AMapSearchKit/AMapSearchKit.h>
-#import "MQSdkManager.h"
+//#import "MQSdkManager.h"
 
 @interface AppDelegate ()
 {
@@ -84,7 +84,7 @@
      busiSystem.agent.password = password;
 
 
-     [[MQSdkManager manager] initData];
+//     [[MQSdkManager manager] initData];
 
      //     [AMapServices sharedServices].apiKey = @"ac4c848c77e3aca27dd0c86d67c8a230";
 
@@ -207,7 +207,7 @@ shouldAllowExtensionPointIdentifier:(NSString *)extensionPointIdentifier
 
      //     [HuanxinKefuManager applicationDidEnterBackground:application];
      // 进入后台 关闭美洽服务
-     [[MQSdkManager manager] closeMeiqiaService];
+//     [[MQSdkManager manager] closeMeiqiaService];
 }
 
 - (UIViewController *)getCurrentVC
@@ -252,7 +252,7 @@ shouldAllowExtensionPointIdentifier:(NSString *)extensionPointIdentifier
           [result viewDidAppear:YES];
      }
      //     [HuanxinKefuManager applicationWillEnterForeground:application];
-     [[MQSdkManager manager] openMeiqiaService];
+//     [[MQSdkManager manager] openMeiqiaService];
 }
 
 
@@ -277,7 +277,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 
 
      //上传设备deviceToken
-     [[MQSdkManager manager] registerDeviceToken:deviceToken];
+//     [[MQSdkManager manager] registerDeviceToken:deviceToken];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
