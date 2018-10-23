@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JYDatePickViewController">
+            <connections>
+                <outlet property="_aView" destination="4mh-Zn-mU2" id="8be-Pt-WxN"/>
+                <outlet property="_bView" destination="hW5-jT-11I" id="aRf-Zu-83B"/>
+                <outlet property="_datePk" destination="BJ3-zA-Gyu" id="szs-vh-77r"/>
+                <outlet property="backView" destination="Rmp-Wq-l6j" id="RZt-sV-sbP"/>
+                <outlet property="cancelBtn" destination="lL0-Fn-poj" id="Vvz-AK-SnA"/>
+                <outlet property="finishBtn" destination="x3i-GE-h4h" id="adT-hB-YQh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="198"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" id="w4F-c3-Dd1">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" tag="100" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lL0-Fn-poj">
+                            <rect key="frame" x="0.0" y="7.5" width="78" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="取消">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" tag="101" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="x3i-GE-h4h">
+                            <rect key="frame" x="242" y="8" width="78" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="完成">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="handleAction:" destination="-1" eventType="touchUpInside" id="hPO-s3-BtE"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" id="Rmp-Wq-l6j">
+                    <rect key="frame" x="0.0" y="51" width="320" height="145"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" misplaced="YES" id="4mh-Zn-mU2">
+                            <rect key="frame" x="0.0" y="0.0" width="76" height="137"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" misplaced="YES" id="hW5-jT-11I">
+                            <rect key="frame" x="233" y="-5" width="137" height="150"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" id="BJ3-zA-Gyu">
+                            <rect key="frame" x="42" y="-9" width="320" height="162"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <date key="date" timeIntervalSinceReferenceDate="464769456.825867">
+                                <!--2015-09-24 06:37:36 +0000-->
+                            </date>
+                            <date key="minimumDate" timeIntervalSinceReferenceDate="504918000">
+                                <!--2016-12-31 23:00:00 +0000-->
+                            </date>
+                            <date key="maximumDate" timeIntervalSinceReferenceDate="31556862000">
+                                <!--3000-12-31 11:00:00 +0000-->
+                            </date>
+                            <locale key="locale" localeIdentifier="zh_CN"/>
+                        </datePicker>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="65" y="143"/>
+        </view>
+    </objects>
+</document>

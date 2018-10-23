@@ -1,0 +1,91 @@
+//
+//  PrefixHeader.pch
+//  MeiliWan
+//
+//  Created by wujiayuan on 15/4/12.
+//  Copyright (c) 2015年 wujyapp. All rights reserved.
+//
+
+#ifndef Model_PrefixHeader_pch
+#define Model_PrefixHeader_pch
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "CustomCategories.h"
+#import "CommonUtil.h"
+#import  "CommonLib.h"
+#import "CommonView.h"
+#import "UniversalFramework.h"
+#endif
+
+
+#define LoadingHintString   @"正在加载数据..."
+
+//
+#define UIViewAutoresizingFlexibleAll (UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleBottomMargin)
+
+
+//判断系统版本是否是ios5.0以上
+#define __IOS5 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0)
+//判断系统版本是否是ios6.0以上
+#define __IOS6 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
+//判断系统版本是否是ios7.0以上
+#define __IOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+
+//判断系统版本是否为ios8.0以上
+#define __IOS8 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+#define __IOS11 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0)
+#define __ISIOS5 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 6.0)
+
+#define __OSVERTION ([[[UIDevice currentDevice] systemVersion] floatValue])
+
+//屏幕的SIZE
+#define __SCREEN_SIZE  [UIScreen mainScreen].bounds.size
+
+#define __LESSTHENIPHONE5 (__SCREEN_SIZE.height < 568)
+
+#define __IPHONE5 (__SCREEN_SIZE.height == 568)
+
+#define __IPHONE6 (__SCREEN_SIZE.height == 667)
+
+#define __IPHONE6PLUS (__SCREEN_SIZE.height == 736)
+
+//导航条高度
+#define __NAVBAR_HEIGHT  44
+
+//状态栏高度
+#define __STATUSBAR_HEIGHT  20
+
+//键盘窗口的高度
+#define __KEYBOARDWINDOW_HEIGHT 216
+//客服电话
+#define __SERVICEPHONE @"400-669-7978"
+//默认密码
+#define BUDEFAULTLOGINPWD  @"888888"
+
+//身份证号码显示格式
+#define CERTNUMFORMAT @"XXXXXX XXXXXXXX XXXX"
+#define CERTNUMFORMATDELIMITER @" -"
+//电话号码显示格式
+#define TELNUMFORMAT @"XXX XXXX XXXX"
+#define TELNUMFORMATDELIMITER @" -"
+
+#define TOAST_LONGERTIMER 2
+#define TOAST_SHORTTIMER 1
+
+//#if TARGET_IPHONE_SIMULATOR
+////#define NSLog(format, ...)
+//#elif TARGET_OS_IPHONE
+////#define NSLog MyWriteLog
+//#endif
+
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
+
+#endif

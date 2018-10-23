@@ -1,0 +1,120 @@
+//
+//  PrefixHeader.pch
+//  MeiliWan
+//
+//  Created by wujiayuan on 15/4/12.
+//  Copyright (c) 2015年 wujyapp. All rights reserved.
+//
+
+#ifndef MeiliWan_PrefixHeader_pch
+#define MeiliWan_PrefixHeader_pch
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import "BUConfig.h"
+//#import "BUSystem.h"
+#import <Foundation/Foundation.h>
+#import <UniversalFramework/UniversalFramework.h>
+#import "CommonAPI.h"
+#import "RequestStatus.h"
+#import "JYNetErrorManager.h"
+#import "JYNetLoadingManager.h"
+#import "JYNoDataManager.h"
+#import "UIFont+custom.h"
+//#import "ChatDemoUIDefine.h"
+//#import "EaseUI.h"
+//#import "EMAlertView.h"
+//#import "TTGlobalUICommon.h"
+//#import "helpdesk_sdk.h"
+//#import "HelpDeskUI.h"
+#import<Foundation/Foundation.h>
+
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define fKeyWindow [UIApplication sharedApplication].keyWindow
+#define fUserDefaults [NSUserDefaults standardUserDefaults]
+
+//Ext keyWord
+#define kMesssageExtWeChat @"weichat"
+#define kMesssageExtWeChat_ctrlType @"ctrlType"
+#define kMesssageExtWeChat_ctrlType_enquiry @"enquiry"
+#define kMesssageExtWeChat_ctrlType_inviteEnquiry @"inviteEnquiry"
+#define kMesssageExtWeChat_ctrlType_transferToKf_HasTransfer @"hasTransfer"
+#define kMesssageExtWeChat_ctrlArgs @"ctrlArgs"
+#define kMesssageExtWeChat_ctrlType_transferToKfHint  @"TransferToKfHint"
+#define kMesssageExtWeChat_ctrlArgs_inviteId @"inviteId"
+#define kMesssageExtWeChat_ctrlArgs_serviceSessionId @"serviceSessionId"
+#define kMesssageExtWeChat_ctrlArgs_detail @"detail"
+#define kMesssageExtWeChat_ctrlArgs_summary @"summary"
+#endif
+//#define DEMO_CALL 0
+//
+//#if DEMO_CALL == 1
+//#import <Hyphenate/Hyphenate.h>
+//#else
+//#import <HyphenateLite/HyphenateLite.h>
+//#endif
+
+#define ISTOLOGIN   if(![RequestStatus giveRightResponse])  return;//判断是否退到登陆页
+//判断系统版本是否是ios5.0以上
+#define __IOS5 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0)
+//判断系统版本是否是ios6.0以上
+#define __IOS6 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
+//判断系统版本是否是ios7.0以上
+#define __IOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+
+//判断系统版本是否为ios8.0以上
+#define __IOS8 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+#define __IOS9 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
+#define __IOS10 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
+#define __IOS11 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0)
+#define __ISIOS5 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 6.0)
+
+#define __OSVERTION ([[[UIDevice currentDevice] systemVersion] floatValue])
+
+//屏幕的SIZE
+#define __SCREEN_SIZE  [UIScreen mainScreen].bounds.size //CGSizeMake( 414, 566)//
+
+#define __LESSTHENIPHONE5 (__SCREEN_SIZE.height < 568)
+
+#define __IPHONE5 (__SCREEN_SIZE.height == 568)
+
+#define __IPHONE6 (__SCREEN_SIZE.height == 667)
+
+#define __IPHONE6PLUS (__SCREEN_SIZE.height == 736)
+#define __IPHONEX  (__SCREEN_SIZE.height == 812)
+//导航条高度
+#define __NAVBAR_HEIGHT  44
+#define NAVBARHEIGHT  ( __IPHONEX ? 88: 64)//导航栏高度
+//状态栏高度
+#define __STATUSBAR_HEIGHT  20
+#define TABBARHEIGHT  ( __IPHONEX ? 83: 49)//标准底部标签高度
+#define TABHEIGHT  ( __IPHONEX ? 78: 44)//自定义底部标签高度
+#define TABBARNONEHEIGHT  ( __IPHONEX ? 34: 0)//iPhone X底部禁用高度
+#define NAVNONEHEIGHT TABBARNONEHEIGHT //iPhone X导航栏部禁用高度
+//键盘窗口的高度
+#define __KEYBOARDWINDOW_HEIGHT 216
+//客服电话
+#define __SERVICEPHONE @"400-669-7978"
+//默认密码
+#define BUDEFAULTLOGINPWD  @"888888"
+
+//身份证号码显示格式
+#define CERTNUMFORMAT @"XXXXXX XXXXXXXX XXXX"
+#define CERTNUMFORMATDELIMITER @" -"
+//电话号码显示格式
+#define TELNUMFORMAT @"XXX XXXX XXXX"
+#define TELNUMFORMATDELIMITER @" -"
+
+#define TOAST_LONGERTIMER 2
+#define TOAST_SHORTTIMER 1
+
+#if TARGET_IPHONE_SIMULATOR
+//#define NSLog(format, ...)
+#elif TARGET_OS_IPHONE
+//#define NSLog MyWriteLog
+#endif
+
+#define APPSCHEME  @"xxtfsc"
+
+#endif

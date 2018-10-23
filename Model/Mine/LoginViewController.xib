@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
+            <connections>
+                <outlet property="NameImage" destination="XdX-ay-I3f" id="4cC-bJ-kTV"/>
+                <outlet property="PwdImage" destination="bgS-ct-hQS" id="c0e-of-q3m"/>
+                <outlet property="_division" destination="VSA-1X-s60" id="Tfy-KV-i5Y"/>
+                <outlet property="_loginBackgroundImgV" destination="hJX-VT-fOV" id="lOG-00-RUa"/>
+                <outlet property="_loginTipLb" destination="a7G-F5-zWR" id="9c6-rV-UTa"/>
+                <outlet property="_qqBtn" destination="g3E-F5-PfR" id="JNA-g6-zm6"/>
+                <outlet property="_seplitLine2Lb" destination="c6G-2g-xZZ" id="QnF-sU-Kwh"/>
+                <outlet property="_seplitLineLb" destination="YzK-za-n1X" id="Coh-mM-Djp"/>
+                <outlet property="_userName" destination="bwc-uP-GwN" id="61Y-uC-zxq"/>
+                <outlet property="_wxBtn" destination="fpS-r1-aOH" id="f9P-U2-tsJ"/>
+                <outlet property="buttonForget" destination="Xae-SA-n0g" id="Xpk-Ih-WhK"/>
+                <outlet property="buttonReigster" destination="pNU-t9-CqV" id="3Dt-H3-hhf"/>
+                <outlet property="buttonRemember" destination="7RK-oA-Bkb" id="Rkc-33-fYZ"/>
+                <outlet property="headPortrait" destination="Wpp-XZ-iwN" id="ZYi-yX-bj6"/>
+                <outlet property="identifyingCodeBtn" destination="Tdh-8n-HDD" id="k2n-67-G6i"/>
+                <outlet property="lbl" destination="Emm-pK-0z4" id="9vF-tH-8BG"/>
+                <outlet property="lbl1" destination="zYx-qm-ceB" id="Wkj-O1-QNB"/>
+                <outlet property="userLoginBtn" destination="N8Z-aU-WzV" id="YxP-v3-g2J"/>
+                <outlet property="userNameTextField" destination="4Wj-1V-l4g" id="05u-NG-Kqn"/>
+                <outlet property="userPwdTextField" destination="bme-Gd-7aP" id="rHS-9l-Mg1"/>
+                <outlet property="view" destination="1" id="3"/>
+                <outlet property="viewThirdLoginContainer" destination="FIB-fy-C1H" id="DcO-PU-wBw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="hJX-VT-fOV">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Emm-pK-0z4">
+                    <rect key="frame" x="26" y="232" width="323" height="0.0"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                            <color key="value" red="0.63921568627450975" green="0.63921568627450975" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zYx-qm-ceB">
+                    <rect key="frame" x="26" y="282" width="323" height="0.0"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" minimumFontSize="17" id="4Wj-1V-l4g" customClass="MyInputView">
+                    <rect key="frame" x="15" y="192" width="344" height="30"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                    <connections>
+                        <action selector="handleTextFieldReturn:" destination="-1" eventType="editingDidEndOnExit" id="mYS-dz-I5F"/>
+                        <outlet property="delegate" destination="-1" id="9Bn-IY-T76"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" minimumFontSize="17" id="bme-Gd-7aP" customClass="MyInputView">
+                    <rect key="frame" x="15" y="243" width="344" height="30"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES"/>
+                    <connections>
+                        <action selector="handleTextFieldReturn:" destination="-1" eventType="editingDidEndOnExit" id="lIS-SW-OBj"/>
+                        <outlet property="delegate" destination="-1" id="ZbQ-HV-Ytg"/>
+                    </connections>
+                </textField>
+                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" id="FIB-fy-C1H">
+                    <rect key="frame" x="0.0" y="400" width="375" height="166"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第三方登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a7G-F5-zWR">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c6G-2g-xZZ">
+                            <rect key="frame" x="8" y="10" width="101" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YzK-za-n1X">
+                            <rect key="frame" x="265" y="10" width="102" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fpS-r1-aOH">
+                            <rect key="frame" x="32" y="46" width="44" height="84"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" image="wxIcon.png">
+                                <color key="titleColor" red="0.18544720113277435" green="0.18544161319732666" blue="0.18544477224349976" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="handleThirdLogin:" destination="-1" eventType="touchUpInside" id="5vO-uJ-lOf"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="g3E-F5-PfR">
+                            <rect key="frame" x="140" y="46" width="44" height="84"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" image="QQIcon.png">
+                                <color key="titleColor" red="0.18544720113277435" green="0.18544161319732666" blue="0.18544477224349976" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="handleThirdLogin:" destination="-1" eventType="touchUpInside" id="lA6-tb-pQK"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="F3b-eY-mMW">
+                            <rect key="frame" x="303" y="46" width="44" height="84"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="微博" image="wbIcon.png">
+                                <color key="titleColor" red="0.18544720113277435" green="0.18544161319732666" blue="0.18544477224349976" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="handleThirdLogin:" destination="-1" eventType="touchUpInside" id="63W-aX-vtL"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="7RK-oA-Bkb">
+                            <rect key="frame" x="102" y="138" width="116" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                            <inset key="titleEdgeInsets" minX="8" minY="2" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="4" minY="3" maxX="16" maxY="0.0"/>
+                            <state key="normal" title="记住密码" image="remember_N.png">
+                                <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="remPwdHandle:" destination="-1" eventType="touchUpInside" id="edd-dq-VMH"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </view>
+                <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wpp-XZ-iwN">
+                    <rect key="frame" x="128" y="400" width="100" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="defaultAvatar.png"/>
+                    <connections>
+                        <action selector="headPortraitAction:" destination="-1" eventType="touchUpInside" id="hmi-kK-x4t"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tdh-8n-HDD">
+                    <rect key="frame" x="249" y="205" width="88" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.23137254901960785" green="0.6470588235294118" blue="0.71372549019607845" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="获取验证码">
+                        <color key="titleColor" red="0.22745098039215686" green="0.64313725490196083" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="identifyingCodeAction:" destination="-1" eventType="touchUpInside" id="vGM-e0-dd5"/>
+                    </connections>
+                </button>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bgS-ct-hQS">
+                    <rect key="frame" x="32" y="294" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="XdX-ay-I3f">
+                    <rect key="frame" x="32" y="237" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VSA-1X-s60">
+                    <rect key="frame" x="258" y="86" width="1" height="45"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.78823529411764703" green="0.792156862745098" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xae-SA-n0g">
+                    <rect key="frame" x="276" y="361" width="83" height="26"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="忘记密码">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="forgetPwdHandle:" destination="-1" eventType="touchUpInside" id="Vc4-PZ-TbR"/>
+                    </connections>
+                </button>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bwc-uP-GwN">
+                    <rect key="frame" x="8" y="197" width="359" height="21"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="N8Z-aU-WzV">
+                    <rect key="frame" x="26" y="308" width="323" height="45"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="backgroundColor" red="0.22745098039215686" green="0.63529411764705879" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="登录">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="loginHandle:" destination="-1" eventType="touchUpInside" id="Wgl-ll-2qv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pNU-t9-CqV">
+                    <rect key="frame" x="16" y="354" width="99" height="26"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="backgroundColor" red="0.039215686270000001" green="0.49803921569999998" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="手机快速注册">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="registerHandle:" destination="-1" eventType="touchUpInside" id="LcO-R6-exB"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo.png" id="Api-SD-NXF">
+                    <rect key="frame" x="152" y="49" width="70" height="92"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+            <point key="canvasLocation" x="-265.5" y="-255.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="QQIcon.png" width="50" height="50"/>
+        <image name="defaultAvatar.png" width="100" height="100"/>
+        <image name="logo.png" width="104" height="47"/>
+        <image name="remember_N.png" width="319" height="383"/>
+        <image name="wbIcon.png" width="50" height="50"/>
+        <image name="wxIcon.png" width="50" height="50"/>
+    </resources>
+</document>

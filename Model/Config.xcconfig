@@ -1,0 +1,22 @@
+//
+//  Config.xcconfig
+//  model
+//
+//  Created by air on 2017/6/6.
+//  Copyright © 2017年 ORANLLC_IOS1. All rights reserved.
+//
+APP_DISPLAY = 测试服dddx  //应用显示的名称
+
+CONFIG_FLAG = DEBUG
+
+PROVISIONING_PROFILE = "compassionparkDisPro2" //发布概要文件
+
+CODE_SIGN_IDENTITY_NAME = "iPhone Distribution: tianen lin (9LV9LK4E6Q)" //发布证书
+
+PROJECTNAME="model"    //项目名称
+
+AppleID="xxx@qq.com"      //苹果账号
+
+AppleIDPWD="123456"     //苹果密码
+
+PROVISIONING_PROFILE_DEV_NAME="compassionparkDevPro6" //开发概要文件

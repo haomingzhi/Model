@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JYInputViewController">
+            <connections>
+                <outlet property="_emotionBtn" destination="c2Y-KZ-M7t" id="Oc6-km-Z9d"/>
+                <outlet property="_menuView" destination="vkZ-at-k09" id="1qa-lR-z64"/>
+                <outlet property="_otherBtn" destination="Rlf-0k-Dqz" id="kRD-hL-OBM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rlf-0k-Dqz">
+                    <rect key="frame" x="287" y="6" width="34" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="2" maxX="4" maxY="2"/>
+                    <state key="normal" title="Button" image="addMore.png"/>
+                    <connections>
+                        <action selector="otherHandle:" destination="-1" eventType="touchUpInside" id="IL7-qY-K0E"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="c2Y-KZ-M7t">
+                    <rect key="frame" x="253" y="7" width="32" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="emotionHandle:" destination="-1" eventType="touchUpInside" id="jwX-HC-JPd"/>
+                    </connections>
+                </button>
+                <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mRj-ka-qNR" customClass="YYTextView">
+                    <rect key="frame" x="10" y="6" width="237" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="375" y="345.5"/>
+        </view>
+        <view contentMode="scaleToFill" id="vkZ-at-k09">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="282" y="5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="addMore.png" width="25" height="25"/>
+    </resources>
+</document>

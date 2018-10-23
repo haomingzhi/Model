@@ -1,0 +1,20 @@
+//
+//  ReleseConfig.xcconfig
+//  model
+//
+//  Created by air on 2017/6/6.
+//  Copyright © 2017年 ORANLLC_IOS1. All rights reserved.
+//
+APP_DISPLAY_NAME = 发布服
+CONFIG_FLAG = RELESE
+PROVISIONING_PROFILE = "GPSImmobilizerDisPro" //发布概要文件
+
+CODE_SIGN_IDENTITY_NAME = "iPhone Distribution: lan wangyao (H265KGY35T)" //发布证书
+
+PROJECTNAME=GPSImmobilizer    //项目名称
+
+AppleID="lane03@qq.com"      //苹果账号
+
+AppleIDPWD="Gpsfd@123"     //苹果密码
+
+PROVISIONING_PROFILE_DEV_NAME="GPSImmobilizerDevPro3" //开发概要文件
