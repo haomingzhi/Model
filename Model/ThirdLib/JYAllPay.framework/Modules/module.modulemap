@@ -1,6 +1,0 @@
-framework module JYAllPay {
-  umbrella header "JYAllPay.h"
-
-  export *
-  module * { export * }
-}
