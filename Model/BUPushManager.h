@@ -7,8 +7,12 @@
 //
 
 #import <UniversalFramework/UniversalFramework.h>
+#if TARGET_IPHONE_SIMULATOR
 
-@interface BUPushManager : BUBase
+#elif TARGET_OS_IPHONE
+#import "JPUSHService.h"
+#endif
+@interface BUPushManager : BUBase<JPUSHRegisterDelegate>
 @property(nonatomic)NSInteger pushToWhich;//启动后由主页跳去哪
 @property(nonatomic,strong)NSDictionary *pushInfo;
 -(void)pushToWhich:(NSDictionary *)Data;

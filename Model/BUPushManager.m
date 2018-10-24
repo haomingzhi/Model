@@ -10,11 +10,7 @@
 #import "BUSystem.h"
 
 #import "LoginViewController.h"
-#if TARGET_IPHONE_SIMULATOR
 
-#elif TARGET_OS_IPHONE
-#import "JPUSHService.h"
-#endif
 #import "MineViewController.h"
 #import <UserNotifications/UserNotifications.h>
 #import "MsgViewController.h"
@@ -182,7 +178,7 @@
 
 
      [JPUSHService setupWithOption:launchOptions appKey:@"eff700b98a3739fea54e2956"
-                           channel:@"rentShop"
+                           channel:@"wb"
                   apsForProduction:isProduction];
      NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
      [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kJPFNetworkDidReceiveMessageNotification object:nil];

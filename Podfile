@@ -10,13 +10,13 @@ end
 
 #第三方
 def vendorsPod
-
+    
     pod 'YYKit'
-  
-
+    pod 'JPush'
+    # pod 'ZLPhotoBrowser'
 end
 
 target 'Model' do
-componentsPod
-vendorsPod
+    componentsPod
+    vendorsPod
 end
