@@ -14,7 +14,6 @@
 #import "SetUpViewController.h"
 #import "SysMsgViewController.h"
 #import "MIneTableViewCell.h"
-#import "ZMSdkManager.h"
 #import "PersonInfoViewController.h"
 #import "MineHeadTableViewCell.h"
 #import "IconTitleAndImgTableViewCell.h"
