@@ -604,7 +604,7 @@
     else
     {
          [BUPushManager setTags:[NSSet setWithArray:@[@"1"]] alias:_tel callbackSelector:@selector(AliasCallback:tags:alias:) object:self];
-        HUDCRY(noti.error.domain, 1);
+//        HUDCRY(noti.error.domain, 1);
     }
 }
 
@@ -645,7 +645,7 @@
     else
     {
          [BUPushManager setTags:[NSSet setWithArray:@[@"1"]] alias:_tel callbackSelector:@selector(AliasCallback:tags:alias:) object:self];
-        HUDCRY(noti.error.domain, 1);
+//        HUDCRY(noti.error.domain, 1);
     }
 }
 

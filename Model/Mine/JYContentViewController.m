@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    HUDSHOW(@"加载中");
+//    HUDSHOW(@"加载中");
     [self getData];
     self.view.backgroundColor = kUIColorFromRGB(color_9);
     _contentLb.x = 15;
@@ -45,7 +45,7 @@
 -(void)getDataNotification:(BSNotification *)noti
 {
     if (noti.error.code == 0) {
-        HUDDISMISS;
+//        HUDDISMISS;
 //        self.title = busiSystem.agent.help.title;
 //        NSString *htmlStringx = [JYCommonTool unescape:busiSystem.agent.help.content] ;
 //        NSString *htmlString = htmlStringx;
@@ -66,7 +66,7 @@
     }
     else
     {
-        HUDCRY(noti.error.domain, 2);
+//        HUDCRY(noti.error.domain, 2);
     }
 }
 

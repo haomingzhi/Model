@@ -7,8 +7,8 @@
 //
 
 #import <MAMapKit/MAMapKit.h>
-#import "BUDustbinManager.h"
+//#import "BUDustbinManager.h"
 
 @interface BUMyPointAntation : MAPointAnnotation
-@property (nonatomic,strong) BUGetStationInfo *station;
+//@property (nonatomic,strong) BUGetStationInfo *station;
 @end

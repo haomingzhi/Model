@@ -176,14 +176,14 @@
 
 -(void)submit{
      if (_textViewCell.textView.text.length == 0) {
-          HUDCRY(@"请输入商品评价", 2);
+//          HUDCRY(@"请输入商品评价", 2);
           return;
      }
 //     if (_disTextViewCell.textView.text.length == 0) {
 //          HUDCRY(@"请输入配送评价", 2);
 //          return;
 //     }
-     HUDSHOW(@"提交中");
+//     HUDSHOW(@"提交中");
 //     NSString *evaScoreStr = [NSString stringWithFormat:@"%d",_evaScore];
 //     NSString *disScoreStr = [NSString stringWithFormat:@"%d",_disScore];
 //     NSMutableArray *commentList = [NSMutableArray new];
@@ -225,11 +225,11 @@
 {
 
      if (noti.error.code == 0) {
-          HUDSMILE(@"评价成功", 2);
+//          HUDSMILE(@"评价成功", 2);
           [self performSelector:@selector(goback) withObject:nil afterDelay:2];
           busiSystem.agent.isNeedRefreshTabD = YES;
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
      
 }
@@ -349,7 +349,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 @end

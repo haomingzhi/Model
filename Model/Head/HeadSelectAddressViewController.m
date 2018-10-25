@@ -37,7 +37,7 @@
      self.title = @"选择收货地址";
      [self initTableView];
      _searBar.delegate = self;
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
       [self locate];
      if (busiSystem.agent.isLogin) {
           [self addAddressBtn];
@@ -70,7 +70,7 @@
           if (error)
           {
                NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
-               HUDCRY(@"定位失败", 2);
+//               HUDCRY(@"定位失败", 2);
                return;
 //               if (error.code == AMapLocationErrorLocateFailed)
 //               {
@@ -79,7 +79,7 @@
 //               }
           }
           if (_requestCount == 0) {
-               HUDDISMISS;
+//               HUDDISMISS;
           }
           
           if (regeocode)
@@ -122,7 +122,7 @@
      _requestCount -- ;
      if (noti.error.code == 0) {
           if (_requestCount == 0) {
-               HUDDISMISS;
+//               HUDDISMISS;
           }
           
 //          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.userManager.addressList];
@@ -130,7 +130,7 @@
      }
      else
      {
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
 }
 
@@ -235,7 +235,7 @@
                     [self.navigationController pushViewController:vc animated:YES];
                     __weak HeadSelectAddressViewController *weakSelf = self;
                     [vc setHandleGoBack:^(id userData) {
-                         HUDSHOW(@"加载中");
+//                         HUDSHOW(@"加载中");
                          [weakSelf getData];
                     }];
                }];
@@ -344,7 +344,7 @@
 
 
 -(void)validateAddress:(BUAddress *)address{
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      NSString *log = [NSString stringWithFormat:@"%f",address.longitude];
      NSString *lat = [NSString stringWithFormat:@"%f",address.latitude];
 //     [busiSystem.userManager validateAddress:busiSystem.agent.storeId log:log lat:lat observer:self callback:@selector(validateAddressNotification:) extraInfo:@{@"obj":address?:[BUAddress new]}];
@@ -355,7 +355,7 @@
 {
 
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
           [self.navigationController popViewControllerAnimated:YES];
           BUAddress *address = noti.extraInfo[@"obj"];
           NSString *log = [NSString stringWithFormat:@"%f",address.longitude];
@@ -369,7 +369,7 @@
      }
      else
      {
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
 }
 

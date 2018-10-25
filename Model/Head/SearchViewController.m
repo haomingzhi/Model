@@ -85,7 +85,7 @@
 -(void)searchActivityNotification:(BSNotification *)noti
 {
     if (noti.error.code == 0) {
-        HUDDISMISS;
+//        HUDDISMISS;
 //          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.searchActivityManager.data];
         [[JYNoDataManager manager] addNodataView:_tableView withTip:@"暂无信息" withImg:@"nodata" withCount:_tableView.dataArr.count withTag:@"serShop"];
         [[JYNoDataManager manager] fitModeY:200];
@@ -93,7 +93,7 @@
     }
     else
     {
-        HUDCRY(noti.error.domain, 1);
+//        HUDCRY(noti.error.domain, 1);
     }
 }
 

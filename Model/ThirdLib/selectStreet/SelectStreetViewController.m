@@ -72,7 +72,7 @@
      self.locationManager.locationTimeout =5;
      //   逆地理请求超时时间，最低2s，此处设置为10s
      self.locationManager.reGeocodeTimeout = 5;
-     HUDSHOW(@"定位中");
+//     HUDSHOW(@"定位中");
     [self locate];
      
     
@@ -96,12 +96,12 @@
                
 //               if (error.code == AMapLocationErrorLocateFailed)
 //               {
-                    HUDCRY(error.localizedDescription, 2);
+//                    HUDCRY(error.localizedDescription, 2);
                     return;
 //               }
           }
           
-          HUDDISMISS;
+//          HUDDISMISS;
           _locationSuccess = YES;
           if (regeocode)
           {
@@ -160,7 +160,7 @@
 - (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error
 {
      NSLog(@"Error: %@", error);
-     HUDCRY(error.domain, 2);
+//     HUDCRY(error.domain, 2);
 }
 
 -(void)addSearchBar
@@ -442,7 +442,7 @@
 //    busiSystem.adressManager.address =address;
      
      if (address.Lon.length == 0) {
-          HUDCRY(@"请选择地址", 2);
+//          HUDCRY(@"请选择地址", 2);
           return;
      }
      
@@ -472,7 +472,7 @@
 {
      
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
           [self.navigationController popViewControllerAnimated:YES];
           if (self.handleGoBack) {
 //               self.handleGoBack(@{@"address":address?:[BUAddress new]});
@@ -480,7 +480,7 @@
      }
      else
      {
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
 }
 

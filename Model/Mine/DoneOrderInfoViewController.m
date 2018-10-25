@@ -11,7 +11,7 @@
 //#import "GoodsInfoViewController.h"
 //#import "CartViewController.h"
 //#import "ApplySalesReturnViewController.h"
-#import "OrderTrackingViewController.h"
+//#import "OrderTrackingViewController.h"
 #import "PublishEvaViewController.h"
 //#import "SendBackGoodsViewController.h"
 @interface DoneOrderInfoViewController ()
@@ -167,13 +167,13 @@ else
 
 -(void)showLoading
 {
-      HUDSHOW(@"加载中");
+//      HUDSHOW(@"加载中");
 }
 
 -(void) getOrderDetailNotification:(BSNotification *) noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
 //          self.orderDetail = busiSystem.getOrderListManager.orderDetail;
           [self.stateCell setCellData:@{@"title":@"交易完成",@"detail":@"",@"img":@"waitSend"}];
           [self.stateCell fitOrderInfoModeA];
@@ -291,7 +291,7 @@ else
             [self.submitCell fitMyOrderInfoMode];
           [self.tableView reloadData];
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
 
 }

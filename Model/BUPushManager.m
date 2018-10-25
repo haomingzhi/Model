@@ -134,7 +134,7 @@
 
 -(void)tiRen:(NSString *)str
 {
-     HUDDISMISS;
+//     HUDDISMISS;
      LoginViewController *loginVC =[LoginViewController new];
      busiSystem.agent.isLogin =NO;
      busiSystem.agent.isCancel =YES;

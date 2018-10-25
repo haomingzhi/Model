@@ -107,10 +107,10 @@
 {
      [self.view endEditing:YES];
      if ([_textViewCell.textView.text isEqualToString:@""]) {
-          HUDCRY(@"请填写反馈内容", 1);
+//          HUDCRY(@"请填写反馈内容", 1);
           return;
      }
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
 //     [busiSystem.agent feedBack:_textTfCell.textTf.text withContent:_textViewCell.textView.text withType:[NSString stringWithFormat:@"%ld",_type] observer:self callback:@selector(feedBackNotification:)];
      [busiSystem.agent addFeed:_textViewCell.textView.text withUserid:busiSystem.agent.userId?:@"" observer:self callback:@selector(feedBackNotification:)];
 }
@@ -118,13 +118,13 @@
 -(void)feedBackNotification:(BSNotification*)noti
 {
      if (noti.error.code == 0) {
-          HUDSMILE(@"反馈成功", 2);
+//          HUDSMILE(@"反馈成功", 2);
           [self.navigationController popViewControllerAnimated:YES];
      }
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 

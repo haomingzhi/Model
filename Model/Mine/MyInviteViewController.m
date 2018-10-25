@@ -49,7 +49,7 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-  HUDDISMISS;
+//  HUDDISMISS;
 }
 
 -(void)handleDidRightButton:(id)sender
@@ -148,7 +148,7 @@
 
 -(void)showLoading
 {
-    HUDSHOW(@"加载中");
+//    HUDSHOW(@"加载中");
 }
 -(void)getData
 {
@@ -159,7 +159,7 @@
 -(void)getDataNotification:(BSNotification *)noti
 {
     if (noti.error.code == 0) {
-        HUDDISMISS;
+//        HUDDISMISS;
 //         BUInviteInfo *iv = busiSystem.sysManager.inviteInfo;
 //         [_tabsCell setCellData:@{@"tab1":@"成功邀请",@"tab2":@"累计奖励",@"aimg":@"invRec",@"bimg":@"award",@"aDetail":[NSString stringWithFormat:@"%ld人",iv.inviteUser],@"bDetail":[NSString stringWithFormat:@"%ld元",iv.rewardsCount]}];
 //         [_tabsCell fitInvGetGiftMode];
@@ -169,7 +169,7 @@
     }
     else
     {
-        HUDCRY(noti.error.domain, 2);
+//        HUDCRY(noti.error.domain, 2);
     }
 }
 

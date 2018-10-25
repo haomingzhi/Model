@@ -406,14 +406,14 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 {
      [[NSNotificationCenter defaultCenter] postNotificationName:@"zhiMaGoBack" object:nil];
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
 
           [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshUserInfo" object:nil];
      }
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 // NOTE: 9.0以后使用新API接口

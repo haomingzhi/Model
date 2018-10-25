@@ -108,7 +108,7 @@
      if (busiSystem.agent.isNeedRefreshTabA && busiSystem.agent.isLogin && _isFirstBuy) {
           busiSystem.agent.isNeedRefreshTabA = NO;
           _delayTime = 0.5;
-          HUDSHOW(@"加载中");
+//          HUDSHOW(@"加载中");
           [self getSignInfo];
      }
      _isFirstBuy = YES;
@@ -237,7 +237,7 @@
     }
     else
     {
-        HUDCRY(noti.error.domain, 2);
+//        HUDCRY(noti.error.domain, 2);
         [self removeBgImg];
     }
 }
@@ -319,7 +319,7 @@
           busiSystem.agent.isDaySigin = busiSystem.agent.signInfo.isDaySigin;
 
           if (_requestCount == 0) {
-               HUDDISMISS;
+//               HUDDISMISS;
                if (_tableView.isRefreshing) {
                     //  [_curTableView.refreshHeaderView setState:EGOPullRefreshNormal];
                     [self refreshTableHeaderNotification:noti myTableView:_tableView];
@@ -334,13 +334,13 @@
      else
      {
           
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
 
 -(void)addSign{
-     HUDSHOW(@"提交中");
+//     HUDSHOW(@"提交中");
      _requestCount ++;
      [busiSystem.agent addSign:self callback:@selector(addSignNotification:)];
 }
@@ -351,7 +351,7 @@
      _requestCount--;
      if (noti.error.code == 0) {
           if (_requestCount == 0) {
-               HUDDISMISS;
+//               HUDDISMISS;
                busiSystem.agent.isNeedRefreshTabA = NO;
           }
           busiSystem.agent.isDaySigin = 1;
@@ -362,7 +362,7 @@
      else
      {
           
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -378,7 +378,7 @@
      _requestCount--;
      if (noti.error.code == 0) {
           if (_requestCount == 0) {
-               HUDDISMISS;
+//               HUDDISMISS;
                if (_tableView.isRefreshing) {
                     //  [_curTableView.refreshHeaderView setState:EGOPullRefreshNormal];
                     [self refreshTableHeaderNotification:noti myTableView:_tableView];
@@ -394,7 +394,7 @@
      else
      {
           
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -413,7 +413,7 @@
 //          busiSystem.agent.isDaySigin = busiSystem.headManager.bannerAndQuickMenu.isDaySigin;
           
           if (_requestCount == 0) {
-               HUDDISMISS;
+//               HUDDISMISS;
                if (_tableView.isRefreshing) {
                     //  [_curTableView.refreshHeaderView setState:EGOPullRefreshNormal];
                     [self refreshTableHeaderNotification:noti myTableView:_tableView];
@@ -437,7 +437,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -454,7 +454,7 @@
      _requestCount--;
      if (noti.error.code == 0) {
           if (_requestCount == 0) {
-               HUDDISMISS;
+//               HUDDISMISS;
                if (_tableView.isRefreshing) {
                     //  [_curTableView.refreshHeaderView setState:EGOPullRefreshNormal];
                     [self refreshTableHeaderNotification:noti myTableView:_tableView];
@@ -483,7 +483,7 @@
      else
      {
           
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -500,7 +500,7 @@
      _requestCount--;
      if (noti.error.code == 0) {
           if (_requestCount == 0) {
-               HUDDISMISS;
+//               HUDDISMISS;
                if (_tableView.isRefreshing) {
                     //  [_curTableView.refreshHeaderView setState:EGOPullRefreshNormal];
                     [self refreshTableHeaderNotification:noti myTableView:_tableView];
@@ -517,7 +517,7 @@
      else
      {
           
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -1137,7 +1137,7 @@
 
 -(void)showLoading
 {
-      HUDSHOW(@"加载中");
+//      HUDSHOW(@"加载中");
 }
 
 -(void)refreshCurentPage
@@ -1282,16 +1282,16 @@
           [LoginViewController toLogin:self];
           return;
      }
-     HUDSHOW(@"提交中");
+//     HUDSHOW(@"提交中");
      [busiSystem.orderManager addShoppingCart:productId storeId:busiSystem.agent.storeId withProCount:1 userId:busiSystem.agent.userId?:@"" observer:self callback:@selector(addShoppingCartNotification:)];
 }
 
 -(void)addShoppingCartNotification:(BSNotification *)noti{
 
      if (noti.error.code == 0) {
-          HUDSMILE(@"添加成功", 1);
+//          HUDSMILE(@"添加成功", 1);
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
 
 }

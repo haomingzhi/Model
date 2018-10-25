@@ -173,7 +173,7 @@
 
 -(void)orderPay:(NSString *)type{
      
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
 //     [busiSystem.payManager orderPay:type withOrderid:_order.orderId sourceType:@"1" orderType:_orderType?:@"" typeId:_typeId?:@""  observer:self callback:@selector(orderPayNotification:) extraInfo:@{@"type":type?:@""}];
 }
 
@@ -181,7 +181,7 @@
 
 -(void)orderPayNotification:(BSNotification *)noti{
      
-     HUDDISMISS;
+//     HUDDISMISS;
 
      
      if (noti.error.code == 0) {
@@ -205,20 +205,20 @@
 
 
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
      
 }
 
 -(void)upOrder{
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
 //     [busiSystem.payManager upOrder:_order.orderId observer:self callback:@selector(upOrderNotification:)];
 }
 
 
 -(void)upOrderNotification:(BSNotification *)noti{
      
-     HUDDISMISS;
+//     HUDDISMISS;
      
      
      if (noti.error.code == 0) {
@@ -230,7 +230,7 @@
           
           
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
      
 }

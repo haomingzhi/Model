@@ -379,7 +379,7 @@
      }];
      if (!hasAllSelected) {
 //          TOASTSHOW(@"请选择全商品规格");
-          HUDCRY(@"请选择全商品规格", 2);
+//          HUDCRY(@"请选择全商品规格", 2);
           return;
      }
      

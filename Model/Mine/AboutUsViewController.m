@@ -41,13 +41,13 @@
 -(void)getAboutNotification:(BSNotification *)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
           [_myTableView reloadData];
      }
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 

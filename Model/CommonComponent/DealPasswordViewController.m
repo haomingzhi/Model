@@ -44,7 +44,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (textField.text.length < 6) {
-        HUDCRY(@"请输入完密码", 2);
+//        HUDCRY(@"请输入完密码", 2);
         return YES;
     }
      NSString *pwd = _pwdTf.text;
@@ -136,7 +136,7 @@ static DealPasswordViewController *dealvc;
         [self.view endEditing:YES];
         if(![txtTf.text isEqualToString: _userInfo[@"pwd"]])
         {
-            HUDCRY(@"两次密码不一致，请重新申请", 2);
+//            HUDCRY(@"两次密码不一致，请重新申请", 2);
             return;
         }
         if (_doneCallBack) {

@@ -35,7 +35,7 @@
 -(void) getOrderDetailNotification:(BSNotification *) noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
 //          self.orderDetail = busiSystem.getOrderListManager.orderDetail;
            if ( 2) {
                       [self.stateCell setCellData:@{@"title":@"等待发货",@"detail":@"",@"img":@"waitSend"}];
@@ -128,7 +128,7 @@
           [self.submitCell fitMyOrderInfoModeB];
           [self.tableView reloadData];
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
 
 }

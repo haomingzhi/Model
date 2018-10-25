@@ -20,7 +20,7 @@
 #import "WaitEvaOrderInfoViewController.h"
 #import "DoneOrderInfoViewController.h"
 #import "CancelOrderInfoViewController.h"
-#import "OrderTrackingViewController.h"
+//#import "OrderTrackingViewController.h"
 
 #import "WatiRecOrderInfoViewController.h"
 #import "PayOrderViewController.h"
@@ -137,7 +137,7 @@
 -(void)getOrderListNotification:(BSNotification*)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
           MyTableView *_curTableView;
           NSInteger type = [noti.extraInfo[@"type"] integerValue];
           if (type == 0) {
@@ -169,7 +169,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 -(NSArray *) getScrollMenuTitles
@@ -753,7 +753,7 @@
     NSInteger index = menu.index;
     _currentOrderStatue = index ;
      [self menuSelectedIndex:_currentOrderStatue];
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [self getData];
  }
 
@@ -840,7 +840,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -890,7 +890,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -914,7 +914,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -932,7 +932,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 -(void)confirmOrder:(NSString *)o
@@ -950,7 +950,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 @end

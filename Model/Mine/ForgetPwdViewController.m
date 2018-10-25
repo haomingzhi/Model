@@ -83,7 +83,7 @@
 
 -(void)nextAction:(UIButton *)btn
 {
-     HUDSHOW(@"验证中");
+//     HUDSHOW(@"验证中");
      [busiSystem.agent checkVerify:self.phoneCell.textTf.text Verify:self.codeCell.textTf.text observer:self callback:@selector(checkVerifyNotification:)];
      
      
@@ -92,7 +92,7 @@
 -(void)checkVerifyNotification:(BSNotification *)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
           ForgetPwdNextViewController *vc = [[ForgetPwdNextViewController alloc] initWithNibName:@"RegisterViewController" bundle:nil];
           vc.userInfo = @{@"tel":self.phoneCell.textTf.text,@"type":@(_type)};
           vc.title = self.title;
@@ -100,7 +100,7 @@
      }
      else
      {
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
 }
 
@@ -108,11 +108,11 @@
 {
     [self.view endEditing:YES];
     if (![JYCommonTool isMobileNum:self.phoneCell.textTf.text]) {
-        HUDCRY(@"手机号格式有误", 2);
+//        HUDCRY(@"手机号格式有误", 2);
         return;
     }
     if (self.pwdCell.textTf.text.length < 6 || self.pwdCell.textTf.text.length > 18 ) {
-           HUDCRY(@"密码需为6-12位数字或数字英文组合", 2);
+//           HUDCRY(@"密码需为6-12位数字或数字英文组合", 2);
             return;
     }
 //    if (![self.pwdCell.textTf.text isEqualToString:self.surepwdCell.textTf.text]) {
@@ -129,7 +129,7 @@
 
 
 -(void)registerUser{
-     HUDSHOW(@"提交中");
+//     HUDSHOW(@"提交中");
      [busiSystem.agent registerUser:self.phoneCell.textTf.text withPwd:self.pwdCell.textTf.text withCode:self.codeCell.textTf.text observer:self callback:@selector(registerUserNotification:)];
      //    RegisterNextViewController *vc = [RegisterNextViewController new];
      //    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:self.userInfo];
@@ -142,30 +142,30 @@
 {
      if (noti.error.code == 0) {
 //          [busiSystem.agent login:self.phoneCell.textTf.text password:self.pwdCell.textTf.text  observer:self callback:@selector(loginNotification:)];
-          HUDSMILE(@"注册成功", 1);
+//          HUDSMILE(@"注册成功", 1);
           [self.navigationController popViewControllerAnimated:YES];
      }
      else
      {
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
 -(void)forgetPwd{
-     HUDSHOW(@"提交中");
+//     HUDSHOW(@"提交中");
      [busiSystem.agent forgetPwd:self.phoneCell.textTf.text code:self.codeCell.textTf.text withPwd:self.pwdCell.textTf.text   observer:self callback:@selector(forgetPwdNotification:)];
 }
 
 -(void)forgetPwdNotification:(BSNotification *)noti
 {
     if (noti.error.code == 0) {
-        HUDDISMISS;
-         HUDSMILE(@"修改成功", 1);
+//        HUDDISMISS;
+//         HUDSMILE(@"修改成功", 1);
          [self.navigationController popViewControllerAnimated:YES];
     }
     else
     {
-        HUDCRY(noti.error.domain, 2);
+//        HUDCRY(noti.error.domain, 2);
     }
 }
 
@@ -173,7 +173,7 @@
 {
 //    ForgetPwdNextViewController *vc = [[ForgetPwdNextViewController alloc] initWithNibName:@"RegisterViewController" bundle:nil];
 //    vc.userInfo = @{@"tel":self.phoneCell.textTf.text};
-    HUDSMILE(@"修改成功", 1);
+//    HUDSMILE(@"修改成功", 1);
     [self.navigationController popViewControllerAnimated:YES];
 }
 

@@ -254,8 +254,6 @@
 		78A102BA1B4FB06E00C2AAF0 /* CWStarRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A101CC1B4FB06E00C2AAF0 /* CWStarRateView.m */; };
 		78A102BB1B4FB06E00C2AAF0 /* StyledPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 78A101CD1B4FB06E00C2AAF0 /* StyledPageControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78A102BC1B4FB06E00C2AAF0 /* StyledPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A101CE1B4FB06E00C2AAF0 /* StyledPageControl.m */; };
-		78A102BD1B4FB06E00C2AAF0 /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 78A101CF1B4FB06E00C2AAF0 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78A102BE1B4FB06E00C2AAF0 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A101D01B4FB06E00C2AAF0 /* SVProgressHUD.m */; };
 		78A102BF1B4FB06E00C2AAF0 /* UIScrollView+XHVisibleCenterScroll.h in Headers */ = {isa = PBXBuildFile; fileRef = 78A101D21B4FB06E00C2AAF0 /* UIScrollView+XHVisibleCenterScroll.h */; };
 		78A102C01B4FB06E00C2AAF0 /* UIScrollView+XHVisibleCenterScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A101D31B4FB06E00C2AAF0 /* UIScrollView+XHVisibleCenterScroll.m */; };
 		78A102C11B4FB06E00C2AAF0 /* XHIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 78A101D41B4FB06E00C2AAF0 /* XHIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -641,8 +639,6 @@
 		78A101CC1B4FB06E00C2AAF0 /* CWStarRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWStarRateView.m; sourceTree = "<group>"; };
 		78A101CD1B4FB06E00C2AAF0 /* StyledPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyledPageControl.h; sourceTree = "<group>"; };
 		78A101CE1B4FB06E00C2AAF0 /* StyledPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyledPageControl.m; sourceTree = "<group>"; };
-		78A101CF1B4FB06E00C2AAF0 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		78A101D01B4FB06E00C2AAF0 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		78A101D21B4FB06E00C2AAF0 /* UIScrollView+XHVisibleCenterScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+XHVisibleCenterScroll.h"; sourceTree = "<group>"; };
 		78A101D31B4FB06E00C2AAF0 /* UIScrollView+XHVisibleCenterScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+XHVisibleCenterScroll.m"; sourceTree = "<group>"; };
 		78A101D41B4FB06E00C2AAF0 /* XHIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHIndicatorView.h; sourceTree = "<group>"; };
@@ -1317,8 +1313,6 @@
 				78A101C81B4FB06E00C2AAF0 /* StartView */,
 				78A101CD1B4FB06E00C2AAF0 /* StyledPageControl.h */,
 				78A101CE1B4FB06E00C2AAF0 /* StyledPageControl.m */,
-				78A101CF1B4FB06E00C2AAF0 /* SVProgressHUD.h */,
-				78A101D01B4FB06E00C2AAF0 /* SVProgressHUD.m */,
 				78A101D11B4FB06E00C2AAF0 /* XHScrollMenu */,
 				7835BC581BC675E900F9579A /* CustomActivityIndicatorView.h */,
 				7835BC591BC675E900F9579A /* CustomActivityIndicatorView.m */,
@@ -1758,7 +1752,6 @@
 				78A1022F1B4FB06E00C2AAF0 /* BSSecurity.h in Headers */,
 				78A103081B4FB06E00C2AAF0 /* UIWebView+JavaScriptAlert.h in Headers */,
 				78A102CF1B4FB06E00C2AAF0 /* JYCodeBtn.h in Headers */,
-				78A102BD1B4FB06E00C2AAF0 /* SVProgressHUD.h in Headers */,
 				78DFCAD31BDDBF55007186D0 /* MyMaker.h in Headers */,
 				78A102D91B4FB06E00C2AAF0 /* Validate.h in Headers */,
 				78A1028B1B4FB06E00C2AAF0 /* MSViewControllerSlidingPanel.h in Headers */,
@@ -1921,7 +1914,6 @@
 				454FBD07201B09EE0091886D /* JYUPPay.m in Sources */,
 				78A1022A1B4FB06E00C2AAF0 /* BSConvertion.m in Sources */,
 				78A102CE1B4FB06E00C2AAF0 /* JYCache.m in Sources */,
-				78A102BE1B4FB06E00C2AAF0 /* SVProgressHUD.m in Sources */,
 				78A103091B4FB06E00C2AAF0 /* UIWebView+JavaScriptAlert.m in Sources */,
 				4531CA2C1C883F6D00B2631C /* TextViewCountTableViewCell.m in Sources */,
 				78A102B61B4FB06E00C2AAF0 /* SortMenuVer.m in Sources */,

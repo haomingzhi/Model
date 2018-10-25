@@ -66,7 +66,7 @@
 
     [self initTableView];
     [self setRightNav];
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [self getUserInfo];
 }
 -(void)getUserInfo
@@ -78,14 +78,14 @@
 -(void)getUserInfoNotification:(BSNotification *)noti
 {
      if (noti.error.code == 0) {
-     HUDDISMISS;
+//     HUDDISMISS;
           [_headCell setCellData:@{@"title":@"点击修改头像",@"default":@"defaultHead",@"img":busiSystem.agent.userInfo.headImage?:[NSNull new],@"changeImg":@(YES)}];
           [_headCell fitPersonInfoMode];
 }
 else
 {
 
-     HUDCRY(noti.error.domain, 1);
+//     HUDCRY(noti.error.domain, 1);
 }
 }
 //-(void)handleReturnBack:(id)sender
@@ -113,7 +113,7 @@ else
 -(void)handleDidRightButton:(id)sender
 {
      [self.view endEditing:YES];
-    HUDSHOW(@"加载中");
+//    HUDSHOW(@"加载中");
     [self submit];
 }
 
@@ -132,14 +132,14 @@ else
 
 -(void)saveHeadImg:(UIImage*)img
 {
-    HUDSHOW(@"上传中");
+//    HUDSHOW(@"上传中");
     [busiSystem.agent uploadImgs:@[img] observer:self callback:@selector(chageLogoNotification:)];
 }
 
 -(void)chageLogoNotification:(BSNotification*)noti
 {
     if (noti.error.code == 0) {
-        HUDSMILE(@"头像修改成功", 1);
+//        HUDSMILE(@"头像修改成功", 1);
           busiSystem.agent.isNeedRefreshTabD = YES;
          _headImg =  busiSystem.agent.imgsList;
          BUImageRes *img = [BUImageRes new];
@@ -148,7 +148,7 @@ else
     }
     else
     {
-        HUDCRY(noti.error.domain, 2);
+//        HUDCRY(noti.error.domain, 2);
     }
 }
 
@@ -158,7 +158,7 @@ else
     if (noti.error.code == 0) {
         if(_requestCount == 0)
         {
-            HUDSMILE(@"保存成功", 1);
+//            HUDSMILE(@"保存成功", 1);
              
             busiSystem.agent.isNeedRefreshTabD = YES;
              [self.navigationController popViewControllerAnimated:YES];
@@ -166,7 +166,7 @@ else
     }
     else
     {
-        HUDCRY(noti.error.domain, 1);
+//        HUDCRY(noti.error.domain, 1);
         
     }
 }
@@ -177,14 +177,14 @@ else
     if (noti.error.code == 0) {
         if(_requestCount == 0)
         {
-            HUDSMILE(@"保存成功", 1);
+//            HUDSMILE(@"保存成功", 1);
               busiSystem.agent.isNeedRefreshTabC = YES;
             [self.navigationController popViewControllerAnimated:YES];
         }
     }
     else
     {
-        HUDCRY(noti.error.domain, 1);
+//        HUDCRY(noti.error.domain, 1);
     }
 }
 

@@ -14,7 +14,12 @@
 +(UINavigationController *)NavViewController:(NSString * )classStr withTitle:(NSString *) title withSelImg:(NSString *)aSelImg withUnSelImg:(NSString *)aUnSelImg
 {
     Class someClass = NSClassFromString(classStr);
-    id obj = [[someClass alloc] initWithNibName:classStr bundle:nil];
+     id obj;
+     if ([classStr isEqualToString:@"MineViewController"]) {
+          obj = [[someClass alloc] init];
+     }
+     else
+   obj  = [[someClass alloc] initWithNibName:classStr bundle:nil];
     [obj performSelector:@selector(setTitle:) withObject:title];
     [obj setValue:[[UITabBarItem alloc] initWithTitle:title image:[[UIImage imageNamed:aUnSelImg] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ] selectedImage:[[UIImage imageNamed:aSelImg] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ]] forKey:@"tabBarItem"];
     UINavigationController *navSvc = [[UINavigationController alloc] initWithRootViewController:obj];

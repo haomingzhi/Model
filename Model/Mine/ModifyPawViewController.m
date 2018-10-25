@@ -100,7 +100,7 @@
 
 -(void) updatePwdNotification:(BSNotification *) noti
 {
-     BASENOTIFICATION(noti);
+//     BASENOTIFICATION(noti);
     busiSystem.agent.Phone=@"";
     busiSystem.agent.password =@"";
     busiSystem.agent.isLogin =NO;

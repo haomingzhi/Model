@@ -128,7 +128,7 @@
 
 - (void)logoutNotification:(BSNotification*)noti
 {
-     BASENOTIFICATION(noti);
+//     BASENOTIFICATION(noti);
      //    busiSystem.agent.Phone=@"";
      busiSystem.agent.password =@"";
      //    [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:@"cityName"];

@@ -11,7 +11,7 @@
 //#import "RealNameViewController.h"
 #import "ReceiverAddressViewController.h"
 #import <AVFoundation/AVFoundation.h>
-#import "modifyUserNameViewController.h"
+//#import "modifyUserNameViewController.h"
 //#import "genderViewController.h"
 //#import "RegisterViewController.h"
 //#import "DatePickViewController.h"
@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"基本资料";
-    [self showDetail];
+//    [self showDetail];
     self.tableViewMine.backgroundColor = kUIColorFromRGB(color_0xf5f5f5);
 //    [self.imageUserLogo corner:[UIColor clearColor] radius:self.imageUserLogo.frame.size.width/2];
     tableTitles = @[@"用户名",@"性别",@"手机号",@"当前定位地址"];
@@ -168,7 +168,7 @@
 
 -(void)uploadImgNotification:(BSNotification*)noti
 {
-    BASENOTIFICATION(noti);
+//    BASENOTIFICATION(noti);
 //    [busiSystem.agent chageLogo:busiSystem.releases.Images[0] observer:self callback:@selector(chageLogoNofification:)];
 }
 
@@ -195,9 +195,9 @@
         switch (indexPath.row) {
             case 0:
             {
-                modifyUserNameViewController *vc = [[modifyUserNameViewController alloc] init];
-                vc.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:vc animated:YES];
+//                modifyUserNameViewController *vc = [[modifyUserNameViewController alloc] init];
+//                vc.hidesBottomBarWhenPushed = YES;
+//                [self.navigationController pushViewController:vc animated:YES];
             }
                 break;
             case 1:
@@ -299,7 +299,7 @@ static NSString *prebirthday;
 
 -(void)changeUserNofification:(BSNotification*)noti
 {
-    BASENOTIFICATION(noti);
+//    BASENOTIFICATION(noti);
     tableValues =@[busiSystem.agent.Name,busiSystem.agent.sex==0?@"男":@"女",busiSystem.agent.Phone,busiSystem.agent.cityName];
     [self.tableViewMine reloadData];
 }
@@ -321,10 +321,10 @@ static NSString *prebirthday;
             BSNetworkCommand *cmd = noti.cmd;
             [self performSelector:@selector(addToHistoryCommand:) withObject:cmd];
             [self performSelector:@selector(showLoadingFailureCoverView:) withObject:@"加载失败,请点击屏幕重试"];
-            HUDDISMISS;
+//            HUDDISMISS;
         }
         else
-            HUDCRY(noti.error.domain, TOAST_LONGERTIMER);
+//            HUDCRY(noti.error.domain, TOAST_LONGERTIMER);
         return;
     }
 }

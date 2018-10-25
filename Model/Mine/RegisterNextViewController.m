@@ -68,7 +68,7 @@
 {
     UIImage *img = _img;
     [self.view endEditing:YES];
-    HUDSHOW(@"提交中");
+//    HUDSHOW(@"提交中");
     [busiSystem.agent registerUser:_userInfo[@"tel"] withPwd:_userInfo[@"pwd"] withCode:_userInfo[@"code"]  observer:self callback:@selector(registerUserNotification:)];
 }
 
@@ -79,19 +79,19 @@
     }
     else
     {
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
     }
 }
 
 -(void)loginNotification:(BSNotification *)noti
 {
     if (noti.error.code == 0) {
-        HUDDISMISS;
+//        HUDDISMISS;
         [self finishReg];
     }
     else
     {
-        HUDCRY(noti.error.domain, 1);
+//        HUDCRY(noti.error.domain, 1);
     }
 }
 

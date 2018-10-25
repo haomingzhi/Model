@@ -8,15 +8,8 @@
 
 #import <UniversalFramework/UniversalFramework.h>
 
-@interface MineViewController : BaseTableViewController
-
-@property (strong, nonatomic) IBOutlet UITableViewCell *tableCellUser;
-
-@property (weak, nonatomic) IBOutlet UIImageView *imageViewUserLogo;
-
-@property (weak, nonatomic) IBOutlet UILabel *labelUserName;
-
-@property (weak, nonatomic) IBOutlet MyTableView *tableViewMine;
+@interface MineViewController : UIViewController
+@property (nonatomic, copy, setter=loginoutBlock:) void (^loginoutBlock)(void);
 
 //-(void)toWitchView:(id)data type:(NSInteger)type;
 @end

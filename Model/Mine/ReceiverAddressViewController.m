@@ -57,7 +57,7 @@
         TOASTSHOWUNDERVIEW(@"车辆接收人手机号必须为11位", self.inputViewdorder_mobile, CGPointMake(0,10));
         return ;
     }
-    HUDSHOW(@"正在提交数据，请稍等...");
+//    HUDSHOW(@"正在提交数据，请稍等...");
 //    [busiSystem.agent updateReceive:self.inputVieworder_receiver.text phone:self.inputViewdorder_mobile.text address:self.inputVieworder_address.text addressDetail:self.inputVieworder_detailaddress.text observer:self callback:@selector(updateReceiveNotification:)];
 }
 

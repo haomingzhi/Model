@@ -38,11 +38,11 @@ extern NSInvocation* BSGetInvocationFromSel(NSObject *obj, SEL sel);
 
 #define  DIDGROUPNOTIFICATION(noti)\
 if (noti.error.code ==0 && [BUBase commandCount] ==0) {\
-    HUDDISMISS;\
+//    HUDDISMISS;\
 }\
 else if (noti.error.code != 0 ) {\
     if ([BUBase commandCount] ==0) {\
-        [SVProgressHUD dismiss];\
+//        [SVProgressHUD dismiss];\
         if ([self isKindOfClass:NSClassFromString(@"JYBaseViewController")] && [busiSystem.errorMonitors indexOfObject:@(noti.error.code)] != NSNotFound)\
         {\
             BSNetworkCommand *cmd = noti.cmd;\
@@ -55,7 +55,7 @@ else if (noti.error.code != 0 ) {\
 
 #define BASENOTIFICATION(noti)\
 if (noti.error.code ==0) {\
-HUDDISMISS;\
+//HUDDISMISS;\
 [[JYNetErrorManager manager] dismissErrorView:NSStringFromClass([noti.target class])];\
 }\
 else {\
@@ -68,7 +68,7 @@ if([self valueForKey:@"view"])\
 BSNetworkCommand *cmd = noti.cmd;\
 [self performSelector:@selector(addToHistoryCommand:) withObject:cmd];\
 [self performSelector:@selector(showLoadingFailureCoverView:) withObject:@"加载失败,请点击屏幕重试"];\
-[SVProgressHUD dismiss];\
+//[SVProgressHUD dismiss];\
 }\
 }\
 else \
@@ -80,7 +80,7 @@ return;\
 if (noti.error.code ==0) {\
 if(can)\
 {\
-HUDDISMISS;\
+//HUDDISMISS;\
 [[JYNetLoadingManager manager] dismissLoadingView];\
 [[JYNetErrorManager manager] dismissErrorView];\
 }\
@@ -95,7 +95,7 @@ if([self valueForKey:@"view"])\
 BSNetworkCommand *cmd = noti.cmd;\
 [self performSelector:@selector(addToHistoryCommand:) withObject:cmd];\
 [self performSelector:@selector(showLoadingFailureCoverView:) withObject:@"加载失败,请点击屏幕重试"];\
-[SVProgressHUD dismiss];\
+//[SVProgressHUD dismiss];\
 }\
     }\
     else \
@@ -107,7 +107,7 @@ BSNetworkCommand *cmd = noti.cmd;\
 
 #define JYBASENOTIFICATION(noti)\
 if (noti.error.code ==0) {\
-HUDDISMISS;\
+//HUDDISMISS;\
 [[JYNetLoadingManager manager] dismissLoadingView];\
 [[JYNetErrorManager manager] dismissErrorView:NSStringFromClass([noti.target class])];\
 }\
@@ -118,7 +118,7 @@ BSNetworkCommand *cmd = noti.cmd;\
 [self performSelector:@selector(addToHistoryCommand:) withObject:cmd];\
 [[JYNetErrorManager manager] addErrorView:self.view withTip:@"网络异常" withImg:[UIImage imageContentWithFileName:@"netError"] withTag:NSStringFromClass([noti.target class]) withTarget:self withAction:@selector(handleRedo:)];\
 [[JYNetLoadingManager manager] dismissLoadingView];\
-HUDDISMISS;\
+//HUDDISMISS;\
 }\
 else \
 {\
@@ -132,7 +132,7 @@ return;\
 if (noti.error.code ==0) {\
     if(can)\
     {\
-    HUDDISMISS;\
+//    HUDDISMISS;\
     [[JYNetLoadingManager manager] dismissLoadingView];\
     [[JYNetErrorManager manager] dismissErrorView];\
     }\
@@ -144,7 +144,7 @@ BSNetworkCommand *cmd = noti.cmd;\
 [self performSelector:@selector(addToHistoryCommand:) withObject:cmd];\
 [[JYNetErrorManager manager] addErrorView:self.view withTip:@"网络异常" withImg:[UIImage imageContentWithFileName:@"netError"] withTarget:self withAction:@selector(handleRedo:)];\
 [[JYNetLoadingManager manager] dismissLoadingView];\
-HUDDISMISS;\
+//HUDDISMISS;\
 }\
 else \
 HUDCRY(noti.error.domain, TOAST_LONGERTIMER); \
@@ -155,7 +155,7 @@ return;\
 if (noti.error.code ==0) {\
 if(can)\
 {\
-HUDDISMISS;\
+//HUDDISMISS;\
 [[JYNetLoadingManager manager] dismissLoadingView];\
 [[JYNetErrorManager manager] dismissErrorView];\
 }\
@@ -167,7 +167,7 @@ BSNetworkCommand *cmd = noti.cmd;\
 [self performSelector:@selector(addToHistoryCommand:) withObject:cmd];\
 [[JYNetErrorManager manager] addErrorView:vc.view withTip:@"网络异常" withImg:[UIImage imageContentWithFileName:@"netError"] withTarget:self withAction:@selector(handleRedo:)];\
 [[JYNetLoadingManager manager] dismissLoadingView];\
-HUDDISMISS;\
+//HUDDISMISS;\
 }\
 else \
 HUDCRY(noti.error.domain, TOAST_LONGERTIMER); \

@@ -519,7 +519,7 @@
 -(void)getCommentListNotification:(BSNotification *)noti
 {
    
-     HUDDISMISS;
+//     HUDDISMISS;
     
      
      if (noti.error.code == 0) {
@@ -531,7 +531,7 @@
      }
      else
      {
-          HUDCRY( noti.error.domain , 1);
+//          HUDCRY( noti.error.domain , 1);
      }
      
 }

@@ -538,7 +538,7 @@
      //    BASENOTIFICATION(noti);
      if (noti.error.code == 0) {
           busiSystem.agent.isLogin = YES;
-          HUDDISMISS;
+//          HUDDISMISS;
           //    if (!busiSystem.agent.isLogin) {
           //        HUDCRY(busiSystem.agent.RetMsg, 2);
           //        return;
@@ -552,7 +552,7 @@
           //            [busiSystem.agent checkAuth:self callback:@selector(checkAuthNotification:)];
           //        }
           //        else
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
 
      }
      //    if (noti.error.code ==0) {\
@@ -610,7 +610,7 @@
 {
      //    BASENOTIFICATION(noti);
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
           busiSystem.agent.regModel.Phone =_userNameTextField.text;
           if (_isBackPwd==NO) {
                [self pushLoginViewControllerType:USERNAME];
@@ -623,7 +623,7 @@
      }
      else
      {
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 
 }
@@ -712,12 +712,12 @@
 {
      //    BASENOTIFICATION(noti);
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
           busiSystem.agent.regModel.Name =self.userNameTextField.text;
      }
      else
      {
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 
      //    if (_headPortrait.imageView.image!=[UIImage imageNamed:@"defaultAvatar"]) {
@@ -778,7 +778,7 @@
           TOASTSHOWUNDERVIEW(@"手机号码无效", self.userNameTextField, CGPointMake(0,10));
           return;
      }
-     HUDSHOW(@"正在登录中...");
+//     HUDSHOW(@"正在登录中...");
      [busiSystem.agent mobileLogin:password withMobile:name observer:self callback:@selector(loginNotification:)];
 }
 -(void) doLogin{
@@ -807,7 +807,7 @@
      //        return;
      //    }
      else{
-          HUDSHOW(@"正在登录中...");
+//          HUDSHOW(@"正在登录中...");
           [busiSystem.agent login:self.userNameTextField.text
                          password:self.userPwdTextField.text
                          observer:self
@@ -1118,7 +1118,7 @@
                p = PlatformQQ;
                type = @"2";
           }
-          HUDSHOW(@"授权中...");
+//          HUDSHOW(@"授权中...");
           [UMWarp getUserInfo:p callBack:^(NSDictionary *dic) {
                NSLog(@"logsssdd:%@",dic);
                [busiSystem.agent thirdLogin:dic[@"headImg"] withNickname:dic[@"name"] withUid:dic[@"uid"]  withType:type observer:self callback:@selector(loginNotification:)];

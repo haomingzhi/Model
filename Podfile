@@ -13,6 +13,10 @@ def vendorsPod
     
     pod 'YYKit'
     pod 'JPush'
+     pod 'SDCycleScrollView'
+     pod 'MJRefresh'
+     pod 'SVProgressHUD'
+#     pod 'HXPhotoPicker'
     # pod 'ZLPhotoBrowser'
 end
 

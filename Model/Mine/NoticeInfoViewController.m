@@ -44,13 +44,13 @@
 {
     if(noti.error.code == 0)
     {
-             HUDDISMISS;
+//             HUDDISMISS;
 //        _notice = busiSystem.getNoticeManager.notice;
         [_tableView reloadData];
     }
     else
     {
-        HUDCRY(noti.error.domain, 2);
+//        HUDCRY(noti.error.domain, 2);
     }
 
 }

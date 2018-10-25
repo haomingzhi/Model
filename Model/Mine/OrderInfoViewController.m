@@ -26,7 +26,7 @@
      self.title = @"订单详情";
      [self initTableView];
      [self addBottomMenuView];
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [self getData];
 }
 
@@ -39,7 +39,7 @@
 -(void) getOrderDetailNotification:(BSNotification *) noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
           _orderDetail = busiSystem.orderManager.orderDetail;
 
           if (4) {
@@ -87,7 +87,7 @@
           [ _payTimeCell setCellData:@{@"title":@"付款时间:",@"detail":_orderDetail.othInfo.payTime?:@""}];
           [_payTimeCell fitOrderInfoModeF];
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
 
 }
@@ -492,13 +492,13 @@
 -(void)orderCancelNotification:(BSNotification*)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
           [self.navigationController popViewControllerAnimated:YES];
      }
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -511,13 +511,13 @@
 -(void)orderPayNotification:(BSNotification *)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
 
      }
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -529,13 +529,13 @@
 -(void)orderFinishNotification:(BSNotification*)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
 
      }
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -546,13 +546,13 @@
 -(void)orderDelNotification:(BSNotification*)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
           [self.navigationController popViewControllerAnimated:YES];
      }
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 

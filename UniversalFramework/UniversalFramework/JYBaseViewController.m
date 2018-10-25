@@ -160,7 +160,7 @@ static __weak JYBaseViewController *mainvc;
     static NSString *errorDomain;
     if (noti.error.code ==0 && [BUBase commandCount] ==0) {
         errorDomain = @"";
-        HUDDISMISS;
+//        HUDDISMISS;
         return YES;
     }
     else if (noti.error.code != 0 ) {
@@ -168,7 +168,7 @@ static __weak JYBaseViewController *mainvc;
             errorDomain = errorDomain == NULL || errorDomain.length ==0 ? noti.error.domain : [NSString stringWithFormat:@"%@,%@",errorDomain,noti.error.domain];
         }
         if ([BUBase commandCount] ==0) {
-            [SVProgressHUD dismiss];
+//            [SVProgressHUD dismiss];
             if ([self isKindOfClass:NSClassFromString(@"JYBaseViewController")] && [self.monitorErrors indexOfObject:@(noti.error.code)] != NSNotFound)
             {
                 BSNetworkCommand *cmd = noti.cmd;

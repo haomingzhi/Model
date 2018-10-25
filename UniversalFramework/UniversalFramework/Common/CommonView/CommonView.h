@@ -15,7 +15,7 @@
 #import "EGORefreshTableFooterView.h"
 
 #import "MyTabBar.h"
-#import "SVProgressHUD.h"
+//#import "SVProgressHUD.h"
 #import "MySpringBoardView.h"
 #import "MyTextField.h"
 #import "MyPwdTextField.h"

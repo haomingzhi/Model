@@ -332,7 +332,7 @@
 @end
 
 @interface BUUserList : BUBase
-@property(strong,nonatomic) BUImageRes *userHead;
+@property(strong,nonatomic) NSString *userHead;
 @property(strong,nonatomic) NSString *nickName;
 @property(strong,nonatomic) NSString *userName;
 @property(nonatomic) NSInteger integral;

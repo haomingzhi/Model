@@ -54,7 +54,7 @@
           _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.agent.userAddresses];
           [_tableView reloadData];
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
      
 }

@@ -39,7 +39,7 @@
 -(void)getMessageInfoNotification:(BSNotification *)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
 //          _msg = busiSystem.sysManager.messageListManager.getMessage.lastObject;
 //          [_titleCell setCellData:@{@"title":_msg.mTitle?:@"",@"detail":_msg.createTime?:@""}];
 //          [_titleCell fitSysMsgInfoMode];
@@ -51,7 +51,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 - (void)didReceiveMemoryWarning {

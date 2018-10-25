@@ -42,7 +42,7 @@
 //    [self getDataFromList];
 //    self.view.backgroundColor = kUIColorFromRGB(color_4);
     //    JYWAITSHOW(@"正在加载",self.view);
-    HUDSHOW(@"加载中");
+//    HUDSHOW(@"加载中");
     [self getData];
     //    [self initFpsLb];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshAddressList) name:@"RefreshAddressList" object:nil];
@@ -142,7 +142,7 @@
 {
     if (noti.error.code ==0) {
         
-        HUDDISMISS;
+//        HUDDISMISS;
        NSMutableArray *arr = [NSMutableArray arrayWithArray:busiSystem.agent.userAddresses];
         _tableView.dataArr = arr;
 //        [[JYNoDataManager manager] addNodataView:_tableView withTip:@"暂无数据" withImg:@"" withCount:arr.count];
@@ -159,7 +159,7 @@
         }
     else
     {
-         HUDCRY(noti.error.domain, 2);
+//         HUDCRY(noti.error.domain, 2);
        
     }
     
@@ -403,7 +403,7 @@
      if (addre.isDefault == 1) {
           return;
      }
-    HUDSHOW(@"加载中");
+//    HUDSHOW(@"加载中");
     [busiSystem.agent setDefaultUserAddress:addre.addressId observer:self callback:@selector(setDefaultUserAddressNotification:)];
 }
 
@@ -416,7 +416,7 @@
     }
     else
     {
-        HUDCRY(noti.error.domain, 2);
+//        HUDCRY(noti.error.domain, 2);
         
     }
 }
@@ -428,7 +428,7 @@
 
 -(void)delAddress:(BUUserAddress *)addre
 {
-    HUDSHOW(@"加载中");
+//    HUDSHOW(@"加载中");
 //    [busiSystem.agent delUserAddress:addre.addressId observer:self callback:@selector(delUserAddressNotification:) extraInfo:@{@"addres":addre}];
 //     [busiSystem.myPathManager deleAddress:busiSystem.agent.userId withAddressid:addre.addressId  observer:self callback:@selector(delUserAddressNotification:) extraInfo:@{@"addres":addre}];
 }
@@ -444,7 +444,7 @@
         }
         else
         {
-            HUDDISMISS;
+//            HUDDISMISS;
             [(NSMutableArray *)busiSystem.agent.userAddresses removeObject:addres];
             NSMutableArray *arr = [NSMutableArray arrayWithArray:busiSystem.agent.userAddresses];
             _tableView.dataArr = arr;
@@ -462,7 +462,7 @@
     }
     else
     {
-        HUDCRY(noti.error.domain, 2);
+//        HUDCRY(noti.error.domain, 2);
         
     }
 }

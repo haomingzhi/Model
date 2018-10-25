@@ -40,8 +40,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"商品";
-    [self initCollectionView];
-    [self initMenuView];
+//    [self initCollectionView];
+//    [self initMenuView];
     _orderByType = @"0";
     _goodTypeId = @"";
     [self getData];
@@ -70,11 +70,11 @@
 {
     _requestCount--;
     if (_requestCount == 0) {
-        BASENOTIFICATION(noti);
+//        BASENOTIFICATION(noti);
     }
     else
     {
-        BASENOTIFICATIONWITHCANMISS(noti, NO);
+//        BASENOTIFICATIONWITHCANMISS(noti, NO);
     }
     if (noti.error.code == 0) {
         //        HUDDISMISS;
@@ -83,59 +83,59 @@
     }
     else
     {
-        HUDCRY( noti.error.domain , 1);
+//        HUDCRY( noti.error.domain , 1);
     }
 }
 
 
--(void)getGoodsListNotification:(BSNotification *)noti
-{
-    _requestCount--;
-    if (_requestCount == 0) {
-        BASENOTIFICATION(noti);
-    }
-    else
-    {
-        BASENOTIFICATIONWITHCANMISS(noti, NO);
-    }
-    if (noti.error.code == 0) {
-        //        HUDDISMISS;
-//        _dataArr = [NSMutableArray arrayWithArray:busiSystem.goodsListManager.goodsList];
-//        [_collectionView reloadData];
-        // 结束刷新
-        
-//        if (busiSystem.goodsListManager.pageInfo.hasMore) {
-//            [self.collectionView.mj_footer endRefreshing];
-//        }else{
-//            [_collectionView.mj_footer endRefreshingWithNoMoreData];
-//        }
-        [[JYNoDataManager manager] addNodataView:_collectionView withTip:@"暂无信息" withImg:@"icon_noData@2x" withCount:_dataArr.count withTag:[NSString stringWithFormat:@"myac%d",0]];
-        [[JYNoDataManager manager] fitModeY:55];
-//        if (_dataArr.count == 0) {
-//            _topView.hidden = YES;
-//        }else{
-//            _topView.hidden = NO;
-//        }
-    }
-    else
-    {
-        HUDCRY( noti.error.domain , 1);
-    }
-}
+//-(void)getGoodsListNotification:(BSNotification *)noti
+//{
+//    _requestCount--;
+//    if (_requestCount == 0) {
+//        BASENOTIFICATION(noti);
+//    }
+//    else
+//    {
+//        BASENOTIFICATIONWITHCANMISS(noti, NO);
+//    }
+//    if (noti.error.code == 0) {
+//        //        HUDDISMISS;
+////        _dataArr = [NSMutableArray arrayWithArray:busiSystem.goodsListManager.goodsList];
+////        [_collectionView reloadData];
+//        // 结束刷新
+//
+////        if (busiSystem.goodsListManager.pageInfo.hasMore) {
+////            [self.collectionView.mj_footer endRefreshing];
+////        }else{
+////            [_collectionView.mj_footer endRefreshingWithNoMoreData];
+////        }
+//        [[JYNoDataManager manager] addNodataView:_collectionView withTip:@"暂无信息" withImg:@"icon_noData@2x" withCount:_dataArr.count withTag:[NSString stringWithFormat:@"myac%d",0]];
+//        [[JYNoDataManager manager] fitModeY:55];
+////        if (_dataArr.count == 0) {
+////            _topView.hidden = YES;
+////        }else{
+////            _topView.hidden = NO;
+////        }
+//    }
+//    else
+//    {
+//        HUDCRY( noti.error.domain , 1);
+//    }
+//}
 
 
--(void)addBackBtn{
-    _backBtn = [[UIButton alloc]initWithFrame:CGRectMake(15, 5.5, 10, 18)];
-    [_backBtn setBackgroundImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
-    [_backBtn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
-    _backBtn.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:_backBtn];
-    
-}
+//-(void)addBackBtn{
+//    _backBtn = [[UIButton alloc]initWithFrame:CGRectMake(15, 5.5, 10, 18)];
+//    [_backBtn setBackgroundImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
+//    [_backBtn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+//    _backBtn.backgroundColor = [UIColor grayColor];
+//    [self.view addSubview:_backBtn];
+//
+//}
 
--(void)backAction{
-    [self.navigationController popViewControllerAnimated:YES];
-}
+//-(void)backAction{
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
 
 -(void)initMenuView{
 //    UIView *menuView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, __SCREEN_SIZE.width, 44)];
@@ -183,7 +183,7 @@
                     weakSelf.index = [dic[@"index"] integerValue];
                     weakSelf.orderByType = dic[@"index"];
                     [_topView setTitle:arr[weakSelf.index] index:0 isSelect:NO];
-                    HUDSHOW(@"加载中");
+//                    HUDSHOW(@"加载中");
                     [weakSelf getGoodsListData];
                 }];
                 
@@ -249,7 +249,7 @@
         }
         [_topView setTitle:dic[@"title"] index:1 isSelect:NO];
 
-        HUDSHOW(@"加载中");
+//        HUDSHOW(@"加载中");
         [weakSelf getGoodsListData];
     };
 }

@@ -31,7 +31,7 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"帮助";
     [self initTableView];
-    HUDSHOW(@"加载中");
+//    HUDSHOW(@"加载中");
     [self getData];
 }
 
@@ -48,13 +48,13 @@
 -(void)getHelpTypeListNotification:(BSNotification*)noti
 {
     if (noti.error.code == 0) {
-        HUDDISMISS;
+//        HUDDISMISS;
 //        _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.agent.helpTypeList];
         [_tableView reloadData];
     }
     else
     {
-        HUDCRY(noti.error.domain, 2);
+//        HUDCRY(noti.error.domain, 2);
     }
 }
 -(void)initTableView

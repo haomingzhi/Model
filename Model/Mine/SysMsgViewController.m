@@ -23,7 +23,7 @@
      // Do any additional setup after loading the view from its nib.
      self.title = @"消息中心";
      [self initTableView];
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [self getData];
 }
 
@@ -35,7 +35,7 @@
 -(void)getUserMsgNotification:(BSNotification *)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
 //          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.getUserMsgManager.getUserMsgArr];
 //                    _tableView.hasMore = busiSystem.myPathManager.getUserMsgManager.pageInfo.hasMore;
           [_tableView reloadData];
@@ -45,7 +45,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 

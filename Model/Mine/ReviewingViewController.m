@@ -65,20 +65,20 @@
     _goodsId = _userInfo[@"goodsId"]?:@"";
     _type = _userInfo[@"type"]?:@"1";
     _content = _textViewCell.textView.text;
-    HUDSHOW(@"提交中");
+//    HUDSHOW(@"提交中");
 //    [busiSystem.getCommentListManager addComment:_content?:@"" withStar:_star?:@"5" withOrderid:_orderId?:@"" withGoodsid:_goodsId?:@"" withType:_type?:@"" withImgArr:_imgUrlArr  observer:self callback:@selector(addCommentNotification:)];
 }
 
 -(void)addCommentNotification:(BSNotification*)noti
 {
     if (noti.error.code == 0) {
-        HUDSMILE(@"评价完成", 2);
+//        HUDSMILE(@"评价完成", 2);
         [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshOrderList" object:nil];
         [self performSelector:@selector(toNextVC) withObject:nil afterDelay:2];
     }
     else
     {
-        HUDCRY(noti.error.domain, 2);
+//        HUDCRY(noti.error.domain, 2);
     }
 }
 
@@ -377,7 +377,7 @@
 {
     //    for (NSInteger i = 0; i < imgArr.count; i++) {
     //        UIImage *im = imgArr[i];
-    HUDSHOW(@"上传中");
+//    HUDSHOW(@"上传中");
 //    [busiSystem.agent uploadImgs:imgArr withType:type withId:_userInfo[@"goodsId"] observer:self callback:@selector(uploadImgNotification:)];
     
     //    }
@@ -386,7 +386,7 @@
 -(void)uploadImgNotification:(BSNotification *)noti
 {
     if (noti.error.code  == 0) {
-        HUDSMILE(@"上传成功", 1);
+//        HUDSMILE(@"上传成功", 1);
         [busiSystem.agent.imgCerArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             BUImageRes *im = obj;
           [_imgUrlArr addObject:im.Image];
@@ -395,7 +395,7 @@
     }
     else
     {
-        HUDCRY(noti.error.domain, 2);
+//        HUDCRY(noti.error.domain, 2);
     }
 }
 
@@ -409,11 +409,11 @@
 -(void)delImageFileNotification:(BSNotification*)noti
 {
     if (noti.error.code  == 0) {
-        HUDDISMISS
+//        HUDDISMISS
     }
     else
     {
-        HUDCRY(noti.error.domain, 2);
+//        HUDCRY(noti.error.domain, 2);
     }
 }
 /*

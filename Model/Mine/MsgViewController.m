@@ -30,7 +30,7 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"我的消息";
     [self initTableView];
-    HUDSHOW(@"加载中");
+//    HUDSHOW(@"加载中");
     [self getData];
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postRefreshMsgList) name:@"PostRefreshMsgList" object:nil];
      [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
@@ -55,7 +55,7 @@
 {
   if(noti.error.code == 0)
   {
-      HUDDISMISS;
+//      HUDDISMISS;
 //       _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.indexManager.getSysMessageListManager.dataArr];
 //       _tableView.hasMore = busiSystem.indexManager.getSysMessageListManager.pageInfo.hasMore;
        [_tableView reloadData];
@@ -65,7 +65,7 @@
   }
      else
      {
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 

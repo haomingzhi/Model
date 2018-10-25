@@ -147,7 +147,7 @@
 
 -(void)upSexData:(NSString *)sex
 {
-     HUDSHOW(@"保存中");
+//     HUDSHOW(@"保存中");
      [busiSystem.agent upUserInfo:busiSystem.agent.userId?:@"" withTypeMsg:@"3" withData:sex observer:self callback:@selector(saveUserNotification:)];
 
 }
@@ -156,20 +156,20 @@
 {
      if (noti.error.code == 0) {
           //          HUDDISMISS;
-          HUDSMILE(@"保存成功", 1);
+//          HUDSMILE(@"保存成功", 1);
           [self performSelector:@selector(goNext) withObject:nil afterDelay:1];
      }
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 
 }
 
 -(void)goNext
 {
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshPersonData" object:nil];
      busiSystem.agent.isNeedRefreshTabD = YES;
      [self.navigationController popViewControllerAnimated:YES];

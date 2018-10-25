@@ -26,7 +26,7 @@
     // Do any additional setup after loading the view from its nib.
      self.title = @"评价";
      [self initTableView];
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [self getData];
 }
 
@@ -42,7 +42,7 @@
 
 -(void)getCommentListNotification:(BSNotification *)noti
 {
-     HUDDISMISS;
+//     HUDDISMISS;
      if (noti.error.code == 0) {
 //          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.getCommentListManager.getCommentList];
 //          _tableView.hasMore = busiSystem.getCommentListManager.pageInfo.hasMore;
@@ -53,7 +53,7 @@
      }
      else
      {
-          HUDCRY( noti.error.domain , 1);
+//          HUDCRY( noti.error.domain , 1);
      }
 }
 

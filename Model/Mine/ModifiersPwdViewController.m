@@ -89,27 +89,27 @@
 {
     [self.view endEditing:YES];
     if (self.codeCell.textTf.text.length < 6 || self.codeCell.textTf.text.length > 12 ) {
-        HUDCRY(@"密码需为6-20位数字或数字英文组合", 2);
+//        HUDCRY(@"密码需为6-20位数字或数字英文组合", 2);
         return;
     }
     if (![self.codeCell.textTf.text isEqualToString:_comfirmCell.textTf.text]) {
-        HUDCRY(@"2次输入的新密码不一致",1);
+//        HUDCRY(@"2次输入的新密码不一致",1);
         return;
     }
-    HUDSHOW(@"提交中");
+//    HUDSHOW(@"提交中");
     [busiSystem.agent changeUserPassword :@"1" withOldPwd:self.phoneCell.textTf.text withNewPwd:_comfirmCell.textTf.text observer:self callback:@selector(passwordModifyNotification:)];
 }
 
 -(void)passwordModifyNotification:(BSNotification *)noti
 {
     if (noti.error.code == 0) {
-        HUDSMILE(@"修改成功", 1);
+//        HUDSMILE(@"修改成功", 1);
         busiSystem.agent.password = _comfirmCell.textTf.text;
         [self performSelector:@selector(toLoginVC) withObject:nil afterDelay:1];
     }
     else
     {
-        HUDCRY(noti.error.domain, 1);
+//        HUDCRY(noti.error.domain, 1);
     }
 }
 

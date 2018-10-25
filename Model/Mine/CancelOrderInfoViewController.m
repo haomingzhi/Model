@@ -49,7 +49,7 @@
 -(void) getOrderDetailNotification:(BSNotification *) noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
 //          self.orderDetail = busiSystem.getOrderListManager.orderDetail;
           [self.stateCell setCellData:@{@"title":@"交易关闭",@"detail":@"",@"img":@"icon_order_cancel"}];
           [self.stateCell fitOrderInfoModeA];
@@ -112,7 +112,7 @@
 
           [self.tableView reloadData];
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
 
 }
@@ -127,19 +127,19 @@
      }
 }
 -(void)operOrder:(NSString *)type orderId:(NSString *)orderId{
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [busiSystem.orderManager operOrder:busiSystem.agent.userId orderId:orderId type:type observer:self callback:@selector(operOrderNotification:)];
 }
 
 -(void)operOrderNotification:(BSNotification *)noti{
-     HUDDISMISS;
+//     HUDDISMISS;
      if (noti.error.code == 0) {
           //          [self getData];
           //          [_tableView reloadData];
-          HUDSMILE(@"订单已删除", 2);
+//          HUDSMILE(@"订单已删除", 2);
           [self performSelector:@selector(goback) withObject:nil afterDelay:2];
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
      
 }

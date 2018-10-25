@@ -44,15 +44,15 @@
 {
      [self.view endEditing:YES];
     if (![self.phoneCell.textTf.text isEqualToString:self.codeCell.textTf.text]) {
-        HUDCRY(@"密码不一致", 1);
+//        HUDCRY(@"密码不一致", 1);
         return;
     }
     if (![BSUtility isRightNameStyle:_nickCell.textTf.text withMax:16 withMin:4]) {
-        HUDCRY(@"昵称未填或太短", 1);
+//        HUDCRY(@"昵称未填或太短", 1);
         return;
     }
     
-    HUDSHOW(@"提交中");
+//    HUDSHOW(@"提交中");
     [busiSystem.agent registerUser:self.userInfo[@"tel"] withPwd:self.phoneCell.textTf.text withCode:self.userInfo[@"code"]  observer:self callback:@selector(registerUserNotification:)];
 //    RegisterNextViewController *vc = [RegisterNextViewController new];
 //    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:self.userInfo];
@@ -112,20 +112,20 @@
     }
     else
     {
-        HUDCRY(noti.error.domain, 1);
+//        HUDCRY(noti.error.domain, 1);
     }
 }
 
 -(void)loginNotification:(BSNotification *)noti
 {
     if (noti.error.code == 0) {
-        HUDSMILE(@"注册成功", 2);
+//        HUDSMILE(@"注册成功", 2);
         [self performSelector:@selector(finishReg) withObject:nil afterDelay:2];
      
     }
     else
     {
-        HUDCRY(noti.error.domain, 1);
+//        HUDCRY(noti.error.domain, 1);
     }
 }
 

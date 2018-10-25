@@ -436,7 +436,7 @@
 //完成
 - (void)imageCropper:(VPImageCropperViewController *)cropperViewController didFinished:(UIImage *)editedImage {
 //    self.portraitImageView.image = editedImage;
-    HUDSHOW(@"正在上传..")
+//    HUDSHOW(@"正在上传..")
 //    [busiSystem.releases uploadImg:@[editedImage] observer:self action:@selector(uploadImgNotification:)];
 //    [[NSNotificationCenter
 //      defaultCenter] postNotificationName:@"dis"
@@ -444,7 +444,7 @@
 }
 -(void)uploadImgNotification:(BSNotification*)noti
 {
-    BASENOTIFICATION(noti);
+//    BASENOTIFICATION(noti);
 //    [busiSystem.agent chageLogo:busiSystem.releases.Images[0] observer:self callback:@selector(chageLogoNofification:)];
 }
 
@@ -468,10 +468,10 @@
             BSNetworkCommand *cmd = noti.cmd;
             [self performSelector:@selector(addToHistoryCommand:) withObject:cmd];
             [self performSelector:@selector(showLoadingFailureCoverView:) withObject:@"加载失败,请点击屏幕重试"];
-            HUDDISMISS;
+//            HUDDISMISS;
         }
         else
-            HUDCRY(noti.error.domain, TOAST_LONGERTIMER);
+//            HUDCRY(noti.error.domain, TOAST_LONGERTIMER);
         return;
     }
 }

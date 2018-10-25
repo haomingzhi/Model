@@ -24,7 +24,7 @@
     // Do any additional setup after loading the view from its nib.
      self.title = @"我的收藏";
      [self initTableView];
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [self getData];
 }
 
@@ -36,7 +36,7 @@
 -(void)getListNotification:(BSNotification*)noti
 {
      if (noti.error.code == 0) {
-     HUDDISMISS;
+//     HUDDISMISS;
 //          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.getCollocArr];
 //          _tableView.hasMore = busiSystem.getCollectListManager.pageInfo.hasMore;
           [_tableView reloadData];
@@ -46,7 +46,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 
 }
@@ -178,7 +178,7 @@
 
 -(void)delCol:(NSIndexPath *)indexPath
 {
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
 //     BUGetColloc *co = _tableView.dataArr[indexPath.section];
 //     [busiSystem.myPathManager addandUpCon:busiSystem.agent.userId?:@"" withProductid:co.productId?:@"" observer:self callback:@selector(addandUpConNotification:)  extraInfo:@{@"row":indexPath}];
 //     [busiSystem.getCollectListManager delGoodsCollect:[NSString stringWithFormat:@"%d",co.productType] withGoodsid:co.goodsId withUserid:busiSystem.agent.userId observer:self callback:@selector(delGoodsCollectNotification:) extraInfo:@{@"row":indexPath}];
@@ -187,7 +187,7 @@
 -(void)addandUpConNotification:(BSNotification*)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
           NSIndexPath *indexPath = noti.extraInfo[@"row"];
           [_tableView.dataArr removeObjectAtIndex:indexPath.row];
           [_tableView reloadData];
@@ -198,7 +198,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 /*

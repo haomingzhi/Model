@@ -22,7 +22,7 @@
     // Do any additional setup after loading the view from its nib.
      self.title = @"常见问题";
      [self initTableView];
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
 //     [self getData];
 }
 
@@ -34,7 +34,7 @@
 -(void)getListNotificaiton:(BSNotification*)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
 //          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.sysManager.sysHelpTypeMsgListManager.dataArr];
 //          _tableView.hasMore = busiSystem.sysManager.sysHelpTypeMsgListManager.pageInfo.hasMore;
           [_tableView reloadData];
@@ -44,7 +44,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -56,7 +56,7 @@
      [_contentCell fitHtmlMode];
      [_tableView reloadData];
      _contentCell.hidden = NO;
-     HUDDISMISS;
+//     HUDDISMISS;
      }
 }
 -(void)viewWillDisappear:(BOOL)animated

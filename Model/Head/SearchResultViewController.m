@@ -47,7 +47,7 @@
      _searchView.hidden = YES;
 //      self.navigationItem.titleView = _searchView;
      _textTf.text = _searchText;
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [self getData];
 }
 
@@ -59,7 +59,7 @@
 -(void)getListNotification:(BSNotification*)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
           if (_tableView.isRefreshing) {
                //  [_curTableView.refreshHeaderView setState:EGOPullRefreshNormal];
                [self refreshTableHeaderNotification:noti myTableView:_tableView];
@@ -75,7 +75,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -139,7 +139,7 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      _searchText = textField.text;
      [self getData];
      return YES;

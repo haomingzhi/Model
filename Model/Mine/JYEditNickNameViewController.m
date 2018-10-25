@@ -69,7 +69,7 @@
 -(void)changeUserInfoTypeNotification:(BSNotification*)noti
 {
     if (noti.error.code == 0) {
-        HUDSMILE(@"已修改", 1);
+//        HUDSMILE(@"已修改", 1);
         busiSystem.agent.isNeedRefreshTabD = YES;
         busiSystem.agent.userInfo.nickName = _nickNameCell.textTf.text;
         [self.navigationController popViewControllerAnimated:YES];
@@ -77,7 +77,7 @@
     }
     else
     {
-        HUDCRY(noti.error.domain,2);
+//        HUDCRY(noti.error.domain,2);
     }
 }
 
@@ -144,10 +144,10 @@
 {
      [self.view endEditing:YES];
      if (_nickNameCell.textTf.text.length == 0) {
-          HUDCRY(@"您还未设置昵称", 1);
+//          HUDCRY(@"您还未设置昵称", 1);
           return;
      }
-     HUDSHOW(@"保存中");
+//     HUDSHOW(@"保存中");
      [busiSystem.agent upUserInfo:busiSystem.agent.userId?:@"" withTypeMsg:@"2" withData:_nickNameCell.textTf.text observer:self callback:@selector(saveUserNotification:)];
 //     [busiSystem.agent saveUser:busiSystem.agent.userInfo.headImage.Image?:@"" withNickname:_nickNameCell.textTf.text withUserid:busiSystem.agent.userId observer:self callback:@selector(saveUserNotification:)];
 }
@@ -156,20 +156,20 @@
 {
      if (noti.error.code == 0) {
 //          HUDDISMISS;
-          HUDSMILE(@"保存成功", 1);
+//          HUDSMILE(@"保存成功", 1);
           [self performSelector:@selector(goNext) withObject:nil afterDelay:1];
      }
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 
 }
 
 -(void)goNext
 {
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshPersonData" object:nil];
      busiSystem.agent.isNeedRefreshTabD = YES;
      [self.navigationController popViewControllerAnimated:YES];

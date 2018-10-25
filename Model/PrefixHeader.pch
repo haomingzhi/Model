@@ -21,6 +21,7 @@
 #import "JYNetLoadingManager.h"
 #import "JYNoDataManager.h"
 #import "UIFont+custom.h"
+#import "Macros.h"
 //#import "ChatDemoUIDefine.h"
 //#import "EaseUI.h"
 //#import "EMAlertView.h"
@@ -33,6 +34,44 @@
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define fKeyWindow [UIApplication sharedApplication].keyWindow
 #define fUserDefaults [NSUserDefaults standardUserDefaults]
+#define IPhone4s            ([[UIDevice currentDevice] model] )
+#define IOS11            ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 11.0)
+#define UIScreenWidth                              [UIScreen mainScreen].bounds.size.width
+#define UIScreenHeight                             [UIScreen mainScreen].bounds.size.height
+//#define UISreenWidthScale   UIScreenWidth / 320
+#define NavHeight   ((UIScreenHeight == 812)? 88:64)
+#define NavTop   ((UIScreenHeight == 812)? 44:0)
+#define XNavTop   ((UIScreenHeight == 812)? 34:0)
+#define FootHeight   ((UIScreenHeight == 812)? 34:0)
+#define TabbarHeight   ((UIScreenHeight == 812)? 83:49)
+#define StateHeight   ((UIScreenHeight == 812)? 44:20)
+#define UICommonTableBkgColor UIColorFromRGB(0xe4e7ec)
+#define Message_Font_Size   14        // 普通聊天文字大小
+#define Notification_Font_Size   10   // 通知文字大小
+#define Chatroom_Message_Font_Size 16 // 聊天室聊天文字大小
+#define IPhoneX   ((UIScreenHeight == 812)? YES:NO)
+
+/* weakSelf strongSelf reference */
+#define WEAK_SELF(weakSelf) __weak __typeof(&*self) weakSelf = self;
+#define STRONG_SELF(strongSelf) __strong __typeof(&*weakSelf) strongSelf = weakSelf;
+
+/** 是否为iOS6 */
+#define iOS6 (([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0) ? YES : NO)
+
+/** 是否为iOS7 */
+#define iOS7 (([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) ? YES : NO)
+
+/** 是否为iOS8 */
+#define iOS8 (([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) ? YES : NO)
+
+/** 是否为iOS9 */
+#define iOS9 (([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0) ? YES : NO)
+
+/** 是否为iOS10 */
+#define iOS10 (([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0) ? YES : NO)
+/** 是否为iOS11 */
+#define iOS11 (([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0) ? YES : NO)
+
 
 //Ext keyWord
 #define kMesssageExtWeChat @"weichat"

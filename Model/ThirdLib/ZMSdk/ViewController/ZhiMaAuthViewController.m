@@ -85,12 +85,12 @@
      [self.view endEditing:YES];
      if(_nameCell.textTf.text.length == 0)
      {
-          HUDCRY(@"请输入您的姓名", 2);
+//          HUDCRY(@"请输入您的姓名", 2);
           return;
      }
      if (_IDCell.textTf.text.length == 0)
      {
-           HUDCRY(@"请输入您的身份证号", 2);
+//           HUDCRY(@"请输入您的身份证号", 2);
           return;
      }
 //     if (_phoneCell.textTf.text.length == 0)
@@ -98,7 +98,7 @@
 //           HUDCRY(@"请输入您的身份证申请的手机号码", 2);
 //          return;
 //     }
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
       [busiSystem.payManager getPublicAppAuthorize:busiSystem.agent.userId?:@"" withUserTrueName:_nameCell.textTf.text withIDCard:_IDCell.textTf.text observer:self callback:@selector(getPublicAppAuthorizeNotification:)];
 
 }
@@ -114,7 +114,7 @@
 -(void)getPublicAppAuthorizeNotification:(BSNotification *)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
 //          [self.navigationController popViewControllerAnimated:NO];
           if(busiSystem.payManager.zmUrl )
           {
@@ -125,7 +125,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

@@ -100,11 +100,11 @@
 -(void)updatePwdByForgetNotification:(BSNotification *)noti
 {
     if (noti.error.code == 0) {
-        HUDDISMISS;
+//        HUDDISMISS;
          [self.navigationController popToRootViewControllerAnimated:YES];
     }else
     {
-        HUDCRY(noti.error.domain, 1);
+//        HUDCRY(noti.error.domain, 1);
     }
    
 }

@@ -22,7 +22,7 @@
      self.title = @"充值记录";
      [self setNavigateRightButton:@"nav_que"];
      [self initTableView];
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [self getData];
 }
 
@@ -34,7 +34,7 @@
 -(void)getDataNotification:(BSNotification*)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
 //          self.tableView.dataArr = [NSMutableArray arrayWithArray: busiSystem.userSetManager.userPayManager.dataArr];
 //          self.tableView.hasMore = busiSystem.userSetManager.userPayManager.pageInfo.hasMore;
           [self.tableView reloadData];
@@ -44,7 +44,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 

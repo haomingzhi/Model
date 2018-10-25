@@ -47,7 +47,7 @@
      // Do any additional setup after loading the view from its nib.
      self.title = @"个人信息";
      [self initTableView];
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [self getUserInfo];
      //     [self addBottomView];
      [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(refreshPersonData) name:@"refreshPersonData" object:nil];
@@ -90,7 +90,7 @@
 {
      if (noti.error.code == 0) {
           //          if (!_isPostRefresh) {
-          HUDDISMISS;
+//          HUDDISMISS;
           //          }
           //          _isPostRefresh = NO;
           //          BUUserInfo *userInfo = busiSystem.agent.userInfo;
@@ -133,7 +133,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 - (void)didReceiveMemoryWarning {
@@ -404,14 +404,14 @@
 
 -(void)upHeadImg:(UIImage*)img
 {
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [busiSystem.agent chageLogo:img observer:self callback:@selector(chageLogoNotificaiton:)];
 }
 
 -(void)chageLogoNotificaiton:(BSNotification*)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
           _imgRes = busiSystem.agent.img;
           //          busiSystem.agent.img = _imgRes;
           busiSystem.agent.isNeedRefreshTabD = YES;
@@ -419,7 +419,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -427,7 +427,7 @@
 {
      [self.view endEditing:YES];
 
-     HUDSHOW(@"保存中");
+//     HUDSHOW(@"保存中");
      [busiSystem.agent saveUser:busiSystem.agent.userInfo.headImage.Image?:@"" withNickname:busiSystem.agent.userInfo.nickName?:@"" withUserid:busiSystem.agent.userId observer:self callback:@selector(saveUserNotification:)];
 }
 
@@ -435,7 +435,7 @@
 {
      if (noti.error.code == 0) {
           //          HUDDISMISS;
-          HUDSMILE(@"保存成功", 1);
+//          HUDSMILE(@"保存成功", 1);
           busiSystem.agent.isNeedRefreshTabD = YES;
           [self performSelector:@selector(goNext) withObject:nil afterDelay:1];
           //          [self getUserInfo];
@@ -444,7 +444,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 
 }

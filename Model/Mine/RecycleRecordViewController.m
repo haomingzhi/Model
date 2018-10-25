@@ -23,7 +23,7 @@
     // Do any additional setup after loading the view from its nib.
      self.title = @"回收记录";
      [self initTableView];
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [self getData];
 }
 
@@ -36,7 +36,7 @@
 -(void)getListNotification:(BSNotification*)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
 //          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.getRecyclingOrderListManager.dataArr];
 //          _tableView.hasMore = busiSystem.getRecyclingOrderListManager.pageInfo.hasMore;
             [_tableView reloadData];
@@ -47,7 +47,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 

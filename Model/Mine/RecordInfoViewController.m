@@ -25,7 +25,7 @@
      self.title = @"记录详情";
      [self initTableView];
 //     [self setNavigateRightButton:@"nav_kefu"];
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [self getData];
 }
 
@@ -40,7 +40,7 @@
 {
 
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
 //          _backInfo = busiSystem.myPathManager.saleInfo;
 //          [_auditCell setCellData:[_backInfo getDic:0]];
 //          [_auditCell fitRecordInfoMode];
@@ -56,7 +56,7 @@
 //          [_stateCell fitRecordInfoMode];
           [_tableView reloadData];
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
      
 }

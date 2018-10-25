@@ -20,7 +20,7 @@
 //     self.title = _name?:@"发现详情";
      [self setCenterTitleLb];
      [self initTableView];
-        HUDSHOW(@"加载中");
+//        HUDSHOW(@"加载中");
      //     [self getData];
 }
 -(void)setCenterTitleLb
@@ -68,7 +68,7 @@
      [_contentCell fitHtmlMode];
      [_tableView reloadData];
      _contentCell.hidden = NO;
-     HUDDISMISS;
+//     HUDDISMISS;
 
      }
 }

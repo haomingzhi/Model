@@ -39,7 +39,7 @@
      self.navigationItem.titleView = [UIView new];
      [self initTableView];
      [self setLeftNav];
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [self getData];
      [self getCarouselListData];
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresSecHandData) name:@"refresSecHandData" object:nil];
@@ -93,7 +93,7 @@
      if (noti.error.code == 0) {
          if( _requestCount == 0)
          {
-          HUDDISMISS;
+//          HUDDISMISS;
          }
           NSDictionary *dic =[BUFoundSlishow getArrDicWithThisArr:  busiSystem.agent.foundSlishowArr];
           [_flashCell setCellData:dic];
@@ -103,7 +103,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 -(void)getFindNotification:(BSNotification *)noti
@@ -118,7 +118,7 @@
      if (noti.error.code == 0) {
           if( _requestCount == 0)
           {
-               HUDDISMISS;
+//               HUDDISMISS;
           }
           _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.agent.getFindArr];
 ////          _tableView.hasMore = busiSystem.secondhandManager.getSecondhandGoodsListManager.pageInfo.hasMore;
@@ -128,7 +128,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 - (void)didReceiveMemoryWarning {

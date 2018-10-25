@@ -56,7 +56,7 @@
         [myLocationManager startUpdatingLocation];
         return YES;
     }
-    else HUDCRY(@"定位失败，未开启定位服务", 2);
+//    else HUDCRY(@"定位失败，未开启定位服务", 2);
     return NO;
 }
 #else

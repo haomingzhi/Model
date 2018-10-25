@@ -8,7 +8,7 @@
 
 #import "WatiRecOrderInfoViewController.h"
 //#import "GoodsInfoViewController.h"
-#import "OrderTrackingViewController.h"
+//#import "OrderTrackingViewController.h"
 @interface WatiRecOrderInfoViewController ()
 {
      TitleDetailTableViewCell *_fukuanTimeCell;
@@ -74,7 +74,7 @@
 -(void) getOrderDetailNotification:(BSNotification *) noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
 //          self.orderDetail = busiSystem.getOrderListManager.orderDetail;
 //          NSString *sstr = @"普通快递";
 //          if ([self.orderDetail.expressType  isEqualToString:@"2"]) {
@@ -160,7 +160,7 @@
           [self.submitCell fitMyOrderInfoMode];
           [self.tableView reloadData];
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
 
 }
@@ -177,19 +177,19 @@
      }
 }
 -(void)operOrder:(NSString *)type orderId:(NSString *)orderId{
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [busiSystem.orderManager operOrder:busiSystem.agent.userId orderId:orderId type:type observer:self callback:@selector(operOrderNotification:)];
 }
 
 -(void)operOrderNotification:(BSNotification *)noti{
-     HUDDISMISS;
+//     HUDDISMISS;
      if (noti.error.code == 0) {
           //          [self getData];
           //          [_tableView reloadData];
-          HUDSMILE(@"已确认收货", 2);
+//          HUDSMILE(@"已确认收货", 2);
           [self performSelector:@selector(goback) withObject:nil afterDelay:2];
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
      
 }

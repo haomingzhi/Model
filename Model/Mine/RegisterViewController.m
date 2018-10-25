@@ -153,7 +153,7 @@
 {
     [self.view endEditing:YES];
     if (![JYCommonTool isMobileNum:self.phoneCell.textTf.text]) {
-        HUDCRY(@"手机号格式有误", 2);
+//        HUDCRY(@"手机号格式有误", 2);
         return;
     }
 //    if (![self.pwdCell.textTf.text isEqualToString:self.surepwdCell.textTf.text]) {
@@ -165,7 +165,7 @@
 //        return;
 //    }
     
-    HUDSHOW(@"提交中");
+//    HUDSHOW(@"提交中");
     [busiSystem.agent registerUser:self.phoneCell.textTf.text withPwd:self.pwdCell.textTf.text  withCode:self.codeCell.textTf.text  observer:self callback:@selector(registerUserNotification:)];
     //    RegisterNextViewController *vc = [RegisterNextViewController new];
     //    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:self.userInfo];
@@ -181,20 +181,20 @@
     }
     else
     {
-        HUDCRY(noti.error.domain, 1);
+//        HUDCRY(noti.error.domain, 1);
     }
 }
 
 -(void)loginNotification:(BSNotification *)noti
 {
     if (noti.error.code == 0) {
-        HUDSMILE(@"注册成功", 2);
+//        HUDSMILE(@"注册成功", 2);
         [self performSelector:@selector(finishReg) withObject:nil afterDelay:2];
         
     }
     else
     {
-        HUDCRY(noti.error.domain, 1);
+//        HUDCRY(noti.error.domain, 1);
     }
 }
 
@@ -230,7 +230,7 @@
         _hasSendCode = YES;
         [self textChange:nil];
     }else{
-         HUDCRY(noti.error.domain, 2);
+//         HUDCRY(noti.error.domain, 2);
          
     }
 }
@@ -381,7 +381,7 @@
     DealPasswordViewController *vc = [DealPasswordViewController toDealVC:self];
     [vc  fitMode];
     vc.doneCallBack = ^(id o){
-        HUDSMILE(@"申请完成，注册成功", 2);
+//        HUDSMILE(@"申请完成，注册成功", 2);
     };
 }
 -(void)viewWillAppear:(BOOL)animated

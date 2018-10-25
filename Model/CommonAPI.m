@@ -176,7 +176,7 @@ static CommonAPI *a;
           UITextField *textField  = avc.textFields.firstObject;
           if (textField.text.length == 0) {
                [avc dismissViewControllerAnimated:YES completion:nil];
-               HUDCRY(@"不能为空", 2);
+//               HUDCRY(@"不能为空", 2);
                return ;
           }
           [avc dismissViewControllerAnimated:YES completion:nil];
@@ -214,7 +214,7 @@ static CommonAPI *a;
         UITextField *textField  = avc.textFields.firstObject;
         if (textField.text.length > 8) {
             [avc dismissViewControllerAnimated:YES completion:nil];
-            HUDCRY(@"备注字数不能小于1或大于8", 2);
+//            HUDCRY(@"备注字数不能小于1或大于8", 2);
             return ;
         }
                [avc dismissViewControllerAnimated:YES completion:nil];
@@ -693,7 +693,7 @@ else
     [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:@"password"];
     [[NSUserDefaults standardUserDefaults]  synchronize];
     if (str&&![str isEqualToString:@""]) {
-        HUDCRY(str, 2);
+//        HUDCRY(str, 2);
     }
     
 }
@@ -717,7 +717,7 @@ else
 {
     NSString *info = order.payInfo?:@"";
     if (!info||[info isEqualToString:@""]) {
-        HUDCRY(@"订单有误", TOAST_SHORTTIMER);
+//        HUDCRY(@"订单有误", TOAST_SHORTTIMER);
         return;
     }
     NSMutableDictionary *payInfo = [NSMutableDictionary dictionaryWithDictionary:@{}];
@@ -780,7 +780,7 @@ else
             {
                 if([resultDic[@"resultStatus"] integerValue] == 6002)
                 {
-                    HUDCRY(@"网络连接出错", TOAST_SHORTTIMER);
+//                    HUDCRY(@"网络连接出错", TOAST_SHORTTIMER);
                     if (_block) {
                         _block(@{@"code":@1});
                     }
@@ -788,7 +788,7 @@ else
                 }
                 else if ([resultDic[@"resultStatus"] integerValue] == 4000)
                 {
-                    HUDCRY(@"订单支付失败!", TOAST_SHORTTIMER);
+//                    HUDCRY(@"订单支付失败!", TOAST_SHORTTIMER);
                     if (_block) {
                         _block(@{@"code":@1});
                     }
@@ -800,7 +800,7 @@ else
                 }
                 else if ([resultDic[@"resultStatus"] integerValue] == 6001)
                 {
-                    HUDCRY(@"您已退出了支付宝支付!", TOAST_SHORTTIMER);
+//                    HUDCRY(@"您已退出了支付宝支付!", TOAST_SHORTTIMER);
                     if (_block) {
                         _block(@{@"code":@1});
                     }
@@ -819,7 +819,7 @@ else
                 }
                 else if([resultDic[@"errCode"] integerValue] == -1)
                 {
-                    HUDCRY(@"订单支付失败!", TOAST_SHORTTIMER);
+//                    HUDCRY(@"订单支付失败!", TOAST_SHORTTIMER);
                     if (_block) {
                         _block(@{@"code":@1});
                     }
@@ -827,7 +827,7 @@ else
                 }
                 else if([resultDic[@"errCode"] integerValue] == -2)
                 {
-                    HUDCRY(@"您已退出了微信支付!", TOAST_SHORTTIMER);
+//                    HUDCRY(@"您已退出了微信支付!", TOAST_SHORTTIMER);
                     if (_block) {
                         _block(@{@"code":@1});
                     }

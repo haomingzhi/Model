@@ -38,13 +38,13 @@
 -(void)getHelpListNotification:(BSNotification*)noti
 {
     if (noti.error.code == 0) {
-        HUDDISMISS;
+//        HUDDISMISS;
 //        _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.agent.helpList];
         [_tableView reloadData];
     }
     else
     {
-        HUDCRY(noti.error.domain, 2);
+//        HUDCRY(noti.error.domain, 2);
     }
 }
 -(void)initTableView

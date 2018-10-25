@@ -42,7 +42,7 @@
 {
      [self.view endEditing:YES];
      if (![JYCommonTool isMobileNum:self.phoneCell.textTf.text]) {
-          HUDCRY(@"手机号格式有误", 2);
+//          HUDCRY(@"手机号格式有误", 2);
           return;
      }
      //    if (![self.pwdCell.textTf.text isEqualToString:self.surepwdCell.textTf.text]) {
@@ -54,7 +54,7 @@
      //        return;
      //    }
 
-     HUDSHOW(@"提交中");
+//     HUDSHOW(@"提交中");
 //     [busiSystem.agent userBindMobile:self.pwdCell.textTf.text withSmscode:self.codeCell.textTf.text withMobile:self.phoneCell.textTf.text withUserid:busiSystem.agent.userId withType:@"" observer:self callback:@selector(userBindMobileNotification:)];
      //    RegisterNextViewController *vc = [RegisterNextViewController new];
      //    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:self.userInfo];
@@ -66,19 +66,19 @@
 -(void)userBindMobileNotification:(BSNotification*)noti
 {
      if (noti.error.code == 0) {
-          HUDSMILE(@"绑定成功", 1);
+//          HUDSMILE(@"绑定成功", 1);
           [self performSelector:@selector( goNext) withObject:nil afterDelay:1];
      }
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
 -(void)goNext
 {
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshPersonData" object:nil];
       [self.navigationController popViewControllerAnimated:YES];
 

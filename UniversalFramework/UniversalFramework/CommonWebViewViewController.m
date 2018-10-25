@@ -169,7 +169,7 @@
     _currentPageUrl = [[webView.request.URL.absoluteString componentsSeparatedByString:@"?"] objectAtIndex:0];
     isMustReload = FALSE;
     reloadUrl = @"";
-    HUDDISMISS;
+//    HUDDISMISS;
     //NSLog([BSUtility getWebViewSource:webView]);
     
     [_progressView setProgress:1.0 animated:YES];
@@ -183,7 +183,7 @@
     if (reloadUrl == NULL || reloadUrl.length ==0) {
         reloadUrl = [error.userInfo objectForKey:@"NSErrorFailingURLStringKey"];
     }
-    HUDDISMISS;
+//    HUDDISMISS;
 }
 
 -(void)reloadWebPage

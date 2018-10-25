@@ -164,12 +164,12 @@ static WithdrawPasswordViewController *dealvc;
     if (noti.error.code == 0) {
         if([busiSystem.payManager.flag isEqualToString:@"1"])
         {
-            HUDDISMISS;
+//            HUDDISMISS;
             [[CommonAPI managerWithVC:self.parentVC] showAlertView:nil withMsg:@"支付/提现密码输入错误，请重试" withBtnTitle:@"重试" withCancelBtnTitle:@"忘记密码" withSel:@selector(toProcessResult:) withUserInfo:@{}];
         }else if ([busiSystem.payManager.flag isEqualToString:@"2"])
         {
 //            HUDCRY(@"已达最大尝试次数，请10分钟后再试", 2);
-            HUDDISMISS;
+//            HUDDISMISS;
             [[CommonAPI managerWithVC:self.parentVC] showConfirmView:nil withMsg:@"已达最大尝试次数，请10分钟后再试"];
         }
         else

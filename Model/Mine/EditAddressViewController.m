@@ -85,7 +85,7 @@
      if (_address.addressId.length == 0) {
           return;
      }
-     HUDSHOW(@"提交中");
+//     HUDSHOW(@"提交中");
 //     [busiSystem.agent delUserAddress:_address.addressId observer:self callback:@selector(deleteAddressNotification:)];
 //     [busiSystem.myPathManager deleAddress:busiSystem.agent.userId withAddressid:_address.addressId  observer:self callback:@selector(deleteAddressNotification:)];
 }
@@ -96,7 +96,7 @@
      if(noti.error.code == 0)
      {
           
-          HUDSMILE(@"删除成功", 2);
+//          HUDSMILE(@"删除成功", 2);
 //          [self.navigationController popViewControllerAnimated:YES];
 //          if (self.handleGoBack) {
 //               self.handleGoBack(@{});
@@ -107,7 +107,7 @@
      }
      else
      {
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
 }
 
@@ -118,22 +118,22 @@
      _address.floor = [_houseInfoCell getTextTf].text;
      _address.address = [_addressCell getTextTf].text;
      if ([_contactCell getTextTf].text.length == 0) {
-          HUDCRY(@"请填写收货人", 2);
+//          HUDCRY(@"请填写收货人", 2);
           return;
      }
      
      if (![JYCommonTool isMobileNum:[_telCell getTextTf].text]) {
-          HUDCRY(@"手机号码格式错误，请重新输入", 2);
+//          HUDCRY(@"手机号码格式错误，请重新输入", 2);
           return;
      }
      
      if (_address.address.length == 0) {
-          HUDCRY(@"请选择详细地址", 2);
+//          HUDCRY(@"请选择详细地址", 2);
           return;
      }
      
      if ([_houseInfoCell getTextTf].text.length == 0) {
-          HUDCRY(@"请填写楼号-门牌号", 2);
+//          HUDCRY(@"请填写楼号-门牌号", 2);
           return;
      }
      NSString *isDefault = @"0";
@@ -141,7 +141,7 @@
           isDefault = @"1";
      }
 
-     HUDSHOW(@"提交中");
+//     HUDSHOW(@"提交中");
 //     NSString *addressStr = [NSString stringWithFormat:@"%@",_address.address];
 //     [busiSystem.agent updateUserAddress:_address.addressId?:@"" withContacts:[_contactCell getTextTf].text withTel:[_telCell getTextTf].text withProvinceName:_address.provinceName withCityName:_address.cityName withAreaName:_address.areaName withAddress:addressStr withIsDefault:isDefault withLongitude:_address.longitude withLatitude:_address.latitude detail:[_houseInfoCell getTextTf].text observer:self callback:@selector(updateUserAddressNotification:)];
      [busiSystem.agent addandUpAddress:busiSystem.agent.userId?:@"" withCityid:_address.cityId?:@"" withUsername:_address.userName?:@"" withAddressid:_address.addressId?:@"" withProvinceid:_address.provinceId?:@"" withAreaid:_address.areaId?:@"" withAddress:_address.address?:@"" withFloor:_address.floor?:@"" withIsdefault:isDefault withTel:_address.tel?:@"" observer:self  callback:@selector(updateUserAddressNotification:)];
@@ -160,11 +160,11 @@
         
         if(_mode == 0)
         {
-          HUDSMILE(@"编辑成功", 2);
+//          HUDSMILE(@"编辑成功", 2);
         }
         else
         {
-            HUDSMILE(@"添加成功", 2);
+//            HUDSMILE(@"添加成功", 2);
         }
          
          if (self.handleGoBack) {
@@ -176,7 +176,7 @@
     }
     else
     {
-        HUDCRY(noti.error.domain, 2);
+//        HUDCRY(noti.error.domain, 2);
     }
 }
 
@@ -355,7 +355,7 @@
 //        }];
          if (1)
          {
-              HUDSHOW(@"加载中");
+//              HUDSHOW(@"加载中");
               [self getProvinlist];
          }
          else
@@ -387,7 +387,7 @@
 -(void)getProvinlistNotification:(BSNotification *)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
 //          _dataArr = [NSArray arrayWithArray:busiSystem.myPathManager.getProvinlist];
 //          _dataArr = [BUGetProvinlist getFitSelectionArr:_dataArr];
           AddressSelectionViewController *vc = [AddressSelectionViewController  toAddressSelectionVC:_dataArr];
@@ -405,7 +405,7 @@
      else
      {
           
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 @end

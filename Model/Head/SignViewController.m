@@ -218,7 +218,7 @@
     
     [self initTableView];
      [self addView];
-    HUDSHOW(@"加载中");
+//    HUDSHOW(@"加载中");
     [self getData];
 }
 
@@ -271,7 +271,7 @@
      else
      {
           
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -285,7 +285,7 @@
 
      if (noti.error.code == 0) {
          
-          HUDDISMISS;
+//          HUDDISMISS;
           busiSystem.agent.isNeedRefreshTabA = NO;
           NSMutableArray *arr = [NSMutableArray new];
           [busiSystem.agent.signInfo.signinPrize enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -301,7 +301,7 @@
      else
      {
           
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 
@@ -313,7 +313,7 @@
 -(void)signNotification:(BSNotification *)noti
 {
     if (noti.error.code == 0) {
-        HUDDISMISS;
+//        HUDDISMISS;
 //        NSInteger day = busiSystem.agent.sign.continuityDays;
 //       NSInteger jf = busiSystem.agent.sign.integral;
 ////        [_signTipCell setCellData:@{@"title":[NSString stringWithFormat:@"今天已签到,明天记得继续签到哦！已连续签到%ld天",day]}];
@@ -326,7 +326,7 @@
     }
     else
     {
-        HUDCRY(noti.error.domain, 2);
+//        HUDCRY(noti.error.domain, 2);
     }
 }
 
@@ -402,7 +402,7 @@
 
 -(void)showSignTip
 {
-   HUDCRY(@"今天已经签到了哦", 2);
+//   HUDCRY(@"今天已经签到了哦", 2);
 }
 -(void)animation:(UIView *)parentView
 {

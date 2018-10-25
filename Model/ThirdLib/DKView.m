@@ -86,7 +86,7 @@
     if (self =[super initWithFrame:frame]) {
 //        _filterData=filterData;
         _threeCity =[NSMutableArray new];
-        HUDSHOW(@"正在定位...");
+//        HUDSHOW(@"正在定位...");
         [self locate];
         }
     return self;
@@ -201,11 +201,11 @@
              [self addCitycChoice];
              busiSystem.agent.cityName =city;
              _citycChoiceView.cityName.text =[NSString stringWithFormat:@"当前城市：%@",city];
-             HUDDISMISS;
+//             HUDDISMISS;
              //             cityName = city;
          }else if (error == nil && [array count] == 0)
          {
-             HUDCRY(@"定位失败", 2);
+//             HUDCRY(@"定位失败", 2);
              [self removeFromSuperview];
              NSLog(@"No results were returned.");
          }else if (error != nil)
@@ -215,7 +215,7 @@
              }
              NSLog(@"An error occurred = %@", error);
              i++;
-             HUDCRY(@"定位失败", 2);
+//             HUDCRY(@"定位失败", 2);
              [self removeFromSuperview];
              _switchCity();
          }

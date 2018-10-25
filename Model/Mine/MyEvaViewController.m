@@ -65,7 +65,7 @@
 -(void)orderMsgListNotification:(BSNotification *)noti
 {
      if (noti.error.code == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
           MyTableView *tableView = noti.extraInfo[@"tabv"];
           NSString *tag = @"xxcc1";
           if (tableView == _tableViewA) {
@@ -86,7 +86,7 @@
      else
      {
 
-          HUDCRY(noti.error.domain, 1);
+//          HUDCRY(noti.error.domain, 1);
      }
 }
 -(void)initTableView:(MyTableView *)tb
@@ -115,7 +115,7 @@
      [super viewDidLoad];
      isFirstAppear = YES;
      self.title = @"我的评价";
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [self getData];
 //     [busiSystem.myPathManager orderMsgList:@"1" withUserid:busiSystem.agent.userId observer:self callback:@selector(orderMsgListNotification:)  extraInfo:@{@"tabv":_tableViewB}];
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshMyEvaData) name:@"refreshMyEvaData" object:nil];
@@ -128,7 +128,7 @@
 }
 -(void)refreshMyEvaData
 {
-      HUDSHOW(@"加载中");
+//      HUDSHOW(@"加载中");
      [self getData];
 }
 
@@ -477,7 +477,7 @@ return nil;
      NSInteger index = menu.index;
      currentOrderStatue = index ;
      [self menuSelectedIndex:currentOrderStatue];
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [self getData];
 }
 

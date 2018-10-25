@@ -56,8 +56,8 @@ NSMutableArray *addressBookTemp;
     _myTableView.delegate =self;
     _myTableView.dataSource =self;
     self.navigationController.navigationBarHidden=NO;
-    [self locate];
-    [self hotCityButtonUI];
+//    [self locate];
+//    [self hotCityButtonUI];
 //    if (busiSystem.agent.cityName.length ==0){
 //        [dKv locate];
 //    }
@@ -114,7 +114,7 @@ NSMutableArray *addressBookTemp;
 
 -(void)getSerAreaInfoWithCityNofification:(BSNotification*)noti
 {
-    BASENOTIFICATION(noti);
+//    BASENOTIFICATION(noti);
     NSMutableArray *mArr =[NSMutableArray new];
     for (int i=0; i<busiSystem.agent.cityArr.count; i++)
     {
@@ -127,13 +127,13 @@ NSMutableArray *addressBookTemp;
     self.indexArray = [ChineseString IndexArray:stringsToSort];
     self.letterResultArr = [ChineseString LetterSortArray:stringsToSort];
     [self tableView:_myTableView sectionForSectionIndexTitle:@"Z" atIndex:26];
-    [self addSearchBar];
+//    [self addSearchBar];
     [_myTableView reloadData];
 }
 
 -(void)getSerAreaInfoWithCitysNofification:(BSNotification*)noti
 {
-    BASENOTIFICATION(noti);
+//    BASENOTIFICATION(noti);
     
   /*  if (busiSystem.serAreaManager._isSerArea ==YES) {
         if (_istabBarController) {
@@ -208,7 +208,7 @@ NSMutableArray *addressBookTemp;
                           //             cityName = city;
          }else if (error == nil && [array count] == 0)
          {
-             HUDCRY(@"定位失败", 2);
+//             HUDCRY(@"定位失败", 2);
              CGSize size =[self detailSizeTitle:@"定位失败" size:17 flo:self.view.frame.size.width];
 //             cityName.text =@"定位失败";
              [_cityNameBtn setTitle:@"定位失败" forState:0];
@@ -221,7 +221,7 @@ NSMutableArray *addressBookTemp;
          }else if (error != nil)
          {
              NSLog(@"An error occurred = %@", error);
-             HUDCRY(@"定位失败", 2);
+//             HUDCRY(@"定位失败", 2);
              CGSize size =[self detailSizeTitle:@"定位失败" size:17 flo:self.view.frame.size.width];
 //             cityName.text =@"定位失败";
              [_cityNameBtn setTitle:@"定位失败" forState:0];
@@ -658,10 +658,11 @@ NSMutableArray *addressBookTemp;
 }
 
 -(void)hasBusinessNotification:(BSNotification *)noti
-{ ISTOLOGIN;
+{
+//     ISTOLOGIN;
 //    BASENOTIFICATION(noti);
     if (noti.error.code ==0) {\
-        HUDDISMISS;\
+//        HUDDISMISS;\
     }\
     else {
 //        [self pushNoDataVC:_Area.currentCity.cityName];

@@ -64,7 +64,7 @@
 -(void)getCouponListNotification:(BSNotification *)noti{
      _requestCount --;
      if (_requestCount == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
      }
 
      if (noti.error.code == 0) {
@@ -74,7 +74,7 @@
           [[JYNoDataManager manager] addNodataView:_tableViewB withTip:@"暂无信息" withImg:@"nodata" withCount:_tableViewB.dataArr.count withTag:[NSString stringWithFormat:@"favc%d",_tableViewB.tag]];
           [[JYNoDataManager manager] fitModeY:130 ];
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
 
 }
@@ -82,7 +82,7 @@
 -(void)getCouponListANotificationC:(BSNotification *)noti{
      _requestCount --;
      if (_requestCount == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
      }
 
      if (noti.error.code == 0) {
@@ -92,7 +92,7 @@
           [[JYNoDataManager manager] addNodataView:_tableViewC withTip:@"暂无信息" withImg:@"nodata" withCount:_tableViewC.dataArr.count withTag:[NSString stringWithFormat:@"favc%d",_tableViewC.tag]];
           [[JYNoDataManager manager] fitModeY:130 ];
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
 
 }
@@ -101,7 +101,7 @@
 -(void)getCouponListANotification:(BSNotification *)noti{
      _requestCount --;
      if (_requestCount == 0) {
-          HUDDISMISS;
+//          HUDDISMISS;
      }
 
      if (noti.error.code == 0) {
@@ -111,7 +111,7 @@
           [[JYNoDataManager manager] addNodataView:_tableViewA withTip:@"暂无信息" withImg:@"nodata" withCount:_tableViewA.dataArr.count withTag:[NSString stringWithFormat:@"favc%d",_tableViewA.tag]];
           [[JYNoDataManager manager] fitModeY:130 ];
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
 
 }
@@ -141,7 +141,7 @@
      self.title = @"我的优惠券";
      [self setNavigateRightButton:@"去领券" font:[UIFont systemFontOfSize:13] color:kUIColorFromRGB(color_0xb0b0b0)];
      //    self.dataModel.currentMyOrder = NULL;
-     HUDSHOW(@"加载中");
+//     HUDSHOW(@"加载中");
      [self getData];
 }
 
@@ -428,7 +428,7 @@
 {
      MyTableView *tv = noti.extraInfo[@"view"];
          [self refreshTableHeaderNotification:noti myTableView:tv];
-         BASENOTIFICATION(noti);
+//         BASENOTIFICATION(noti);
          [self reloadData];
  tv.isRefreshing = NO;
 }
@@ -449,7 +449,7 @@
           [[JYNoDataManager manager] addNodataView:tv withTip:@"暂无信息" withImg:@"nodata" withCount:tv.dataArr.count withTag:[NSString stringWithFormat:@"favc%d",tv.tag]];
           [[JYNoDataManager manager] fitModeY:130 ];
      }else{
-          HUDCRY(noti.error.domain, 2);
+//          HUDCRY(noti.error.domain, 2);
      }
 }
 
