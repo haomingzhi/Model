@@ -17,6 +17,7 @@
     NSMutableArray *idleImages = [NSMutableArray array];
     for (NSUInteger i = 1; i<=17; i++) {
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"加载动画_000%.2d", i]];
+         if(image)
         [idleImages addObject:image];
     }
     [self setImages:idleImages forState:MJRefreshStateIdle];
@@ -25,6 +26,7 @@
     NSMutableArray *refreshingImages = [NSMutableArray array];
     for (NSUInteger i = 1; i<=17; i++) {
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"加载动画_000%.2ld", i]];
+          if(image)
         [refreshingImages addObject:image];
     }
     [self setImages:refreshingImages forState:MJRefreshStatePulling];

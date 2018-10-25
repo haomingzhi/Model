@@ -15,7 +15,7 @@
 {
     Class someClass = NSClassFromString(classStr);
      id obj;
-     if ([classStr isEqualToString:@"MineViewController"]) {
+     if ([classStr isEqualToString:@"MineViewController"] || [classStr isEqualToString:@"JYCourseViewController"]) {
           obj = [[someClass alloc] init];
      }
      else
@@ -34,8 +34,8 @@
 {
     UINavigationController *navSvc = [self NavViewController:@"HeadViewController" withTitle:@"首页" withSelImg:@"tab_home" withUnSelImg:@"tab_home_unSel"];
     [navSvc.navigationBar setShadowImage:[UIImage new]];
-    UINavigationController *navCvc = [self NavViewController:@"ClassifyViewController" withTitle:@"分类" withSelImg:@"tab_classify" withUnSelImg:@"tab_classify_unSel"];
-    UINavigationController *navPvc = [self NavViewController:@"DealViewController" withTitle:@"发现" withSelImg:@"tab_disc" withUnSelImg:@"tab_disc_unSel"];
+    UINavigationController *navCvc = [self NavViewController:@"JYCourseViewController" withTitle:@"课程" withSelImg:@"tab_classify" withUnSelImg:@"tab_classify_unSel"];
+    UINavigationController *navPvc = [self NavViewController:@"DealViewController" withTitle:@"学习" withSelImg:@"tab_disc" withUnSelImg:@"tab_disc_unSel"];
 //    UINavigationController *navEvc = [self NavViewController:@"EvaluateViewController" withTitle:@"评价" withSelImg:@"tab_Evaluate" withUnSelImg:@"tab_Evaluate_unSel"];
     UINavigationController *navMvc = [self NavViewController:@"MineViewController" withTitle:@"我的" withSelImg:@"tab_mine" withUnSelImg:@"tab_mine_unSel"];
 //    [navMvc.navigationBar setShadowImage:[UIImage new]];

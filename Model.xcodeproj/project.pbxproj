@@ -63,6 +63,7 @@
 		181DAA262181B7B9000498FC /* CustomRefreshGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DAA232181B7B9000498FC /* CustomRefreshGifFooter.m */; };
 		181DAA272181B7B9000498FC /* CustomRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DAA242181B7B9000498FC /* CustomRefreshGifHeader.m */; };
 		181DAA2A2181B80E000498FC /* SV_DDLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DAA282181B80D000498FC /* SV_DDLoading.m */; };
+		181DAA302181C48F000498FC /* JYCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DAA2F2181C48F000498FC /* JYCourseViewController.m */; };
 		1846E8AC21806F9000F06395 /* UIImage+ZLPhotoLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 1846E86D21806F8F00F06395 /* UIImage+ZLPhotoLib.m */; };
 		1846E8AD21806F9000F06395 /* UIView+ZLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1846E86F21806F8F00F06395 /* UIView+ZLExtension.m */; };
 		1846E8AE21806F9000F06395 /* ZLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 1846E87221806F8F00F06395 /* ZLCamera.m */; };
@@ -1386,6 +1387,8 @@
 		181DAA242181B7B9000498FC /* CustomRefreshGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRefreshGifHeader.m; sourceTree = "<group>"; };
 		181DAA282181B80D000498FC /* SV_DDLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SV_DDLoading.m; sourceTree = "<group>"; };
 		181DAA292181B80D000498FC /* SV_DDLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SV_DDLoading.h; sourceTree = "<group>"; };
+		181DAA2E2181C48F000498FC /* JYCourseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYCourseViewController.h; sourceTree = "<group>"; };
+		181DAA2F2181C48F000498FC /* JYCourseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYCourseViewController.m; sourceTree = "<group>"; };
 		1846E86C21806F8F00F06395 /* UIImage+ZLPhotoLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZLPhotoLib.h"; sourceTree = "<group>"; };
 		1846E86D21806F8F00F06395 /* UIImage+ZLPhotoLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZLPhotoLib.m"; sourceTree = "<group>"; };
 		1846E86E21806F8F00F06395 /* UIView+ZLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZLExtension.h"; sourceTree = "<group>"; };
@@ -3169,6 +3172,15 @@
 			path = "自定义gif刷新";
 			sourceTree = "<group>";
 		};
+		181DAA2D2181C45F000498FC /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				181DAA2E2181C48F000498FC /* JYCourseViewController.h */,
+				181DAA2F2181C48F000498FC /* JYCourseViewController.m */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
 		1846E8592180124600F06395 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -4693,6 +4705,7 @@
 		787E1D701B5604E5006BC65C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				181DAA2D2181C45F000498FC /* Course */,
 				459C6B841FD1250800BCB37A /* secHandDeal */,
 				459C6B651FD1250800BCB37A /* shop */,
 				459310DE1E320A4F00353805 /* Head */,
@@ -6324,6 +6337,7 @@
 				459166961FEA100300B201DD /* BindPhoneViewController.m in Sources */,
 				45E87E981C1904CB00E25BAC /* BtnAndTitleTableViewCell.m in Sources */,
 				1846E8AE21806F9000F06395 /* ZLCamera.m in Sources */,
+				181DAA302181C48F000498FC /* JYCourseViewController.m in Sources */,
 				787E1D771B5605F7006BC65C /* UIKitHook.m in Sources */,
 				454B38DB2051304300494EDB /* JECalourseCell.m in Sources */,
 				1846E8B421806F9000F06395 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
