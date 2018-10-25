@@ -10,10 +10,10 @@
 //#import "SelledSeverViewController.h"
 //#import "GoodsInfoViewController.h"
 //#import "CartViewController.h"
-#import "ApplySalesReturnViewController.h"
+//#import "ApplySalesReturnViewController.h"
 #import "OrderTrackingViewController.h"
 #import "PublishEvaViewController.h"
-#import "SendBackGoodsViewController.h"
+//#import "SendBackGoodsViewController.h"
 @interface DoneOrderInfoViewController ()
 {
      TitleDetailTableViewCell *_fukuanTimeCell;
@@ -90,7 +90,7 @@
      
      self.submitCell.width = __SCREEN_SIZE.width;
      self.submitCell.y = __SCREEN_SIZE.height - NAVBARHEIGHT - TABHEIGHT;
-     if (self.order.state == 6) {
+     if ( 6) {
           [self.submitCell setCellData:@{@"bTitle":@"删除订单",@"title":@"评价"}];
      }
 else
@@ -108,7 +108,7 @@ else
 
      [self.submitCell setHandleAction:^(id o) {
           PublishEvaViewController *vc = [PublishEvaViewController new];
-                              vc.order = weakSelf.order;
+//                              vc.order = weakSelf.order;
                               [vc setHandleGoBack:^(id userData) {
                                    [weakSelf showLoading];
                                    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshOrderListData" object:nil];
@@ -174,7 +174,7 @@ else
 {
      if (noti.error.code == 0) {
           HUDDISMISS;
-          self.orderDetail = busiSystem.getOrderListManager.orderDetail;
+//          self.orderDetail = busiSystem.getOrderListManager.orderDetail;
           [self.stateCell setCellData:@{@"title":@"交易完成",@"detail":@"",@"img":@"waitSend"}];
           [self.stateCell fitOrderInfoModeA];
 
@@ -299,10 +299,10 @@ else
 
 -(void)toDeleteOrder:(NSDictionary *)dic{
      if ([dic[@"code"] integerValue] == 0) {
-          BUGetOrder *od = [BUGetOrder new];
-          od.orderID = self.orderDetail.orderID;
-          [[NSNotificationCenter defaultCenter] postNotificationName:@"delOrderData" object:nil userInfo:@{@"order":od}];
-          [self.navigationController popViewControllerAnimated:YES];
+//          BUGetOrder *od = [BUGetOrder new];
+//          od.orderID = self.orderDetail.orderID;
+//          [[NSNotificationCenter defaultCenter] postNotificationName:@"delOrderData" object:nil userInfo:@{@"order":od}];
+//          [self.navigationController popViewControllerAnimated:YES];
 //          [self operOrder:@"2" orderId:self.order.orderID];
      }
 }

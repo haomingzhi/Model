@@ -12,7 +12,7 @@
 #import "ZJMenuWithImgView.h"
 #import "TypeChoseViewController.h"
 #import "MenuSelectionViewController.h"
-#import "GoodsInfoViewController.h"
+//#import "GoodsInfoViewController.h"
 #import "BUSystem.h"
 //#import "MJRefresh.h"
 
@@ -362,11 +362,11 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"CLICK %ld-%ld",(long)indexPath.section,(long)indexPath.row);
-    GoodsInfoViewController *vc = [GoodsInfoViewController new];
-//    vc.isPresentCard = NO;
-//    BUGoods *goods = [_dataArr objectAtIndex:indexPath.row];
-//    vc.ID = goods.goodsId;
-    [self.navigationController pushViewController:vc animated:YES];
+//    GoodsInfoViewController *vc = [GoodsInfoViewController new];
+////    vc.isPresentCard = NO;
+////    BUGoods *goods = [_dataArr objectAtIndex:indexPath.row];
+////    vc.ID = goods.goodsId;
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

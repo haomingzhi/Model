@@ -7,7 +7,7 @@
 //
 
 #import "WatiRecOrderInfoViewController.h"
-#import "GoodsInfoViewController.h"
+//#import "GoodsInfoViewController.h"
 #import "OrderTrackingViewController.h"
 @interface WatiRecOrderInfoViewController ()
 {
@@ -44,13 +44,13 @@
      self.submitCell.width = __SCREEN_SIZE.width;
      self.submitCell.y = __SCREEN_SIZE.height - NAVBARHEIGHT - TABHEIGHT;
      NSString *str = @"确认收货";
-     if (self.order.state == 1) {
+     if ( 1) {
           str = @"";
      }
      [self.submitCell setCellData:@{@"title":str}];
      [self.submitCell fitMyOrderInfoMode];
      
-     if (self.order.state == 1) {
+     if (1) {
           self.tableView.height = __SCREEN_SIZE.height - NAVBARHEIGHT;
      }else
      {
@@ -75,7 +75,7 @@
 {
      if (noti.error.code == 0) {
           HUDDISMISS;
-          self.orderDetail = busiSystem.getOrderListManager.orderDetail;
+//          self.orderDetail = busiSystem.getOrderListManager.orderDetail;
 //          NSString *sstr = @"普通快递";
 //          if ([self.orderDetail.expressType  isEqualToString:@"2"]) {
 //               sstr = @"自提";
@@ -171,9 +171,9 @@
      if ([dic[@"code"] integerValue] == 0) {
           self.submitCell.hidden = YES;
            self.tableView.height = __SCREEN_SIZE.height - 64;
-          BUGetOrder *od = [BUGetOrder new];
-          od.orderID = self.orderDetail.orderID;
-          [[NSNotificationCenter defaultCenter] postNotificationName:@"confirmOrderData" object:nil userInfo:@{@"order":od}];
+//          BUGetOrder *od = [BUGetOrder new];
+//          od.orderID = self.orderDetail.orderID;
+//          [[NSNotificationCenter defaultCenter] postNotificationName:@"confirmOrderData" object:nil userInfo:@{@"order":od}];
      }
 }
 -(void)operOrder:(NSString *)type orderId:(NSString *)orderId{

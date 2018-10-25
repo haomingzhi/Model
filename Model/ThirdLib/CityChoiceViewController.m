@@ -13,7 +13,7 @@
 #import "ChineseInclude.h"
 #import "PinYinForObjc.h"
 #import "TabViewControllerManager.h"
-#import "BUSerArea.h"
+//#import "BUSerArea.h"
 #import "BUArea.h"
 #import "NoOpenCityViewController.h"
 

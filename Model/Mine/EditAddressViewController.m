@@ -87,7 +87,7 @@
      }
      HUDSHOW(@"提交中");
 //     [busiSystem.agent delUserAddress:_address.addressId observer:self callback:@selector(deleteAddressNotification:)];
-     [busiSystem.myPathManager deleAddress:busiSystem.agent.userId withAddressid:_address.addressId  observer:self callback:@selector(deleteAddressNotification:)];
+//     [busiSystem.myPathManager deleAddress:busiSystem.agent.userId withAddressid:_address.addressId  observer:self callback:@selector(deleteAddressNotification:)];
 }
 
 
@@ -353,14 +353,15 @@
 //             [_addressCell fitPersonModeEdit:kUIColorFromRGB(color_1)];
 //
 //        }];
-         if (!busiSystem.myPathManager.getProvinlist) {
+         if (1)
+         {
               HUDSHOW(@"加载中");
               [self getProvinlist];
          }
          else
          {
-              _dataArr = [NSArray arrayWithArray:busiSystem.myPathManager.getProvinlist];
-              _dataArr = [BUGetProvinlist getFitSelectionArr:_dataArr];
+//              _dataArr = [NSArray arrayWithArray:busiSystem.myPathManager.getProvinlist];
+//              _dataArr = [BUGetProvinlist getFitSelectionArr:_dataArr];
        AddressSelectionViewController *vc = [AddressSelectionViewController  toAddressSelectionVC:_dataArr];
               [vc setHandleAction:^(NSDictionary *dic) {
                    NSString *city = [NSString stringWithFormat:@"%@%@%@",dic[@"title1"],dic[@"title2"],dic[@"title3"]];
@@ -380,15 +381,15 @@
 }
 -(void)getProvinlist
 {
-     [busiSystem.myPathManager getProvinlist:self callback:@selector(getProvinlistNotification:)];
+//     [busiSystem.myPathManager getProvinlist:self callback:@selector(getProvinlistNotification:)];
 }
 
 -(void)getProvinlistNotification:(BSNotification *)noti
 {
      if (noti.error.code == 0) {
           HUDDISMISS;
-          _dataArr = [NSArray arrayWithArray:busiSystem.myPathManager.getProvinlist];
-          _dataArr = [BUGetProvinlist getFitSelectionArr:_dataArr];
+//          _dataArr = [NSArray arrayWithArray:busiSystem.myPathManager.getProvinlist];
+//          _dataArr = [BUGetProvinlist getFitSelectionArr:_dataArr];
           AddressSelectionViewController *vc = [AddressSelectionViewController  toAddressSelectionVC:_dataArr];
           [vc setHandleAction:^(NSDictionary *dic) {
                NSString *city = [NSString stringWithFormat:@"%@%@%@",dic[@"title1"],dic[@"title2"],dic[@"title3"]];

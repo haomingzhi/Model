@@ -3,30 +3,30 @@
 #import "BUAgent.h"
 #import "BUVersion.h"
 #import "BUPayManager.h"
-#import "BUHeadManager.h"
+//#import "BUHeadManager.h"
 #import "BUArea.h"
 #import "BUMapAddress.h"
 #import "BUPushManager.h"
-#import "BUGetOrderListManager.h"
-#import "BUIndexManager.h"
-#import "BUShopManager.h"
-#import "BUGetShopListManager.h"
-#import "BUGetGoodsListManager.h"
-#import "BUGetServiceListManager.h"
-#import "BUGetActivityManager.h"
-#import "BUGetRecyclingOrderListManager.h"
-#import "BUGetCommentListManager.h"
-#import "BUMyPathManager.h"
-#import "BUGetCollectListManager.h"
-#import "BUDustbinManager.h"
-#import "BUUserManager.h"
-#import "BUGetCourierListManager.h"
-#import "BUOrderManager.h"
-#import "BUGetCommentListManager.h"
-#import "BUGetAfterSaleListManager.h"
-#import "BUGetCourierOrderListManager.h"
-#import "BUMyPointAntation.h"
-#import "BUGetToDoorRecyclingOrderListManager.h"
+//#import "BUGetOrderListManager.h"
+//#import "BUIndexManager.h"
+//#import "BUShopManager.h"
+//#import "BUGetShopListManager.h"
+//#import "BUGetGoodsListManager.h"
+//#import "BUGetServiceListManager.h"
+//#import "BUGetActivityManager.h"
+//#import "BUGetRecyclingOrderListManager.h"
+//#import "BUGetCommentListManager.h"
+//#import "BUMyPathManager.h"
+//#import "BUGetCollectListManager.h"
+//#import "BUDustbinManager.h"
+//#import "BUUserManager.h"
+//#import "BUGetCourierListManager.h"
+//#import "BUOrderManager.h"
+//#import "BUGetCommentListManager.h"
+//#import "BUGetAfterSaleListManager.h"
+//#import "BUGetCourierOrderListManager.h"
+//#import "BUMyPointAntation.h"
+//#import "BUGetToDoorRecyclingOrderListManager.h"
 
 /*
    业务系统类，所有的业务访问入口都从这里开始。。
@@ -49,28 +49,28 @@
 @property(nonatomic, readonly) BUCache *cache;                      //缓存信息，内部使用
 @property(nonatomic, readonly) NSData *publicKeyData;               //公钥，内部使用！！！！
 @property(nonatomic, readonly) BSDatabase *db;                      //数据库，内部使用！！！！
-@property(nonatomic, readonly) BUHeadManager *headManager;
-@property(nonatomic, readonly)BUGetOrderListManager *getOrderListManager;
-@property(nonatomic, readonly)BUGetCollectListManager *getCollectListManager;
-@property(nonatomic, readonly)BUUserManager  *userManager;
-@property(nonatomic,readonly) BUGetShopListManager *getShopListManager;
-@property(nonatomic,readonly) BUShopManager *shopManager;
-@property(nonatomic,readonly) BUGetCourierListManager *getCourierListManager;
-@property(nonatomic,readonly) BUGetGoodsListManager *getGoodsListManager;
-@property(nonatomic,readonly) BUGetServiceListManager *getServiceListManager;
-@property(nonatomic,readonly) BUGetActivityManager *getActivityManager;
-@property(nonatomic,readonly) BUGetCommentListManager *getCommentListManager;
-@property(nonatomic,readonly)BUGetRecyclingOrderListManager *getRecyclingOrderListManager;
+//@property(nonatomic, readonly) BUHeadManager *headManager;
+//@property(nonatomic, readonly)BUGetOrderListManager *getOrderListManager;
+//@property(nonatomic, readonly)BUGetCollectListManager *getCollectListManager;
+//@property(nonatomic, readonly)BUUserManager  *userManager;
+//@property(nonatomic,readonly) BUGetShopListManager *getShopListManager;
+//@property(nonatomic,readonly) BUShopManager *shopManager;
+//@property(nonatomic,readonly) BUGetCourierListManager *getCourierListManager;
+//@property(nonatomic,readonly) BUGetGoodsListManager *getGoodsListManager;
+//@property(nonatomic,readonly) BUGetServiceListManager *getServiceListManager;
+//@property(nonatomic,readonly) BUGetActivityManager *getActivityManager;
+//@property(nonatomic,readonly) BUGetCommentListManager *getCommentListManager;
+//@property(nonatomic,readonly)BUGetRecyclingOrderListManager *getRecyclingOrderListManager;
 
-@property(nonatomic,readonly)BUDustbinManager *dustbinManager;
-@property(nonatomic,readonly)BUGetAfterSaleListManager *getAfterSaleListManager;
-@property(nonatomic,readonly)BUGetCourierOrderListManager *getCourierOrderListManager;
-@property(strong,nonatomic)BUMyPathManager *myPathManager;
+//@property(nonatomic,readonly)BUDustbinManager *dustbinManager;
+//@property(nonatomic,readonly)BUGetAfterSaleListManager *getAfterSaleListManager;
+//@property(nonatomic,readonly)BUGetCourierOrderListManager *getCourierOrderListManager;
+//@property(strong,nonatomic)BUMyPathManager *myPathManager;
 //@property(nonatomic,readonly)BUGetUserPushMsgManager *getUserPushMsgManager;
 
 
-@property(nonatomic,readonly)BUIndexManager *indexManager;
- 
+//@property(nonatomic,readonly)BUIndexManager *indexManager;
+
 
 @property(nonatomic,readonly)BUOrderManager *orderManager  ;
 

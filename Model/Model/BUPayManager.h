@@ -7,7 +7,7 @@
 //
 
 #import "BULCManager.h"
-#import "BUGetOrderListManager.h"
+//#import "BUGetOrderListManager.h"
 
 @interface BUOrderPay : BUBase
 @property(strong,nonatomic) NSString *pickupCode;
@@ -52,7 +52,7 @@
 
 @interface BUPayManager : BULCManager
 @property(strong,nonatomic) NSString *flag;
-@property(nonatomic,strong) BUGetOrder *order;
+//@property(nonatomic,strong) BUGetOrder *order;
 @property (nonatomic,strong) NSString *payBody;
 @property (nonatomic,strong) NSString *zmUrl;
 -(BOOL)orderPay:(NSString *)payType withOrderid:(NSString *)orderId sourceType:(NSString *)sourceType orderType:(NSString *)orderType typeId:(NSString *)typeId observer:(id)observer callback:(SEL)callback;

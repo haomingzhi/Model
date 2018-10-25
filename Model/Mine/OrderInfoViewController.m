@@ -32,7 +32,7 @@
 
 
 -(void)getData{
-     [busiSystem.getOrderListManager getOrderDetail:_order.orderID?:@"" observer:self callback:@selector(getOrderDetailNotification:)];
+//     [busiSystem.getOrderListManager getOrderDetail:_order.orderID?:@"" observer:self callback:@selector(getOrderDetailNotification:)];
 }
 
 
@@ -42,7 +42,7 @@
           HUDDISMISS;
           _orderDetail = busiSystem.orderManager.orderDetail;
 
-          if (_order.state == 4) {
+          if (4) {
                [self.stateInfoCell setCellData:@{@"title":@"感谢您在平台购物，欢迎光临",@"detail":@""}];
                [self.stateInfoCell fitOrderInfoModeG];
           }else{

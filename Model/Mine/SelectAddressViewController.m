@@ -430,7 +430,7 @@
 {
     HUDSHOW(@"加载中");
 //    [busiSystem.agent delUserAddress:addre.addressId observer:self callback:@selector(delUserAddressNotification:) extraInfo:@{@"addres":addre}];
-     [busiSystem.myPathManager deleAddress:busiSystem.agent.userId withAddressid:addre.addressId  observer:self callback:@selector(delUserAddressNotification:) extraInfo:@{@"addres":addre}];
+//     [busiSystem.myPathManager deleAddress:busiSystem.agent.userId withAddressid:addre.addressId  observer:self callback:@selector(delUserAddressNotification:) extraInfo:@{@"addres":addre}];
 }
 
 -(void)delUserAddressNotification:(BSNotification*)noti

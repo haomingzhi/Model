@@ -8,9 +8,9 @@
 
 #import "MyFavViewController.h"
 #import "ImgAndThreeTitleTableViewCell.h"
-#import "ServerInfoViewController.h"
-#import "ErrandServerInfoViewController.h"
-#import "GoodsInfoViewController.h"
+//#import "ServerInfoViewController.h"
+//#import "ErrandServerInfoViewController.h"
+//#import "GoodsInfoViewController.h"
 #import "BUSystem.h"
 @interface MyFavViewController ()
 
@@ -30,14 +30,14 @@
 
 -(void)getData
 {
-     [busiSystem.myPathManager getColloc:busiSystem.agent.userId observer:self callback:@selector(getListNotification:)];
+//     [busiSystem.myPathManager getColloc:busiSystem.agent.userId observer:self callback:@selector(getListNotification:)];
 }
 
 -(void)getListNotification:(BSNotification*)noti
 {
      if (noti.error.code == 0) {
      HUDDISMISS;
-          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.getCollocArr];
+//          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.getCollocArr];
 //          _tableView.hasMore = busiSystem.getCollectListManager.pageInfo.hasMore;
           [_tableView reloadData];
           [[JYNoDataManager manager] addNodataView:_tableView withTip:@"暂无信息" withImg:@"nodata" withCount:_tableView.dataArr.count withTag:@"serShop"];
@@ -125,12 +125,12 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     BUGetColloc *co =  _tableView.dataArr[indexPath.section];
-     co.indexPath = indexPath;
+//     BUGetColloc *co =  _tableView.dataArr[indexPath.section];
+//     co.indexPath = indexPath;
 //      NSDictionary *dic = @{@"title":@"DJI大疆 晓 Mavic Air 便携可折叠 4K无人机",@"source":[NSString stringWithFormat:@"¥99元/月"],@"time":[NSString stringWithFormat:@"商品价值：¥6499.00"],@"default":@"default"};
      UITableViewCell *cell;
      cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:_tableView];
-     [(ImgAndThreeTitleTableViewCell*)cell setCellData:[co getDic]];
+//     [(ImgAndThreeTitleTableViewCell*)cell setCellData:[co getDic]];
      [(ImgAndThreeTitleTableViewCell*)cell fitMyfavMode];
      [(ImgAndThreeTitleTableViewCell *)cell setHandleAction:^(NSDictionary *dic) {
           NSIndexPath *path = dic[@"row"];
@@ -169,18 +169,18 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-          BUGetColloc *co =  _tableView.dataArr[indexPath.section];
-          GoodsInfoViewController  *vc = [GoodsInfoViewController new];
-          vc.ID = co.productId;
-          [self.navigationController pushViewController:vc animated:YES];
+//          BUGetColloc *co =  _tableView.dataArr[indexPath.section];
+//          GoodsInfoViewController  *vc = [GoodsInfoViewController new];
+//          vc.ID = co.productId;
+//          [self.navigationController pushViewController:vc animated:YES];
 
 }
 
 -(void)delCol:(NSIndexPath *)indexPath
 {
      HUDSHOW(@"加载中");
-     BUGetColloc *co = _tableView.dataArr[indexPath.section];
-     [busiSystem.myPathManager addandUpCon:busiSystem.agent.userId?:@"" withProductid:co.productId?:@"" observer:self callback:@selector(addandUpConNotification:)  extraInfo:@{@"row":indexPath}];
+//     BUGetColloc *co = _tableView.dataArr[indexPath.section];
+//     [busiSystem.myPathManager addandUpCon:busiSystem.agent.userId?:@"" withProductid:co.productId?:@"" observer:self callback:@selector(addandUpConNotification:)  extraInfo:@{@"row":indexPath}];
 //     [busiSystem.getCollectListManager delGoodsCollect:[NSString stringWithFormat:@"%d",co.productType] withGoodsid:co.goodsId withUserid:busiSystem.agent.userId observer:self callback:@selector(delGoodsCollectNotification:) extraInfo:@{@"row":indexPath}];
 }
 

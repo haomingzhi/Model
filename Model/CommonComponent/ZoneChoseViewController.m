@@ -31,8 +31,8 @@
         self.curIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     }
     SelectBtnCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SelectBtnCollectionViewCell" forIndexPath:indexPath];
-    BUOpenCity *city = self.dataArr[indexPath.row];
-    [cell setCellData:@{@"title":city.cityName,@"isChecked":@(NO)}];
+//    BUOpenCity *city = self.dataArr[indexPath.row];
+//    [cell setCellData:@{@"title":city.cityName,@"isChecked":@(NO)}];
      [cell fitCellMode];
     return cell;
 }

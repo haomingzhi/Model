@@ -16,9 +16,9 @@
 #import "BlankTableViewCell.h"
 #import "LoginViewController.h"
 #import "BUSystem.h"
-#import "ClassifyListViewController.h"
-#import "OptimizationRecViewController.h"
-#import "GoodsInfoViewController.h"
+//#import "ClassifyListViewController.h"
+//#import "OptimizationRecViewController.h"
+//#import "GoodsInfoViewController.h"
 @interface DealViewController ()
 {
     FlashTableViewCell *_flashCell;
@@ -176,24 +176,24 @@
           [self.navigationController pushViewController:vc animated:YES];
      }
      else if (q.type == 2){
-          ClassifyListViewController *vc = [ClassifyListViewController new];
-          vc.hidesBottomBarWhenPushed = YES;
-          vc.typetId = q.parmaId;
-          vc.parentId = @"";
-          vc.title = q.name;
-          [self.navigationController pushViewController:vc animated:YES];
+//          ClassifyListViewController *vc = [ClassifyListViewController new];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          vc.typetId = q.parmaId;
+//          vc.parentId = @"";
+//          vc.title = q.name;
+//          [self.navigationController pushViewController:vc animated:YES];
      }
      else if (q.type == 3){
-          OptimizationRecViewController *vc = [OptimizationRecViewController new];
-          vc.hidesBottomBarWhenPushed = YES;
-          vc.ID = q.parmaId;
-          [self.navigationController pushViewController:vc animated:YES];
+//          OptimizationRecViewController *vc = [OptimizationRecViewController new];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          vc.ID = q.parmaId;
+//          [self.navigationController pushViewController:vc animated:YES];
      }
      else if (q.type == 4){
-          GoodsInfoViewController *vc = [GoodsInfoViewController new];
-          vc.hidesBottomBarWhenPushed = YES;
-          vc.ID = q.parmaId;
-          [self.navigationController pushViewController:vc animated:YES];
+//          GoodsInfoViewController *vc = [GoodsInfoViewController new];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          vc.ID = q.parmaId;
+//          [self.navigationController pushViewController:vc animated:YES];
      }
 }
 

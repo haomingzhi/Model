@@ -10,6 +10,6 @@
 #import "BUSystem.h"
 
 @interface AuditProgressViewController : BaseTableViewController
-@property (nonatomic,strong) BUSaleInfo *backInfo;
+//@property (nonatomic,strong) BUSaleInfo *backInfo;
 
 @end

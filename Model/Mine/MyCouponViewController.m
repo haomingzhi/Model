@@ -10,7 +10,7 @@
 #import "CouponTableViewCell.h"
 #import "CouponInfoViewController.h"
 #import "CouponRuleViewController.h"
-#import "GetCouponCenterViewController.h"
+//#import "GetCouponCenterViewController.h"
 #import "BUSystem.h"
 @interface MyCouponViewController ()
 //@property (strong, nonatomic) IBOutlet MyTableView *tableView;
@@ -49,13 +49,13 @@
 
 -(void)getData{
 
-     _requestCount++;
-     [busiSystem.myPathManager.getMyCouponUnUseManager getMyCoupon:self callback:@selector(getCouponListANotification:)];
-
-     _requestCount++;
-  [busiSystem.myPathManager.getMyCouponUsedManager getMyCoupon:self callback:@selector(getCouponListNotification:)];
-   _requestCount++;
-  [busiSystem.myPathManager.getMyCouponPassedManager getMyCoupon:self callback:@selector(getCouponListANotificationC:)];
+//     _requestCount++;
+//     [busiSystem.myPathManager.getMyCouponUnUseManager getMyCoupon:self callback:@selector(getCouponListANotification:)];
+//
+//     _requestCount++;
+//  [busiSystem.myPathManager.getMyCouponUsedManager getMyCoupon:self callback:@selector(getCouponListNotification:)];
+//   _requestCount++;
+//  [busiSystem.myPathManager.getMyCouponPassedManager getMyCoupon:self callback:@selector(getCouponListANotificationC:)];
 
 }
 
@@ -68,8 +68,8 @@
      }
 
      if (noti.error.code == 0) {
-          _tableViewB.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.getMyCouponUsedManager.getMyCouponArr];
-            _tableViewB.hasMore = busiSystem.myPathManager.getMyCouponUsedManager.pageInfo.hasMore;
+//          _tableViewB.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.getMyCouponUsedManager.getMyCouponArr];
+//            _tableViewB.hasMore = busiSystem.myPathManager.getMyCouponUsedManager.pageInfo.hasMore;
           [_tableViewB reloadData];
           [[JYNoDataManager manager] addNodataView:_tableViewB withTip:@"暂无信息" withImg:@"nodata" withCount:_tableViewB.dataArr.count withTag:[NSString stringWithFormat:@"favc%d",_tableViewB.tag]];
           [[JYNoDataManager manager] fitModeY:130 ];
@@ -86,8 +86,8 @@
      }
 
      if (noti.error.code == 0) {
-          _tableViewC.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.getMyCouponPassedManager.getMyCouponArr];
-            _tableViewC.hasMore = busiSystem.myPathManager.getMyCouponPassedManager.pageInfo.hasMore;
+//          _tableViewC.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.getMyCouponPassedManager.getMyCouponArr];
+//            _tableViewC.hasMore = busiSystem.myPathManager.getMyCouponPassedManager.pageInfo.hasMore;
           [_tableViewC reloadData];
           [[JYNoDataManager manager] addNodataView:_tableViewC withTip:@"暂无信息" withImg:@"nodata" withCount:_tableViewC.dataArr.count withTag:[NSString stringWithFormat:@"favc%d",_tableViewC.tag]];
           [[JYNoDataManager manager] fitModeY:130 ];
@@ -105,8 +105,8 @@
      }
 
      if (noti.error.code == 0) {
-          _tableViewA.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.getMyCouponUnUseManager.getMyCouponArr];
-            _tableViewA.hasMore = busiSystem.myPathManager.getMyCouponUnUseManager.pageInfo.hasMore;
+//          _tableViewA.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.getMyCouponUnUseManager.getMyCouponArr];
+//            _tableViewA.hasMore = busiSystem.myPathManager.getMyCouponUnUseManager.pageInfo.hasMore;
           [_tableViewA reloadData];
           [[JYNoDataManager manager] addNodataView:_tableViewA withTip:@"暂无信息" withImg:@"nodata" withCount:_tableViewA.dataArr.count withTag:[NSString stringWithFormat:@"favc%d",_tableViewA.tag]];
           [[JYNoDataManager manager] fitModeY:130 ];
@@ -147,11 +147,11 @@
 
 -(void)handleDidRightButton:(id)sender
 {
-     GetCouponCenterViewController *vc = [GetCouponCenterViewController new];
-     [self.navigationController pushViewController:vc animated:YES];
-     [vc setHandleGoBack:^(id userData) {
-          [self getData];
-     }];
+//     GetCouponCenterViewController *vc = [GetCouponCenterViewController new];
+//     [self.navigationController pushViewController:vc animated:YES];
+//     [vc setHandleGoBack:^(id userData) {
+//          [self getData];
+//     }];
 }
 
 -(NSArray *) getScrollMenuTitles
@@ -269,14 +269,14 @@
 {
      UITableViewCell *cell;
      cell = [CouponTableViewCell dequeueReusableCell:_tableView];
-               BUGetMyCoupon *o = _tableView.dataArr[indexPath.row];
+//               BUGetMyCoupon *o = _tableView.dataArr[indexPath.row];
      if (_tableView == self.tableViewA) {
 
 //          BUMyCoupon *p = _tableViewA.dataArr[indexPath.row];
 //           p.mode = 0;
 //     NSDictionary *dic = @{@"aTitle":@"¥60",@"bTitle":[NSString stringWithFormat:@"满100元可用"],@"cTitle":[NSString stringWithFormat:@"全品类通用券"],@"dTitle":@"适用平台：全平台",@"eTitle":@"有效期至：2017-08-01",@"bgImg":@"coupon_bg"};//[o getDicB];
-          NSDictionary *dic = [o getDic:0];
-     [(JYAbstractTableViewCell *)cell setCellData:dic];
+//          NSDictionary *dic = [o getDic:0];
+//     [(JYAbstractTableViewCell *)cell setCellData:dic];
      [(CouponTableViewCell *)cell fitMode];
      }
      else if(_tableView == _tableViewB)
@@ -284,8 +284,8 @@
 //           BUMyCoupon *p = _tableViewB.dataArr[indexPath.row];
 //           p.mode = 1;
 //          NSDictionary *dic = @{@"aTitle":@"¥60",@"bTitle":[NSString stringWithFormat:@"满100元可用"],@"cTitle":[NSString stringWithFormat:@"全品类通用券"],@"dTitle":@"适用平台：全平台",@"eTitle":@"有效期至：2017-08-01",@"bgImg":@"coupon_bg2",@"markImg":@"couponUsed"};;//[o getDicB];
-          NSDictionary *dic = [o getDic:1];
-          [(JYAbstractTableViewCell *)cell setCellData:dic];
+//          NSDictionary *dic = [o getDic:1];
+//          [(JYAbstractTableViewCell *)cell setCellData:dic];
           [(CouponTableViewCell *)cell fitModeB];
      }
      else
@@ -293,8 +293,8 @@
 //           BUMyCoupon *p = _tableViewC.dataArr[indexPath.row];
 //          p.mode = 2;
 //          NSDictionary *dic = @{@"aTitle":@"¥60",@"bTitle":[NSString stringWithFormat:@"满100元可用"],@"cTitle":[NSString stringWithFormat:@"全品类通用券"],@"dTitle":@"适用平台：全平台",@"eTitle":@"有效期至：2017-08-01",@"bgImg":@"coupon_bg2",@"markImg":@"couponPassed"};;//[o getDicB];
-          NSDictionary *dic = [o getDic:2];
-          [(JYAbstractTableViewCell *)cell setCellData:dic];
+//          NSDictionary *dic = [o getDic:2];
+//          [(JYAbstractTableViewCell *)cell setCellData:dic];
           [(CouponTableViewCell *)cell fitModeC];
      }
      cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -380,33 +380,33 @@
     [((UITableView *)self.scrollViewList[currentOrderStatue]) reloadData];
 }
 
--(BUGetMyCouponManager *) dataModel
-{
-     if(currentOrderStatue == 0)
-    return busiSystem.myPathManager.getMyCouponUnUseManager;
-     else if (currentOrderStatue == 1)
-     {
-          return busiSystem.myPathManager.getMyCouponUsedManager;
-     }
-     else
-     {
-          return busiSystem.myPathManager.getMyCouponPassedManager;
-     }
-}
-
--(BUGetMyCouponManager *) dataModel:(MyTableView *)tv
-{
-     if(tv == _tableViewA)
-          return busiSystem.myPathManager.getMyCouponUnUseManager;
-     else if (tv == _tableViewB)
-     {
-          return busiSystem.myPathManager.getMyCouponUsedManager;
-     }
-     else
-     {
-          return busiSystem.myPathManager.getMyCouponPassedManager;
-     }
-}
+//-(BUGetMyCouponManager *) dataModel
+//{
+//     if(currentOrderStatue == 0)
+//    return busiSystem.myPathManager.getMyCouponUnUseManager;
+//     else if (currentOrderStatue == 1)
+//     {
+//          return busiSystem.myPathManager.getMyCouponUsedManager;
+//     }
+//     else
+//     {
+//          return busiSystem.myPathManager.getMyCouponPassedManager;
+//     }
+//}
+//
+//-(BUGetMyCouponManager *) dataModel:(MyTableView *)tv
+//{
+//     if(tv == _tableViewA)
+//          return busiSystem.myPathManager.getMyCouponUnUseManager;
+//     else if (tv == _tableViewB)
+//     {
+//          return busiSystem.myPathManager.getMyCouponUsedManager;
+//     }
+//     else
+//     {
+//          return busiSystem.myPathManager.getMyCouponPassedManager;
+//     }
+//}
 
 #pragma mark --handle
 
@@ -421,7 +421,7 @@
 
       MyTableView *tv = (MyTableView *)self.scrollViewList[currentOrderStatue];
         tv.isRefreshing = YES;
-        [self.dataModel getMyCoupon:self callback:@selector(getMyOrderList2Output:) extraInfo:@{@"view":tv}];
+//        [self.dataModel getMyCoupon:self callback:@selector(getMyOrderList2Output:) extraInfo:@{@"view":tv}];
 }
 
 -(void) getMyOrderList2Output:(BSNotification *) noti
@@ -436,15 +436,15 @@
 -(void) loadNextPage
 {
       MyTableView *tv = (MyTableView *)self.scrollViewList[currentOrderStatue];
-     [self.dataModel getDataNextPage:self callback:@selector(getDataNextPageNotification:) extraInfo:@{@"view":tv}];
+//     [self.dataModel getDataNextPage:self callback:@selector(getDataNextPageNotification:) extraInfo:@{@"view":tv}];
 }
 
 -(void)getDataNextPageNotification:(BSNotification *)noti
 {
      if (noti.error.code == 0) {
           MyTableView *tv = noti.extraInfo[@"view"];
-          tv.dataArr = [NSMutableArray arrayWithArray:[self dataModel:tv].getMyCouponArr];
-          tv.hasMore = [self dataModel:tv].pageInfo.hasMore;
+//          tv.dataArr = [NSMutableArray arrayWithArray:[self dataModel:tv].getMyCouponArr];
+//          tv.hasMore = [self dataModel:tv].pageInfo.hasMore;
           [tv reloadData];
           [[JYNoDataManager manager] addNodataView:tv withTip:@"暂无信息" withImg:@"nodata" withCount:tv.dataArr.count withTag:[NSString stringWithFormat:@"favc%d",tv.tag]];
           [[JYNoDataManager manager] fitModeY:130 ];

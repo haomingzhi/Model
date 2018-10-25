@@ -44,8 +44,8 @@
 {
      HUDDISMISS;
      if (noti.error.code == 0) {
-          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.getCommentListManager.getCommentList];
-          _tableView.hasMore = busiSystem.getCommentListManager.pageInfo.hasMore;
+//          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.getCommentListManager.getCommentList];
+//          _tableView.hasMore = busiSystem.getCommentListManager.pageInfo.hasMore;
           [_tableView reloadData];
           [[JYNoDataManager manager] addNodataView:_tableView withTip:@"暂无信息" withImg:@"nodata" withCount:_tableView.dataArr.count withTag:@"nodata"];
           [[JYNoDataManager manager] fitModeY:100];
@@ -103,13 +103,13 @@
 
 -(UITableViewCell *)createEvaInfoCell:(NSIndexPath *)indexPath{
      UITableViewCell *cell ;
-     BUGetComment *comment = _tableView.dataArr[indexPath.section];
+//     BUGetComment *comment = _tableView.dataArr[indexPath.section];
      
      if (indexPath.row == 0) {
           cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:_tableView];
-          [(ImgAndThreeTitleTableViewCell *)cell setCellData:[comment getDic:0]];
+//          [(ImgAndThreeTitleTableViewCell *)cell setCellData:[comment getDic:0]];
           [(ImgAndThreeTitleTableViewCell *)cell fitEvaMode];
-          if (comment.picList.count == 0) {
+          if (0) {
                [(JYAbstractTableViewCell *)cell showSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(cell.height, 0, 0, 0)];
           }else{
                [(JYAbstractTableViewCell *)cell hiddenSeparatorView];
@@ -118,11 +118,11 @@
           cell = [ImgsTableViewCell dequeueReusableCell:_tableView];
           
           
-          if (comment.picList.count == 0) {
+          if ( 0) {
                cell.hidden = YES;
                [(JYAbstractTableViewCell *)cell hiddenSeparatorView];
           }else{
-               [(ImgsTableViewCell *)cell setCellData:[comment getDic:1]];
+//               [(ImgsTableViewCell *)cell setCellData:[comment getDic:1]];
                [(ImgsTableViewCell *)cell fitMode];
                [(JYAbstractTableViewCell *)cell showSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(cell.height, 0, 0, 0)];
           }
@@ -130,14 +130,14 @@
           [(ImgsTableViewCell *)cell setHandleAction:^(NSDictionary *dic) {
                NSInteger row = [dic[@"row"] integerValue];
                NSMutableArray *imgArr = [NSMutableArray new];
-               NSArray *arr = comment.picList;
-               if (arr.count !=0) {
-                    for (int i =0;i<arr.count;i++) {
-                         UIImageView *myImageView = [[UIImageView alloc]init];
-                         [imgArr addObject:myImageView];
-                    }
-                    [weakSelf setupPhotoBrowser:@{@"arr":arr?:@[],@"row":@(row),@"imgArr":imgArr}];
-               }
+//               NSArray *arr = comment.picList;
+//               if (arr.count !=0) {
+//                    for (int i =0;i<arr.count;i++) {
+//                         UIImageView *myImageView = [[UIImageView alloc]init];
+//                         [imgArr addObject:myImageView];
+//                    }
+//                    [weakSelf setupPhotoBrowser:@{@"arr":arr?:@[],@"row":@(row),@"imgArr":imgArr}];
+//               }
           }];
           
      }
@@ -149,24 +149,24 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
      CGFloat height = 35;
-     BUGetComment *comment = _tableView.dataArr[indexPath.section];
+//     BUGetComment *comment = _tableView.dataArr[indexPath.section];
      if (indexPath.row == 0) {
           ImgAndThreeTitleTableViewCell *cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:_tableView];
           
-          [cell setCellData:[comment getDic:0]];
+//          [cell setCellData:[comment getDic:0]];
           [cell fitEvaMode];
           height = cell.height;
      }else{
-          if (comment.picList.count == 0) {
-               height = 0.001;
-          }else{
-               ImgsTableViewCell *cell = [ImgsTableViewCell dequeueReusableCell:_tableView];
-               NSMutableArray *arr = [NSMutableArray new];
-               [(ImgsTableViewCell *)cell setCellData:[comment getDic:1]];
-               [(ImgsTableViewCell *)cell fitMode];
-               [(ImgsTableViewCell *)cell fitMode];
-               height = cell.height;
-          }
+//          if (comment.picList.count == 0) {
+//               height = 0.001;
+//          }else{
+//               ImgsTableViewCell *cell = [ImgsTableViewCell dequeueReusableCell:_tableView];
+//               NSMutableArray *arr = [NSMutableArray new];
+//               [(ImgsTableViewCell *)cell setCellData:[comment getDic:1]];
+//               [(ImgsTableViewCell *)cell fitMode];
+//               [(ImgsTableViewCell *)cell fitMode];
+//               height = cell.height;
+//          }
           
      }
      
@@ -186,7 +186,7 @@
 
 
 -(void)loadNextPage{
-     [busiSystem.getCommentListManager getCommentListNextPage:self callback:@selector(getCommentListNotification:)];
+//     [busiSystem.getCommentListManager getCommentListNextPage:self callback:@selector(getCommentListNotification:)];
 }
 
 

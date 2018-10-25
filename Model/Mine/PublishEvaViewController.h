@@ -10,5 +10,5 @@
 #import "BUSystem.h"
 
 @interface PublishEvaViewController : BaseTableViewController
-@property (nonatomic,strong) BUGetOrder *order;
+//@property (nonatomic,strong) BUGetOrder *order;
 @end

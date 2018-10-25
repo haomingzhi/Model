@@ -12,7 +12,7 @@
 @interface PayOrderViewController : BaseTableViewController
 @property (weak, nonatomic) IBOutlet MyTableView *tableView;
 //@property (nonatomic,strong) BUSubmitCart *submitCart;
-@property (nonatomic,strong) BUSubmitOrder *order;
+//@property (nonatomic,strong) BUSubmitOrder *order;
 @property (nonatomic)NSInteger mode;
 @property (nonatomic)NSInteger sec;
 @property (nonatomic)NSInteger min;

@@ -48,7 +48,7 @@
 }
 -(void)getData
 {
-     [busiSystem.indexManager.getSysMessageListManager getList:[NSString stringWithFormat:@"%@",busiSystem.agent.userId] observer:self callback:@selector(getDataNotification:)];
+//     [busiSystem.indexManager.getSysMessageListManager getList:[NSString stringWithFormat:@"%@",busiSystem.agent.userId] observer:self callback:@selector(getDataNotification:)];
 }
 
 -(void)getDataNotification:(BSNotification*)noti
@@ -56,8 +56,8 @@
   if(noti.error.code == 0)
   {
       HUDDISMISS;
-       _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.indexManager.getSysMessageListManager.dataArr];
-       _tableView.hasMore = busiSystem.indexManager.getSysMessageListManager.pageInfo.hasMore;
+//       _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.indexManager.getSysMessageListManager.dataArr];
+//       _tableView.hasMore = busiSystem.indexManager.getSysMessageListManager.pageInfo.hasMore;
        [_tableView reloadData];
        [[JYNoDataManager manager] addNodataView:_tableView withTip:@"暂无信息" withImg:@"nodata" withCount:_tableView.dataArr.count withTag:@"serShop"];
        [[JYNoDataManager manager] fitModeY:150];
@@ -145,10 +145,10 @@
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     BUGetSysMessage *sys = _tableView.dataArr[indexPath.section];
+//     BUGetSysMessage *sys = _tableView.dataArr[indexPath.section];
     UITableViewCell *cell;
      cell = [TitleDetailTableViewCell dequeueReusableCell:_tableView];
-     [(TitleDetailTableViewCell*)cell setCellData:[sys getDic]];
+//     [(TitleDetailTableViewCell*)cell setCellData:[sys getDic]];
      [(TitleDetailTableViewCell*)cell fitMsgMode];
 //    [(JYAbstractTableViewCell *)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(50, 0, 0, 0)];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -179,7 +179,7 @@
 
 -(void)loadNextPage
 {
-     [busiSystem.indexManager.getSysMessageListManager getListNextPage:self callback:@selector(getDataNotification:)];
+//     [busiSystem.indexManager.getSysMessageListManager getListNextPage:self callback:@selector(getDataNotification:)];
 }
 /*
 #pragma mark - Navigation

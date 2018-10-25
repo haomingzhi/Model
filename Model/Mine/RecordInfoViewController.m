@@ -32,7 +32,7 @@
 -(void)getData{
 
 //     [busiSystem.getAfterSaleListManager getAfterSaleDetail:_orderBackID observer:self callback:@selector(getBackOrderItemNotification:)];
-     [busiSystem.myPathManager saleInfo:_orderBackID withUserid:busiSystem.agent.userId observer:self callback:@selector(saleInfoNotification:)];
+//     [busiSystem.myPathManager saleInfo:_orderBackID withUserid:busiSystem.agent.userId observer:self callback:@selector(saleInfoNotification:)];
 }
 
 
@@ -41,19 +41,19 @@
 
      if (noti.error.code == 0) {
           HUDDISMISS;
-          _backInfo = busiSystem.myPathManager.saleInfo;
-          [_auditCell setCellData:[_backInfo getDic:0]];
-          [_auditCell fitRecordInfoMode];
-          [_queCell setCellData:@{@"title":_backInfo.content?:@""}];
-          [_queCell fitRecordInfoModeC];
-          [_auditNoteCell setCellData:@{@"title":_backInfo.note?:@""}];
-          [_auditNoteCell fitRecordInfoModeC];
-//          BUTimeList *t = _backInfo.timeList.firstObject;
-          NSString *title = [NSString stringWithFormat:@"审核进度：%@",_backInfo.stateName?: @""];
-          [_auditTipCell setCellData:@{@"title":title}];
-          [_auditTipCell fitRecordInfoModeA];
-          [_stateCell setCellData:[_backInfo getDic:1]];
-          [_stateCell fitRecordInfoMode];
+//          _backInfo = busiSystem.myPathManager.saleInfo;
+//          [_auditCell setCellData:[_backInfo getDic:0]];
+//          [_auditCell fitRecordInfoMode];
+//          [_queCell setCellData:@{@"title":_backInfo.content?:@""}];
+//          [_queCell fitRecordInfoModeC];
+//          [_auditNoteCell setCellData:@{@"title":_backInfo.note?:@""}];
+//          [_auditNoteCell fitRecordInfoModeC];
+////          BUTimeList *t = _backInfo.timeList.firstObject;
+//          NSString *title = [NSString stringWithFormat:@"审核进度：%@",_backInfo.stateName?: @""];
+//          [_auditTipCell setCellData:@{@"title":title}];
+//          [_auditTipCell fitRecordInfoModeA];
+//          [_stateCell setCellData:[_backInfo getDic:1]];
+//          [_stateCell fitRecordInfoMode];
           [_tableView reloadData];
      }else{
           HUDCRY(noti.error.domain, 2);

@@ -16,9 +16,9 @@
 #import "MsgViewController.h"
 //#import "AppDelegate.h"
 #import "MyOrderViewController.h"
-#import "BuyOutServerViewController.h"
-#import "ReletServerViewController.h"
-#import "SelledSeverViewController.h"
+//#import "BuyOutServerViewController.h"
+//#import "ReletServerViewController.h"
+//#import "SelledSeverViewController.h"
 #import "MyCouponViewController.h"
 @implementation BUPushManager
 -(void)pushToWhich:(NSDictionary *)Data
@@ -39,10 +39,10 @@
      NSInteger  noticeType = [Data[@"type"] integerValue];//1订单2续租3买断4售后5认证6优惠劵
      if (noticeType == 2)
      {
-          ReletServerViewController *vc = [ReletServerViewController new];
-          //        vc.userInfo = Data[@"entityId"];
-          vc.hidesBottomBarWhenPushed = YES;
-          [cnav pushViewController:vc animated:YES];
+//          ReletServerViewController *vc = [ReletServerViewController new];
+//          //        vc.userInfo = Data[@"entityId"];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          [cnav pushViewController:vc animated:YES];
      }
      else if (noticeType == 1)
      {
@@ -53,17 +53,17 @@
      }
      else if (noticeType == 3)
      {
-          BuyOutServerViewController *vc = [BuyOutServerViewController new];
-          //        vc.userInfo = Data[@"entityId"];
-          vc.hidesBottomBarWhenPushed = YES;
-          [cnav pushViewController:vc animated:YES];
+//          BuyOutServerViewController *vc = [BuyOutServerViewController new];
+//          //        vc.userInfo = Data[@"entityId"];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          [cnav pushViewController:vc animated:YES];
      }
      else if (noticeType == 4)
      {
-          SelledSeverViewController *vc = [SelledSeverViewController new];
-          //        vc.userInfo = Data[@"entityId"];
-          vc.hidesBottomBarWhenPushed = YES;
-          [cnav pushViewController:vc animated:YES];
+//          SelledSeverViewController *vc = [SelledSeverViewController new];
+//          //        vc.userInfo = Data[@"entityId"];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          [cnav pushViewController:vc animated:YES];
      }
      else if(noticeType == 6)
      {

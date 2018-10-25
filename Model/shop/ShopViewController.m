@@ -7,7 +7,7 @@
 //
 
 #import "ShopViewController.h"
-#import "SearchShopViewController.h"
+//#import "SearchShopViewController.h"
 #import "ImgTitleAndDetailCollectionViewCell.h"
 #import "ShopHeaderCollectionReusableView.h"
 //#import "PresentCardListViewController.h"
@@ -19,13 +19,13 @@
 #import "JECalourseTableViewCell.h"
 #import "ImgTableViewCell.h"
 #import "ScrollerTableViewCell.h"
-#import "ShopListViewController.h"
-#import "ServerListViewController.h"
-#import "CartViewController.h"
+//#import "ShopListViewController.h"
+//#import "ServerListViewController.h"
+//#import "CartViewController.h"
 #import "LoginViewController.h"
-#import "ErrandServerViewController.h"
-#import "SearchShopViewController.h"
-#import "ClassifyListViewController.h"
+//#import "ErrandServerViewController.h"
+//#import "SearchShopViewController.h"
+//#import "ClassifyListViewController.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
 #import "ZoneChoseViewController.h"
@@ -94,11 +94,11 @@
                //               HUDCRY(@"定位失败", 2);
                busiSystem.agent.log = @"0";
                busiSystem.agent.lat = @"0";
-               if (busiSystem.indexManager.cityList != 0) {
-                    BUOpenCity *city = [busiSystem.indexManager.cityList firstObject];
-                    busiSystem.agent.cityId = city.cityId;
-                    busiSystem.agent.cityName = city.cityName?:@"";
-               }
+//               if (busiSystem.indexManager.cityList != 0) {
+//                    BUOpenCity *city = [busiSystem.indexManager.cityList firstObject];
+//                    busiSystem.agent.cityId = city.cityId;
+//                    busiSystem.agent.cityName = city.cityName?:@"";
+//               }
 //               [self getActivityList];
 //               [self getCarouselList];
                return;
@@ -122,22 +122,22 @@
                busiSystem.agent.log = [NSString stringWithFormat:@"%f",location.coordinate.longitude];
                busiSystem.agent.lat = [NSString stringWithFormat:@"%f",location.coordinate.latitude];
                __block BOOL hasOpenCity = NO;
-               [busiSystem.indexManager.cityList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    BUOpenCity *city = obj;
-                    if ([city.cityName isEqualToString:regeocode.city]) {
-                         hasOpenCity = YES;
-                         busiSystem.agent.cityId = city.cityId;
-                         busiSystem.agent.cityName = city.cityName?:@"";
-                         *stop = YES;
-                    }
-                    
-               }];
+//               [busiSystem.indexManager.cityList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//                    BUOpenCity *city = obj;
+//                    if ([city.cityName isEqualToString:regeocode.city]) {
+//                         hasOpenCity = YES;
+//                         busiSystem.agent.cityId = city.cityId;
+//                         busiSystem.agent.cityName = city.cityName?:@"";
+//                         *stop = YES;
+//                    }
+//
+//               }];
                
-               if (busiSystem.indexManager.cityList != 0 && !hasOpenCity) {
-                    BUOpenCity *city = [busiSystem.indexManager.cityList firstObject];
-                    busiSystem.agent.cityId = city.cityId;
-                    busiSystem.agent.cityName = city.cityName?:@"";
-               }
+//               if (busiSystem.indexManager.cityList != 0 && !hasOpenCity) {
+//                    BUOpenCity *city = [busiSystem.indexManager.cityList firstObject];
+//                    busiSystem.agent.cityId = city.cityId;
+//                    busiSystem.agent.cityName = city.cityName?:@"";
+//               }
 //               [self getActivityList];
 //               [self getCarouselList];
           }
@@ -188,27 +188,27 @@
 //          }
 //          else
           if ((index == 15 && _shopTypeList.count>8)|| (index == 7 && _serviceTypeList.count>7)){
-               ClassifyListViewController *vc = [ClassifyListViewController new];
-               vc.hidesBottomBarWhenPushed = YES;
-               [weakSelf.navigationController pushViewController:vc animated:YES];
+//               ClassifyListViewController *vc = [ClassifyListViewController new];
+//               vc.hidesBottomBarWhenPushed = YES;
+//               [weakSelf.navigationController pushViewController:vc animated:YES];
           }
           else   if (index ==0) {
-               ErrandServerViewController *vc = [ErrandServerViewController new];
-               vc.hidesBottomBarWhenPushed = YES;
-               [weakSelf.navigationController pushViewController:vc animated:YES];
+//               ErrandServerViewController *vc = [ErrandServerViewController new];
+//               vc.hidesBottomBarWhenPushed = YES;
+//               [weakSelf.navigationController pushViewController:vc animated:YES];
           }
           else if(index<8){
-               ServerListViewController *vc = [ServerListViewController new];
-               vc.hidesBottomBarWhenPushed = YES;
-               vc.type = weakSelf.serviceTypeList[index-1];
-               [weakSelf.navigationController pushViewController:vc animated:YES];
+//               ServerListViewController *vc = [ServerListViewController new];
+//               vc.hidesBottomBarWhenPushed = YES;
+//               vc.type = weakSelf.serviceTypeList[index-1];
+//               [weakSelf.navigationController pushViewController:vc animated:YES];
           }
           else if (index-8 < _shopTypeList.count)  {
 
-                    ShopListViewController *vc = [ShopListViewController new];
-                    vc.hidesBottomBarWhenPushed = YES;
-                    vc.type = weakSelf.shopTypeList[index-8];
-                    [weakSelf.navigationController pushViewController:vc animated:YES];
+//                    ShopListViewController *vc = [ShopListViewController new];
+//                    vc.hidesBottomBarWhenPushed = YES;
+//                    vc.type = weakSelf.shopTypeList[index-8];
+//                    [weakSelf.navigationController pushViewController:vc animated:YES];
                
           }
           
@@ -229,9 +229,9 @@
 
 -(void)getData{
      _requestCount ++;
-     [busiSystem.shopManager getServiceTypeList:self callback:@selector(getServiceTypeListNotification:)];
+//     [busiSystem.shopManager getServiceTypeList:self callback:@selector(getServiceTypeListNotification:)];
      _requestCount ++;
-     [busiSystem.shopManager getShopTypeList:self callback:@selector(getShopTypeListNotification:)];
+//     [busiSystem.shopManager getShopTypeList:self callback:@selector(getShopTypeListNotification:)];
 //     _requestCount ++;
 //     [busiSystem.indexManager getOpenCityList:self callback:@selector(getOpenCityListNotification:)];
      [self getActivityList];
@@ -247,7 +247,7 @@
           return;
      }
      _requestCount ++;
-     [busiSystem.userManager getUserCartCount:busiSystem.agent.userId observer:self callback:@selector(getUserCartCountNotification:)];
+//     [busiSystem.userManager getUserCartCount:busiSystem.agent.userId observer:self callback:@selector(getUserCartCountNotification:)];
 }
 
 
@@ -268,15 +268,15 @@
           BASENOTIFICATIONWITHCANMISS(noti, NO);
      }
      if (noti.error.code == 0) {
-          NSInteger _cartCount = busiSystem.userManager.cartCount;
-          if (_cartCount == 0) {
-               _redDotLb.hidden = YES;
-          }else{
-               _redDotLb.hidden = NO;
-               _redDotLb.text = [NSString stringWithFormat:@"%ld",(long)_cartCount];
-               CGSize size = [_redDotLb.text size:_redDotLb.font constrainedToSize:CGSizeMake(200, 15)];
-               _redDotLb.width = size.width +8;
-          }
+//          NSInteger _cartCount = busiSystem.userManager.cartCount;
+//          if (_cartCount == 0) {
+//               _redDotLb.hidden = YES;
+//          }else{
+//               _redDotLb.hidden = NO;
+//               _redDotLb.text = [NSString stringWithFormat:@"%ld",(long)_cartCount];
+//               CGSize size = [_redDotLb.text size:_redDotLb.font constrainedToSize:CGSizeMake(200, 15)];
+//               _redDotLb.width = size.width +8;
+//          }
      }
      else
      {
@@ -298,7 +298,7 @@
 
 -(void)getCarouselList{
      _requestCount ++;
-     [busiSystem.indexManager getCarouselList:0 postion:@"1" observer:self callback:@selector(getCarouselListNotification:)];
+//     [busiSystem.indexManager getCarouselList:0 postion:@"1" observer:self callback:@selector(getCarouselListNotification:)];
 }
 
 
@@ -316,11 +316,11 @@
      }
      if (noti.error.code == 0) {
           NSMutableArray *arr = [NSMutableArray new];
-          _imageList = [NSMutableArray arrayWithArray:busiSystem.indexManager.carouseList];
-          [_imageList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-               BUCarouse *c = obj;
-               [arr addObject:@{@"img":c.imagePath?:[BUImageRes new]}];
-          }];
+//          _imageList = [NSMutableArray arrayWithArray:busiSystem.indexManager.carouseList];
+//          [_imageList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//               BUCarouse *c = obj;
+//               [arr addObject:@{@"img":c.imagePath?:[BUImageRes new]}];
+//          }];
           [_flashCell setCellData:@{@"arr":arr}];
           [_flashCell fitHeadMode];
      }
@@ -335,7 +335,7 @@
      _requestCount ++;
      NSString *cityId = [NSString stringWithFormat:@"%ld",(long)busiSystem.agent.cityId];
      cityId = @"0";
-     [busiSystem.getActivityManager getActivity:cityId withIsHome:@"0" observer:self callback:@selector(getActivityNotification:)];
+//     [busiSystem.getActivityManager getActivity:cityId withIsHome:@"0" observer:self callback:@selector(getActivityNotification:)];
 }
 
 
@@ -352,8 +352,8 @@
           }
      }
      if (noti.error.code == 0) {
-          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.getActivityManager.dataArr];
-          _tableView.hasMore = busiSystem.getActivityManager.pageInfo.hasMore;
+//          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.getActivityManager.dataArr];
+//          _tableView.hasMore = busiSystem.getActivityManager.pageInfo.hasMore;
           [_tableView reloadData];
      }
      else
@@ -375,19 +375,19 @@
                     _tableView.isRefreshing = NO;
                }
           }
-          _shopTypeList = [NSMutableArray arrayWithArray:busiSystem.shopManager.shopTypeList];
+//          _shopTypeList = [NSMutableArray arrayWithArray:busiSystem.shopManager.shopTypeList];
           NSMutableArray *arr  = [NSMutableArray new];
           [arr addObject:@{@"img":@"icon_deliverService",@"title":@"跑腿服务",@"hidden":@(NO)}];
           [_serviceTypeList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                if (idx <6) {
-                    BUShopType *type = obj;
-                    [arr addObject:[type getDic:0]];
+//                    BUShopType *type = obj;
+//                    [arr addObject:[type getDic:0]];
                }else if (idx == 6){
                     if (_serviceTypeList.count>7) {
                          [arr addObject:@{@"img":@"icon_type_more",@"title":@"更多"}];
                     }else{
-                         BUShopType *type = obj;
-                         [arr addObject:[type getDic:0]];
+//                         BUShopType *type = obj;
+//                         [arr addObject:[type getDic:0]];
                     }
                }
           }];
@@ -400,14 +400,14 @@
           
           [_shopTypeList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                if (idx <7) {
-                    BUShopType *type = obj;
-                    [arr addObject:[type getDic:0]];
+//                    BUShopType *type = obj;
+//                    [arr addObject:[type getDic:0]];
                }else if (idx == 7){
                     if (_shopTypeList.count>8) {
                          [arr addObject:@{@"img":@"icon_type_more",@"title":@"更多"}];
                     }else{
-                         BUShopType *type = obj;
-                         [arr addObject:[type getDic:0]];
+//                         BUShopType *type = obj;
+//                         [arr addObject:[type getDic:0]];
                     }
                }
           }];
@@ -434,20 +434,20 @@
                     _tableView.isRefreshing = NO;
                }
           }
-          _serviceTypeList = [NSMutableArray arrayWithArray:busiSystem.shopManager.serviceTypeList];
+//          _serviceTypeList = [NSMutableArray arrayWithArray:busiSystem.shopManager.serviceTypeList];
           NSMutableArray *arr  = [NSMutableArray new];
           
           [arr addObject:@{@"img":@"icon_deliverService",@"title":@"跑腿服务",@"hidden":@(NO)}];
           [_serviceTypeList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                if (idx <6) {
-                    BUShopType *type = obj;
-                    [arr addObject:[type getDic:0]];
+//                    BUShopType *type = obj;
+//                    [arr addObject:[type getDic:0]];
                }else if (idx == 6){
                     if (_serviceTypeList.count>7) {
                          [arr addObject:@{@"img":@"icon_type_more",@"title":@"更多"}];
                     }else{
-                         BUShopType *type = obj;
-                         [arr addObject:[type getDic:0]];
+//                         BUShopType *type = obj;
+//                         [arr addObject:[type getDic:0]];
                     }
                }
           }];
@@ -460,14 +460,14 @@
           
           [_shopTypeList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                if (idx <7) {
-                    BUShopType *type = obj;
-                    [arr addObject:[type getDic:0]];
+//                    BUShopType *type = obj;
+//                    [arr addObject:[type getDic:0]];
                }else if (idx == 7){
                     if (_shopTypeList.count>8) {
                          [arr addObject:@{@"img":@"icon_type_more",@"title":@"更多"}];
                     }else{
-                         BUShopType *type = obj;
-                         [arr addObject:[type getDic:0]];
+//                         BUShopType *type = obj;
+//                         [arr addObject:[type getDic:0]];
                     }
                }
           }];
@@ -486,9 +486,9 @@
 
 
 -(void)handleDidRightButton:(id)sender{
-     CartViewController *vc = [CartViewController new];
-     vc.hidesBottomBarWhenPushed = YES;
-     [self.navigationController pushViewController:vc animated:YES];
+//     CartViewController *vc = [CartViewController new];
+//     vc.hidesBottomBarWhenPushed = YES;
+//     [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)initNav{
@@ -518,9 +518,9 @@
           [LoginViewController toLogin:self];
           return;
      }
-     CartViewController *vc = [CartViewController new];
-     vc.hidesBottomBarWhenPushed = YES;
-     [self.navigationController pushViewController:vc animated:YES];
+//     CartViewController *vc = [CartViewController new];
+//     vc.hidesBottomBarWhenPushed = YES;
+//     [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)setNavCenter
@@ -567,9 +567,9 @@
 
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-     SearchShopViewController *vc = [SearchShopViewController new];
-     vc.hidesBottomBarWhenPushed = YES;
-     [self.navigationController pushViewController:vc animated:NO];
+//     SearchShopViewController *vc = [SearchShopViewController new];
+//     vc.hidesBottomBarWhenPushed = YES;
+//     [self.navigationController pushViewController:vc animated:NO];
      return NO;
 }
 
@@ -613,17 +613,17 @@
      __weak ShopViewController *weakSelf = self;
      //    [_menuView fitMyServerApplyMode:YES];
      self.zoneVC = (ZoneChoseViewController*)[ZoneChoseViewController toTypeVC];
-     self.zoneVC.dataArr = busiSystem.indexManager.cityList;
+//     self.zoneVC.dataArr = busiSystem.indexManager.cityList;
      self.zoneVC.cancelAction = ^(){
           //        [weakSelf.menuView fitMyServerApplyMode:NO];
      };
      self.zoneVC.handleAction = ^(NSDictionary *dic){
           [weakSelf.zoneVC.parentDialog dismiss];
-          BUOpenCity *city = dic[@"title"];
-          //        CGSize size = [pk.name size:weakSelf.navBtn.titleLabel.font constrainedToSize:CGSizeMake(MAXFLOAT, 30)];
-          //        size.width += 20;
-          busiSystem.agent.cityName = city.cityName;
-          busiSystem.agent.cityId = city.cityId;
+//          BUOpenCity *city = dic[@"title"];
+//          //        CGSize size = [pk.name size:weakSelf.navBtn.titleLabel.font constrainedToSize:CGSizeMake(MAXFLOAT, 30)];
+//          //        size.width += 20;
+//          busiSystem.agent.cityName = city.cityName;
+//          busiSystem.agent.cityId = city.cityId;
          _cityBtn.customTitleLb.text = busiSystem.agent.cityName?:@"位置";
      };
 }
@@ -691,8 +691,8 @@
           cell = indexPath.row == 0 ?_flashCell:_classifyCell;
      }else{
           cell = [ImgTableViewCell dequeueReusableCell:tableView];
-          BUActivity *act = _tableView.dataArr[indexPath.section -1];
-          [(ImgTableViewCell *)cell setCellData:@{@"img":act.imagePath?:@"defaultBanner",@"default":@"defaultBanner",@"type":@(act.type)}];
+//          BUActivity *act = _tableView.dataArr[indexPath.section -1];
+//          [(ImgTableViewCell *)cell setCellData:@{@"img":act.imagePath?:@"defaultBanner",@"default":@"defaultBanner",@"type":@(act.type)}];
           [(ImgTableViewCell *)cell fitshopMode];
           
      }
@@ -749,10 +749,10 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
      if (indexPath.section>0) {
-          BUActivity *act = _tableView.dataArr[indexPath.section -1];
-          CommonWebViewViewController *vc = [CommonWebViewViewController setWebViewController:act.name?:@"" withUrl:act.url];
-          vc.hidesBottomBarWhenPushed = YES;
-          [self.navigationController pushViewController:vc animated:YES];
+//          BUActivity *act = _tableView.dataArr[indexPath.section -1];
+//          CommonWebViewViewController *vc = [CommonWebViewViewController setWebViewController:act.name?:@"" withUrl:act.url];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          [self.navigationController pushViewController:vc animated:YES];
      }
 }
 

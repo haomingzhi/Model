@@ -64,13 +64,13 @@
      _titleCell = [TitleDetailTableViewCell createTableViewCell];
 //     [_titleCell setCellData:@{@"title":@"秒杀专区暂时下线公告",@"detail":@"2017年10月5日 10：00"}];
 //     [_titleCell fitSysMsgInfoMode];
-     [_titleCell setCellData:@{@"title":_msg.title?:@"",@"detail":_msg.createTime?:@""}];
+//     [_titleCell setCellData:@{@"title":_msg.title?:@"",@"detail":_msg.createTime?:@""}];
      [_titleCell fitSysMsgInfoMode];
 
      _contentCell = [OnlyTitleTableViewCell createTableViewCell];
 //     [_contentCell setCellData:@{@"title":@"尊敬的用户，为了给您带来更好的体验，秒杀专区业务将于20 17年4月26日22：00-2017年4月27日09:00期间进行看看吧！ 尊敬的用户，为了给您带来更好的体验，秒杀专区业务将于20 17年4月26日22：00-2017年4月27日09:00期间进行看看吧！ 尊敬的用户，为了给您带来更好的体验，秒杀专区业务将于20 17年4月26日22：00-2017年4月27日09:00期间进行看看吧！ 尊敬的用户，为了给您带来更好的体验，秒杀专区业务将于20 17年4月26日22：00-2017年4月27日09:00期间进行看看吧！"}];
 //     [_contentCell fitSysMsgInfoMode];
-     [_contentCell setCellData:@{@"title":_msg.content?:@""}];
+//     [_contentCell setCellData:@{@"title":_msg.content?:@""}];
      [_contentCell fitSysMsgInfoMode];
      _tableView.backgroundColor = kUIColorFromRGB(color_2);
 }

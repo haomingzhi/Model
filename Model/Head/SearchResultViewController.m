@@ -10,7 +10,7 @@
 #import "ImgAndThreeTitleTableViewCell.h"
 #import "IconAndTitleTableViewCell.h"
 #import "BUSystem.h"
-#import "GoodsInfoViewController.h"
+//#import "GoodsInfoViewController.h"
 
 @interface SearchResultViewController ()
 
@@ -54,7 +54,7 @@
 -(void)getData
 {
      
-     [busiSystem.headManager.getSearchListManager getList:_searchText observer:self callback:@selector(getListNotification:)];
+//     [busiSystem.headManager.getSearchListManager getList:_searchText observer:self callback:@selector(getListNotification:)];
 }
 -(void)getListNotification:(BSNotification*)noti
 {
@@ -66,8 +66,8 @@
                [_tableView setContentOffset:CGPointMake(0, 0) animated:YES];
                _tableView.isRefreshing = NO;
           }
-          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.headManager.getSearchListManager.dataArr];
-          _tableView.hasMore = busiSystem.headManager.getSearchListManager.pageInfo.hasMore;
+//          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.headManager.getSearchListManager.dataArr];
+//          _tableView.hasMore = busiSystem.headManager.getSearchListManager.pageInfo.hasMore;
           [_tableView reloadData];
           [[JYNoDataManager manager] addNodataView:_tableView withTip:@"暂无结果" withImg:@"noSearch" withCount:_tableView.dataArr.count withTag:[NSString stringWithFormat:@"favc%d",0]];
           [[JYNoDataManager manager] fitModeY:130];
@@ -178,10 +178,10 @@
      UITableViewCell *cell;
 //     BUGoodsInfo *g = _tableView.dataArr[indexPath.row];
      cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:tableView];
-     BUHeadGoods *g = _tableView.dataArr[indexPath.row];
-     NSDictionary *dic = [g getDic];
+//     BUHeadGoods *g = _tableView.dataArr[indexPath.row];
+//     NSDictionary *dic = [g getDic];
      //@{@"title":@"iPhone X 全新国行",@"source":[NSString stringWithFormat:@"%.2f",200.0],@"time":[NSString stringWithFormat:@"元/%@",@"月"],@"default":@"default",@"img": @"orderEx",@"isPost":@(YES),@"isSecondHand":@(YES)};
-     [(JYAbstractTableViewCell *)cell setCellData:dic];
+//     [(JYAbstractTableViewCell *)cell setCellData:dic];
      [(ImgAndThreeTitleTableViewCell *)cell fitSearchResultMode];
 
      [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(135, 15, 0, 15)];
@@ -216,10 +216,10 @@
 //行的选择
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
      [self.view endEditing:YES];
-     BUHeadGoods *g = _tableView.dataArr[indexPath.row];
-     GoodsInfoViewController *vc = [GoodsInfoViewController new];
-     vc.ID = g.productId;
-     [self.navigationController pushViewController:vc animated:YES];
+//     BUHeadGoods *g = _tableView.dataArr[indexPath.row];
+//     GoodsInfoViewController *vc = [GoodsInfoViewController new];
+//     vc.ID = g.productId;
+//     [self.navigationController pushViewController:vc animated:YES];
 }
 
 
@@ -236,6 +236,6 @@
 
 -(void) loadNextPage
 {
-         [busiSystem.headManager.getSearchListManager getDataNextPage:self callback:@selector(getListNotification:)];
+//         [busiSystem.headManager.getSearchListManager getDataNextPage:self callback:@selector(getListNotification:)];
 }
 @end

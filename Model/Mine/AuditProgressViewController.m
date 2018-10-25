@@ -61,11 +61,11 @@
 {
      _tableView.refreshHeaderView = nil;
      _stateCell = [TitleDetailTableViewCell createTableViewCell];
-     [_stateCell setCellData:[_backInfo getDic:1]];
+//     [_stateCell setCellData:[_backInfo getDic:1]];
      [_stateCell fitAuditProgressModeC];
      
      _alertCell = [TitleAndImageTableViewCell createTableViewCell];
-     [_alertCell setCellData:[_backInfo getDic:2]];
+//     [_alertCell setCellData:[_backInfo getDic:2]];
      [_alertCell fitAuditProgressMode];
      
      _tipCell = [OnlyTitleTableViewCell createTableViewCell];
@@ -158,7 +158,7 @@
             row = 1;
             break;
          case 2:
-              row = _backInfo.timeList.count+1;
+//              row = _backInfo.timeList.count+1;
               break;
         default:
             break;
@@ -187,17 +187,17 @@
           }
           else if (indexPath.row == 1)
           {
-               BUTimeList *t = _backInfo.timeList[indexPath.row -1];
+//               BUTimeList *t = _backInfo.timeList[indexPath.row -1];
                cell = [TitleDetailTableViewCell dequeueReusableCell:_tableView];
-               [(TitleDetailTableViewCell *)cell setCellData:[t getDic:2]];
+//               [(TitleDetailTableViewCell *)cell setCellData:[t getDic:2]];
                [(TitleDetailTableViewCell *)cell  fitAuditProgressModeA];
             
           }
           else
           {
-               BUTimeList *t = _backInfo.timeList[indexPath.row -1];
-               cell = [TitleDetailTableViewCell dequeueReusableCell:_tableView];
-               [(TitleDetailTableViewCell *)cell setCellData:[t getDic:3]];
+//               BUTimeList *t = _backInfo.timeList[indexPath.row -1];
+//               cell = [TitleDetailTableViewCell dequeueReusableCell:_tableView];
+//               [(TitleDetailTableViewCell *)cell setCellData:[t getDic:3]];
                [(TitleDetailTableViewCell *)cell  fitAuditProgressModeB];
             
           }

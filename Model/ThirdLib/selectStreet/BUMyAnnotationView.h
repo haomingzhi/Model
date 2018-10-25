@@ -10,5 +10,5 @@
 #import "BUSystem.h"
 
 @interface BUMyAnnotationView : MAAnnotationView
-@property (nonatomic,strong) BUGetStationInfo *station;
+//@property (nonatomic,strong) BUGetStationInfo *station;
 @end

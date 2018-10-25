@@ -8,7 +8,7 @@
 
 #import "WaitPayOrderInfoViewController.h"
 #import "PayOrderViewController.h"
-#import "GoodsInfoViewController.h"
+//#import "GoodsInfoViewController.h"
 #import "CancelOrderViewController.h"
 
 @interface WaitPayOrderInfoViewController ()
@@ -36,8 +36,8 @@
 {
      if (noti.error.code == 0) {
           HUDDISMISS;
-          self.orderDetail = busiSystem.getOrderListManager.orderDetail;
-           if (self.orderDetail.state == 2) {
+//          self.orderDetail = busiSystem.getOrderListManager.orderDetail;
+           if ( 2) {
                       [self.stateCell setCellData:@{@"title":@"等待发货",@"detail":@"",@"img":@"waitSend"}];
                 [self.stateCell fitOrderInfoModeA];
            }else
@@ -181,20 +181,20 @@
      //        [self.view addSubview:_submitCell];
      //
              [self.submitCell setHandleAction:^(id o) {
-                  BUSubmitOrder *od = [BUSubmitOrder new];
-                  od.orderId = weakSelf.orderDetail.orderID;
-                  od.payMoney = [weakSelf.orderDetail.othInfo.payMoney floatValue];
-                  PayOrderViewController *vc = [PayOrderViewController new];
-                  vc.order = od;
-                  vc.mode = 1;
-                  vc.sec = weakSelf.second;
-                  vc.min = weakSelf.minute;
-                  vc.orderType = @"1";
-                  vc.typeId = od.orderId;
-                  [vc setHandleGoBack:^(id userData) {
-                        busiSystem.agent.isNeedRefreshTabD = YES;
-                  }];
-                  [weakSelf.navigationController pushViewController:vc animated:YES];
+//                  BUSubmitOrder *od = [BUSubmitOrder new];
+//                  od.orderId = weakSelf.orderDetail.orderID;
+//                  od.payMoney = [weakSelf.orderDetail.othInfo.payMoney floatValue];
+//                  PayOrderViewController *vc = [PayOrderViewController new];
+//                  vc.order = od;
+//                  vc.mode = 1;
+//                  vc.sec = weakSelf.second;
+//                  vc.min = weakSelf.minute;
+//                  vc.orderType = @"1";
+//                  vc.typeId = od.orderId;
+//                  [vc setHandleGoBack:^(id userData) {
+//                        busiSystem.agent.isNeedRefreshTabD = YES;
+//                  }];
+//                  [weakSelf.navigationController pushViewController:vc animated:YES];
              }];
      [self.submitCell setExtrHandleAction:^(id o){
            [[CommonAPI managerWithVC:weakSelf] showAlertView:@"取消订单" withMsg:@"是否确认取消订单?" withBtnTitle:@"确认"   withSel:@selector(toCancelProcessResult:) withUserInfo:@{}];
@@ -213,11 +213,11 @@
 -(void)toCancelProcessResult:(NSDictionary *)dic{
          __weak WaitPayOrderInfoViewController *weakSelf = self;
      if ([dic[@"code"] integerValue] == 0) {
-          BUGetOrder *od = [BUGetOrder new];
-          od.orderID = self.orderDetail.orderID;
+//          BUGetOrder *od = [BUGetOrder new];
+//          od.orderID = self.orderDetail.orderID;
           [self.stateCell setCellData:@{@"title":@"交易关闭",@"detail":@"",@"img":@"icon_order_cancel"}];
           [self.submitCell setCellData:@{@"title":@"删除订单",@"detail":@""}];
-          [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelOrderData" object:nil userInfo:@{@"order":od?:@""}];
+//          [[NSNotificationCenter defaultCenter] postNotificationName:@"cancelOrderData" object:nil userInfo:@{@"order":od?:@""}];
           [self.navigationController popViewControllerAnimated:YES];
             busiSystem.agent.isNeedRefreshTabD = YES;
           [self.submitCell setHandleAction:^(id o){
@@ -230,10 +230,10 @@
 }
 -(void)toDeleteOrder:(NSDictionary *)dic{
      if ([dic[@"code"] integerValue] == 0) {
-          BUGetOrder *od = [BUGetOrder new];
-          od.orderID = self.orderDetail.orderID;
-          [[NSNotificationCenter defaultCenter] postNotificationName:@"delOrderData" object:nil userInfo:@{@"order":od}];
-          [self.navigationController popViewControllerAnimated:YES];
+//          BUGetOrder *od = [BUGetOrder new];
+//          od.orderID = self.orderDetail.orderID;
+//          [[NSNotificationCenter defaultCenter] postNotificationName:@"delOrderData" object:nil userInfo:@{@"order":od}];
+//          [self.navigationController popViewControllerAnimated:YES];
           busiSystem.agent.isNeedRefreshTabD = YES;
           //          [self operOrder:@"2" orderId:self.order.orderID];
      }

@@ -29,7 +29,7 @@
 
 -(void)getData
 {
-     [busiSystem.getRecyclingOrderListManager getList:busiSystem.agent.userId observer:self callback:@selector(getListNotification:)];
+//     [busiSystem.getRecyclingOrderListManager getList:busiSystem.agent.userId observer:self callback:@selector(getListNotification:)];
 
 }
 
@@ -37,8 +37,8 @@
 {
      if (noti.error.code == 0) {
           HUDDISMISS;
-          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.getRecyclingOrderListManager.dataArr];
-          _tableView.hasMore = busiSystem.getRecyclingOrderListManager.pageInfo.hasMore;
+//          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.getRecyclingOrderListManager.dataArr];
+//          _tableView.hasMore = busiSystem.getRecyclingOrderListManager.pageInfo.hasMore;
             [_tableView reloadData];
           [[JYNoDataManager manager] addNodataView:_tableView withTip:@"暂无信息" withImg:@"nodata" withCount:_tableView.dataArr.count withTag:@"serShop"];
           [[JYNoDataManager manager] fitModeY:150];
@@ -143,20 +143,20 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
      UITableViewCell *cell;
-   BUGetRecyclingOrder *od = _tableView.dataArr[indexPath.section];
+//   BUGetRecyclingOrder *od = _tableView.dataArr[indexPath.section];
      if (indexPath.section == 0)
      {
           if (indexPath.row == 0)
           {
                cell = [ThreeBtnTableViewCell dequeueReusableCell:_tableView];
-               [(ThreeBtnTableViewCell*)cell setCellData:[od getDic:indexPath.row + 1]];
+//               [(ThreeBtnTableViewCell*)cell setCellData:[od getDic:indexPath.row + 1]];
                [(ThreeBtnTableViewCell*)cell fitRecycleRecMode];
                [(JYAbstractTableViewCell *)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(45, 0, 0, 0)];
           }
           else
           {
                cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:_tableView];
-               [(ImgAndThreeTitleTableViewCell*)cell setCellData:[od getDic:indexPath.row + 1]];
+//               [(ImgAndThreeTitleTableViewCell*)cell setCellData:[od getDic:indexPath.row + 1]];
                [(ImgAndThreeTitleTableViewCell*)cell fitRecycleRecMode];
           }
      }
@@ -164,13 +164,13 @@
      {
           if (indexPath.row == 0)
           { cell = [OnlyTitleTableViewCell dequeueReusableCell:_tableView];
-               [(OnlyTitleTableViewCell*)cell setCellData:[od getDic:indexPath.row]];
+//               [(OnlyTitleTableViewCell*)cell setCellData:[od getDic:indexPath.row]];
                [(OnlyTitleTableViewCell*)cell fitRecycleRecMode];
 
           }
           else if (indexPath.row == 1)
           {cell = [ThreeBtnTableViewCell dequeueReusableCell:_tableView];
-               [(ThreeBtnTableViewCell*)cell setCellData:[od getDic:indexPath.row]];
+//               [(ThreeBtnTableViewCell*)cell setCellData:[od getDic:indexPath.row]];
                [(ThreeBtnTableViewCell*)cell fitRecycleRecMode];
                [(JYAbstractTableViewCell *)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(45, 0, 0, 0)];
 
@@ -178,7 +178,7 @@
           else
           {
                cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:_tableView];
-               [(ImgAndThreeTitleTableViewCell*)cell setCellData:[od getDic:indexPath.row]];
+//               [(ImgAndThreeTitleTableViewCell*)cell setCellData:[od getDic:indexPath.row]];
                [(ImgAndThreeTitleTableViewCell*)cell fitRecycleRecMode];
           }
      }

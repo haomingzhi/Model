@@ -77,12 +77,12 @@
      
      _infoCell = [ImgAndThreeTitleTableViewCell createTableViewCell];
      if (_mode == 1) {
-          [_infoCell setCellData:@{@"img":@"icon_submit_success",@"title":@"订单提交成功",@"time":[NSString stringWithFormat:@"¥%.2f",_order.payMoney],@"m":@(_min),@"s":@(_sec)}];
+//          [_infoCell setCellData:@{@"img":@"icon_submit_success",@"title":@"订单提交成功",@"time":[NSString stringWithFormat:@"¥%.2f",_order.payMoney],@"m":@(_min),@"s":@(_sec)}];
           [_infoCell fitPayOrderMode];
      }
      else
      {
-          [_infoCell setCellData:@{@"img":@"icon_submit_success",@"title":@"订单提交成功",@"time":[NSString stringWithFormat:@"¥%.2f",_order.payMoney]}];
+//          [_infoCell setCellData:@{@"img":@"icon_submit_success",@"title":@"订单提交成功",@"time":[NSString stringWithFormat:@"¥%.2f",_order.payMoney]}];
           [_infoCell fitPayOrderModeB];
      }
      
@@ -174,7 +174,7 @@
 -(void)orderPay:(NSString *)type{
      
      HUDSHOW(@"加载中");
-     [busiSystem.payManager orderPay:type withOrderid:_order.orderId sourceType:@"1" orderType:_orderType?:@"" typeId:_typeId?:@""  observer:self callback:@selector(orderPayNotification:) extraInfo:@{@"type":type?:@""}];
+//     [busiSystem.payManager orderPay:type withOrderid:_order.orderId sourceType:@"1" orderType:_orderType?:@"" typeId:_typeId?:@""  observer:self callback:@selector(orderPayNotification:) extraInfo:@{@"type":type?:@""}];
 }
 
 
@@ -193,7 +193,7 @@
 //                    BUGetOrder *getOrder = busiSystem.payManager.order;
                     PaySuccessViewController *vc = [PaySuccessViewController new];
                     vc.payType = type;
-                    vc.price = _order.payMoney;
+//                    vc.price = _order.payMoney;
                     vc.orderType = _orderType;
                     [self.navigationController pushViewController:vc animated:YES];
                     if (self.handleGoBack) {
@@ -212,7 +212,7 @@
 
 -(void)upOrder{
      HUDSHOW(@"加载中");
-     [busiSystem.payManager upOrder:_order.orderId observer:self callback:@selector(upOrderNotification:)];
+//     [busiSystem.payManager upOrder:_order.orderId observer:self callback:@selector(upOrderNotification:)];
 }
 
 

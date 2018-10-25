@@ -12,7 +12,12 @@
 #elif TARGET_OS_IPHONE
 #import "JPUSHService.h"
 #endif
-@interface BUPushManager : BUBase<JPUSHRegisterDelegate>
+@interface BUPushManager : BUBase
+#if TARGET_IPHONE_SIMULATOR
+
+#elif TARGET_OS_IPHONE
+<JPUSHRegisterDelegate>
+#endif
 @property(nonatomic)NSInteger pushToWhich;//启动后由主页跳去哪
 @property(nonatomic,strong)NSDictionary *pushInfo;
 -(void)pushToWhich:(NSDictionary *)Data;

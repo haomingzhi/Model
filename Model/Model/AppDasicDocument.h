@@ -7,13 +7,13 @@
 //
 
 #import <UniversalFramework/UniversalFramework.h>
-#import "BUInstruction.h"
+//#import "BUInstruction.h"
 //#import "BUNoticeList.h"
 @interface AppDasicDocument : BUBase
 @property(nonatomic,strong)NSArray *instructionList;
 @property(strong,nonatomic) NSString *Content;//版本说明
 @property(strong,nonatomic) NSString *Banben;//版本
-@property(nonatomic,strong) BUInstruction *notice;
+//@property(nonatomic,strong) BUInstruction *notice;
 
 //使用说明详情
 -(BOOL)instruction:(NSString*)InsId  Uid:(NSString*)Uid  observer:(id)observer callback:(SEL)callback;

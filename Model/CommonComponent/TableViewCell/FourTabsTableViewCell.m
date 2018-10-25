@@ -207,7 +207,7 @@
           row = 1;
      }
      else if (_tableViewB == tableView){//商品参数
-          row = _goodsInfo.productParamterList.count;
+//          row = _goodsInfo.productParamterList.count;
      }
      else if (_tableViewC == tableView){//租赁规则
           row = 1;
@@ -250,8 +250,8 @@
      TitleDetailTableViewCell *cell ;
      
      cell = [TitleDetailTableViewCell createTableViewCell];
-     BUProductParamter *p = _goodsInfo.productParamterList[indexPath.row];
-     NSDictionary *dic = [p getDic];
+//     BUProductParamter *p = _goodsInfo.productParamterList[indexPath.row];
+     NSDictionary *dic;// = [p getDic];
      [cell setCellData:dic];
      if (indexPath.row == 0) {
           [cell fitGoodsInfoMode:20];
@@ -272,10 +272,10 @@
           cell = _noEvaCell;
      }
      else{
-          BUGetComment *comment = _tableViewD.extroDataArr[indexPath.section];
+//          BUGetComment *comment = _tableViewD.extroDataArr[indexPath.section];
           if (indexPath.row == 0) {
                cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:_tableViewD];
-               NSDictionary *dic = [comment getDic:0];;
+               NSDictionary *dic;// = [comment getDic:0];;
                [(ImgAndThreeTitleTableViewCell *)cell setCellData:dic];
                [(ImgAndThreeTitleTableViewCell *)cell fitEvaMode];
                //          if (comment.imageList.count == 0) {
@@ -291,7 +291,7 @@
                //               cell.hidden = YES;
                //               [(JYAbstractTableViewCell *)cell hiddenSeparatorView];
                //          }else{
-               NSDictionary *dic = [comment getDic:1];
+               NSDictionary *dic;// = [comment getDic:1];
                [(ImgsTableViewCell *)cell setCellData:dic];
                [(ImgsTableViewCell *)cell fitTopicMode];
                [(JYAbstractTableViewCell *)cell showSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(cell.height, 0, 0, 0)];
@@ -300,7 +300,7 @@
                [(ImgsTableViewCell *)cell setHandleAction:^(NSDictionary *dic) {
                     NSInteger row = [dic[@"row"] integerValue];
                     NSMutableArray *imgArr = [NSMutableArray new];
-                    NSArray *arr = comment.picList;
+                    NSArray *arr;// = comment.picList;
                     if (arr.count !=0) {
                          for (int i =0;i<arr.count;i++) {
                               UIImageView *myImageView = [[UIImageView alloc]init];
@@ -332,15 +332,15 @@
           else if (_tableViewB == tableView){
                TitleDetailTableViewCell *cell;
                cell = [TitleDetailTableViewCell createTableViewCell];
-               BUProductParamter *p = _goodsInfo.productParamterList[indexPath.row];
-               NSDictionary *dic = [p getDic];
+//               BUProductParamter *p = _goodsInfo.productParamterList[indexPath.row];
+               NSDictionary *dic;// = [p getDic];
                [cell setCellData:dic];
                if (indexPath.row == 0) {
                     [cell fitGoodsInfoMode:20];
                }else{
                     [cell fitGoodsInfoMode:13];
                }
-               if (indexPath.row == _goodsInfo.productParamterList.count-1) {
+               if (indexPath.row) {
                     height = cell.height+20;
                }else{
                     height = cell.height;
@@ -355,17 +355,17 @@
                     height = 250;
                }else{
                     UITableViewCell *cell;
-                    BUGetComment *comment = _tableViewD.extroDataArr[indexPath.section];
+//                    BUGetComment *comment = _tableViewD.extroDataArr[indexPath.section];
                     if (indexPath.row == 0) {
                          cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:_tableViewD];
-                         NSDictionary *dic = [comment getDic:0];
+                         NSDictionary *dic;// = [comment getDic:0];
                          [(ImgAndThreeTitleTableViewCell *)cell setCellData:dic];
                          [(ImgAndThreeTitleTableViewCell *)cell fitEvaMode];
                          height = cell.height;
                     }else{
                          cell = [ImgsTableViewCell dequeueReusableCell:_tableViewD];
                          
-                         NSDictionary *dic = [comment getDic:1];
+                         NSDictionary *dic;// = [comment getDic:1];
                          [(ImgsTableViewCell *)cell setCellData:dic];
                          [(ImgsTableViewCell *)cell fitTopicMode];
                          height = cell.height;
@@ -391,8 +391,8 @@
 
 -(void)setCellData:(NSDictionary *)dataDic
 {
-     _goodsInfo = dataDic[@"goods"];
-     [_intruduceCell setCellData:[_goodsInfo getDic:3]];
+//     _goodsInfo = dataDic[@"goods"];
+//     [_intruduceCell setCellData:[_goodsInfo getDic:3]];
      [_intruduceCell fitHtmlMode];
      _intruduceCellHeight = _intruduceCell.height;
      [_tableViewA reloadData];
@@ -406,7 +406,7 @@
 //     _goodsInfo = dataDic[@"goods"];
      _tableViewD.extroDataArr = [NSMutableArray arrayWithArray:dataDic[@"eva"]];
      [_tableViewD reloadData];
-     _tableViewD.hasMore = busiSystem.getCommentListManager.pageInfo.hasMore;
+//     _tableViewD.hasMore = busiSystem.getCommentListManager.pageInfo.hasMore;
 //     [[JYNoDataManager manager] addNodataView:_tableViewD withTip:@"暂无评价" withImg:@"noEva" withCount:_tableViewD.extroDataArr.count withTag:@"eva"];
 //     [[JYNoDataManager manager] fitModeY:100];
 
@@ -512,7 +512,7 @@
 
 -(void) loadNextPage
 {
-     [busiSystem.getCommentListManager getCommentListNextPage:self callback:@selector(getCommentListNotification:)];
+//     [busiSystem.getCommentListManager getCommentListNextPage:self callback:@selector(getCommentListNotification:)];
 }
 
 
@@ -524,7 +524,7 @@
      
      if (noti.error.code == 0) {
           
-          _tableViewD.extroDataArr = [NSMutableArray arrayWithArray:busiSystem.getCommentListManager.getCommentList];
+//          _tableViewD.extroDataArr = [NSMutableArray arrayWithArray:busiSystem.getCommentListManager.getCommentList];
 
           [_tableViewD reloadData];
 

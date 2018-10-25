@@ -22,5 +22,5 @@
 @property (nonatomic,strong) OnlyTitleTableViewCell *auditNoteCell;
 @property (nonatomic,strong) OnlyTitleTableViewCell *auditNoteTipCell;
 @property (strong, nonatomic) IBOutlet MyTableView *tableView;
-@property (nonatomic,strong) BUSaleInfo *backInfo;
+//@property (nonatomic,strong) BUSaleInfo *backInfo;
 @end

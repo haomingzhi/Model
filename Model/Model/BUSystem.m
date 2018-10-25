@@ -56,30 +56,30 @@ BUSystem *busiSystem = nil;
     _globalParams = [[NSMutableDictionary alloc]init];
     _version = [[BUVersion alloc] init];
     _errorMonitors = @[@(-1),@(-2),@(-1001)];//-1网络错误
-    _headManager = [BUHeadManager new];
+//    _headManager = [BUHeadManager new];
       _pushManager = [BUPushManager new];
     _payManager = [BUPayManager new];
     _areaManager = [BUAreaManager new];
-     _indexManager = [BUIndexManager new];
+//     _indexManager = [BUIndexManager new];
      _orderManager = [BUOrderManager new];
-     _getOrderListManager = [BUGetOrderListManager new];
-//     _sysManager = [BUSysManager new];
-     
-     _getCourierListManager = [BUGetCourierListManager new];
-     _userManager = [BUUserManager new];
-     _shopManager = [BUShopManager new];
-     _getShopListManager = [BUGetShopListManager new];
-     _getGoodsListManager = [BUGetGoodsListManager new];
-     _getServiceListManager = [BUGetServiceListManager new];
-     _getActivityManager = [BUGetActivityManager new];
-     _getRecyclingOrderListManager = [BUGetRecyclingOrderListManager new];
-     _getCommentListManager = [BUGetCommentListManager new];
+//     _getOrderListManager = [BUGetOrderListManager new];
+////     _sysManager = [BUSysManager new];
+//
+//     _getCourierListManager = [BUGetCourierListManager new];
+//     _userManager = [BUUserManager new];
+//     _shopManager = [BUShopManager new];
+//     _getShopListManager = [BUGetShopListManager new];
+//     _getGoodsListManager = [BUGetGoodsListManager new];
+//     _getServiceListManager = [BUGetServiceListManager new];
+//     _getActivityManager = [BUGetActivityManager new];
+//     _getRecyclingOrderListManager = [BUGetRecyclingOrderListManager new];
+//     _getCommentListManager = [BUGetCommentListManager new];
 
-          _getCollectListManager = [BUGetCollectListManager new];
-     _dustbinManager = [BUDustbinManager new];
-     _getAfterSaleListManager = [BUGetAfterSaleListManager new];
-     _getCourierOrderListManager = [BUGetCourierOrderListManager new];
-     _myPathManager = [BUMyPathManager new];
+//          _getCollectListManager = [BUGetCollectListManager new];
+//     _dustbinManager = [BUDustbinManager new];
+//     _getAfterSaleListManager = [BUGetAfterSaleListManager new];
+//     _getCourierOrderListManager = [BUGetCourierOrderListManager new];
+//     _myPathManager = [BUMyPathManager new];
 }
 
 

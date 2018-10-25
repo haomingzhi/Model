@@ -11,8 +11,8 @@
 #import "ImgAndThreeTitleTableViewCell.h"
 #import "OnlyTitleTableViewCell.h"
 #import "OnlyBottomBtnTableViewCell.h"
-#import "GoodsInfoViewController.h"
-#import "ServerInfoViewController.h"
+//#import "GoodsInfoViewController.h"
+//#import "ServerInfoViewController.h"
 //#import "ReplacementViewController.h"
 #import "BUSystem.h"
 
@@ -41,7 +41,7 @@
 @property(nonatomic,strong) TitleDetailTableViewCell *payMoneyCell;//实付金额
 @property(nonatomic,strong) TitleDetailTableViewCell *payTimeCell;//付款金额
 @property(strong,nonatomic)OnlyBottomBtnTableViewCell *submitCell;
-@property (nonatomic,strong) BUGetOrder *order;
+//@property (nonatomic,strong) BUGetOrder *order;
 @property (nonatomic,strong) BUOrderDetail *orderDetail;
 -(void)toGoodsInfoVC:(NSString *)pid;
 @end

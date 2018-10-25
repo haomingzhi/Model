@@ -25,19 +25,19 @@
 #import "ImgTableViewCell.h"
 #import "ScrollerTableViewCell.h"
 #import "SignViewController.h"
-#import "OddsRecViewController.h"
+//#import "OddsRecViewController.h"
 #import "SearchViewController.h"
 #import "MsgViewController.h"
 #import "SysMsgInfoViewController.h"
-#import "GoodsInfoViewController.h"
+//#import "GoodsInfoViewController.h"
 #import "PublishAnswerViewController.h"
 #import "AnswerInfoViewController.h"
 #import "ScrollerTableViewCell.h"
 #import "JECalourseTableViewCell.h"
-#import "OptimizationRecViewController.h"
+//#import "OptimizationRecViewController.h"
 #import "SignViewController.h"
 #import "ShowCodeViewController.h"
-#import "ClassifyListViewController.h"
+//#import "ClassifyListViewController.h"
 #import "SysMsgViewController.h"
 
 @interface HeadViewController ()<CLLocationManagerDelegate,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,UIScrollViewDelegate,UITextFieldDelegate>
@@ -401,7 +401,7 @@
 -(void)getIndex
 {
      _requestCount ++;
-     [busiSystem.headManager getIndex:self callback:@selector(getIndexNotification:)];
+//     [busiSystem.headManager getIndex:self callback:@selector(getIndexNotification:)];
 }
 
 
@@ -410,7 +410,7 @@
      _requestCount--;
      if (noti.error.code == 0) {
           
-          busiSystem.agent.isDaySigin = busiSystem.headManager.bannerAndQuickMenu.isDaySigin;
+//          busiSystem.agent.isDaySigin = busiSystem.headManager.bannerAndQuickMenu.isDaySigin;
           
           if (_requestCount == 0) {
                HUDDISMISS;
@@ -425,10 +425,10 @@
                busiSystem.agent.isNeedRefreshTabA = NO;
           }
           
-          [_flashCell setCellData:[busiSystem.headManager.bannerAndQuickMenu getDic:0]];
+//          [_flashCell setCellData:[busiSystem.headManager.bannerAndQuickMenu getDic:0]];
           [_flashCell fitHeadMode];
           
-          [_typeCell setCellData:[busiSystem.headManager.bannerAndQuickMenu getDic:1]];
+//          [_typeCell setCellData:[busiSystem.headManager.bannerAndQuickMenu getDic:1]];
           [_typeCell fitShopMode];
           [_tableView reloadData];
           
@@ -445,7 +445,7 @@
 -(void)getIndexActivity
 {
      _requestCount ++;
-     [busiSystem.headManager getIndexActivity:self callback:@selector(getIndexActivityNotification:)];
+//     [busiSystem.headManager getIndexActivity:self callback:@selector(getIndexActivityNotification:)];
 }
 
 
@@ -466,16 +466,16 @@
                busiSystem.agent.isNeedRefreshTabA = NO;
           }
           NSMutableArray *arr = [NSMutableArray new];
-          [busiSystem.headManager.indexActivityList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-               if (idx >= 4) {
-                    *stop = YES;
-                     
-               }
-               BUIndexActivity *a = obj;
-               NSMutableDictionary *dic = [[NSMutableDictionary alloc]initWithDictionary:[a getDic]];
-               [dic setObject:@(idx) forKey:@"index"];
-               [arr addObject:dic];
-          }];
+//          [busiSystem.headManager.indexActivityList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//               if (idx >= 4) {
+//                    *stop = YES;
+//
+//               }
+//               BUIndexActivity *a = obj;
+//               NSMutableDictionary *dic = [[NSMutableDictionary alloc]initWithDictionary:[a getDic]];
+//               [dic setObject:@(idx) forKey:@"index"];
+//               [arr addObject:dic];
+//          }];
           [_fastFunctionCell setCellData:@{@"arr":arr}];
           [_fastFunctionCell fitHeadModeB];
           [_tableView reloadData];
@@ -491,7 +491,7 @@
 -(void)getIndexOptimi
 {
      _requestCount ++;
-     [busiSystem.headManager  getIndexOptimi:self callback:@selector(getIndexOptimiNotification:)];
+//     [busiSystem.headManager  getIndexOptimi:self callback:@selector(getIndexOptimiNotification:)];
 }
 
 
@@ -511,7 +511,7 @@
                }
                busiSystem.agent.isNeedRefreshTabA = NO;
           }
-          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.headManager.optimizationList];
+//          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.headManager.optimizationList];
           [_tableView reloadData];
      }
      else
@@ -651,8 +651,8 @@
     [_flashCell fitHeadMode];
     _flashCell.selecedtItem = ^(NSDictionary *dic){
         NSInteger row = [dic[@"row"] integerValue];
-       BUQuickMenu *b =  busiSystem.headManager.bannerAndQuickMenu.slideshow[row];
-        [weakSelf tofitflashVC:b];
+//       BUQuickMenu *b =  busiSystem.headManager.bannerAndQuickMenu.slideshow[row];
+//        [weakSelf tofitflashVC:b];
     };
 
      _typeCell =  [ScrollerTableViewCell createTableViewCell];
@@ -667,8 +667,8 @@
      [_typeCell fitShopMode];
      [_typeCell setHandleAction:^(UIButton *btn) {
           NSInteger index = btn.tag - 200;
-          BUQuickMenu *q = busiSystem.headManager.bannerAndQuickMenu.nvaig[index];
-          [weakSelf tofitflashVC:q];
+//          BUQuickMenu *q = busiSystem.headManager.bannerAndQuickMenu.nvaig[index];
+//          [weakSelf tofitflashVC:q];
           
      }];
      
@@ -679,8 +679,8 @@
           NSIndexPath *path = dic[@"row"];
           NSInteger index = path.row;
           //（0 无 1 链接地址 2 指定分类 3 指定优选 4 指定商品）
-          BUIndexActivity *q = busiSystem.headManager.indexActivityList[index];
-          [weakSelf tofitActVC:q];
+//          BUIndexActivity *q = busiSystem.headManager.indexActivityList[index];
+//          [weakSelf tofitActVC:q];
      }];
 
 
@@ -846,8 +846,8 @@
   
     else
     {
-         BUOptimization *op = _tableView.dataArr[section-2];
-         row = 2 + (op.proList.count>0?1:0);
+//         BUOptimization *op = _tableView.dataArr[section-2];
+//         row = 2 + (op.proList.count>0?1:0);
     }
     
     return row;
@@ -880,10 +880,10 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
      
-     if(section == 1 && busiSystem.headManager.indexActivityList.count == 0)
-     {
-          return 0.001;
-     }
+//     if(section == 1 && busiSystem.headManager.indexActivityList.count == 0)
+//     {
+//          return 0.001;
+//     }
     return 10;
 }
 
@@ -1064,30 +1064,30 @@
 -(UITableViewCell *)createOtherSection:(NSIndexPath*)indexPath
 {
      UITableViewCell *cell;
-     BUOptimization *op = _tableView.dataArr[indexPath.section - 2];
+//     BUOptimization *op = _tableView.dataArr[indexPath.section - 2];
      if (indexPath.row == 0) {
           cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:_tableView];
-          [(ImgAndThreeTitleTableViewCell*)cell setCellData:[op getDic:0]];
+//          [(ImgAndThreeTitleTableViewCell*)cell setCellData:[op getDic:0]];
           [(ImgAndThreeTitleTableViewCell*)cell fitHeadMode];
           
      }
      else if (indexPath.row == 1){
           cell = [ImgTableViewCell dequeueReusableCell:_tableView];
-          [(ImgTableViewCell*)cell setCellData:[op getDic:1]];
+//          [(ImgTableViewCell*)cell setCellData:[op getDic:1]];
           [(ImgTableViewCell*)cell fitHeadMode];
      }
      else  {
           cell =  [SecKillTableViewCell dequeueReusableCell:_tableView];
           NSInteger index = (indexPath.row-2)*2;
-          BUHeadGoods *g = op.proList[index];
-//          g.row = index;
-          BUHeadGoods *gg;
+//          BUHeadGoods *g = op.proList[index];
+////          g.row = index;
+//          BUHeadGoods *gg;
           NSMutableDictionary *dic = [NSMutableDictionary new];
-          [dic addEntriesFromDictionary:[g getDicA]];
-          if (index + 1 < op.proList.count) {
-               gg = op.proList[index + 1];
-               [dic addEntriesFromDictionary:[gg getDicB]];
-          }
+//          [dic addEntriesFromDictionary:[g getDicA]];
+//          if (index + 1 < op.proList.count) {
+//               gg = op.proList[index + 1];
+//               [dic addEntriesFromDictionary:[gg getDicB]];
+//          }
 //          NSDictionary *dic =  @{@"aHot":@(YES),@"aTitle":@"iPhone X 全新国行",@"aDetail":@"¥439/月起",@"aimg":@"secKillA",@"bTitle":@"iPhone 8 全新国行",@"bDetail":@"¥439/月起",@"bimg":@"secKillA",@"bHot":@(NO),@"default":@"default"};;
           [(SecKillTableViewCell *)cell setCellData:dic];
           [(SecKillTableViewCell *)cell fitHeadMode];
@@ -1102,12 +1102,12 @@
           [(SecKillTableViewCell *)cell setHandleAction:^(NSDictionary *dic){
                NSInteger row = [dic[@"row"] integerValue];
                NSInteger index = [dic[@"index"] integerValue];
-               BUHeadGoods *g = op.proList[index + row];
+//               BUHeadGoods *g = op.proList[index + row];
 //               UIButton *btn = dic[@"obj"];
-               GoodsInfoViewController *vc = [GoodsInfoViewController new];
-               vc.hidesBottomBarWhenPushed = YES;
-               vc.ID = g.productId;
-               [self.navigationController pushViewController:vc animated:YES];
+//               GoodsInfoViewController *vc = [GoodsInfoViewController new];
+//               vc.hidesBottomBarWhenPushed = YES;
+//               vc.ID = g.productId;
+//               [self.navigationController pushViewController:vc animated:YES];
           }];
          
      }
@@ -1122,12 +1122,12 @@
 {
    if (indexPath.section >= 2) {
           if (indexPath.row <= 1) {
-               OptimizationRecViewController *vc = [OptimizationRecViewController new];
-               vc.hidesBottomBarWhenPushed = YES;
-               BUOptimization *op  = _tableView.dataArr[indexPath.section-2];
-               vc.optimization = op;
-               vc.ID = op.optimizationId;
-               [self.navigationController pushViewController:vc animated:YES];
+//               OptimizationRecViewController *vc = [OptimizationRecViewController new];
+//               vc.hidesBottomBarWhenPushed = YES;
+//               BUOptimization *op  = _tableView.dataArr[indexPath.section-2];
+//               vc.optimization = op;
+//               vc.ID = op.optimizationId;
+//               [self.navigationController pushViewController:vc animated:YES];
           }
      
      }
@@ -1218,64 +1218,64 @@
     [self.tabBarController.view addSubview:_bgImgV];
 }
 
--(void)tofitflashVC:(BUQuickMenu *)q
-{
-     //（0 无 1 链接地址 2 指定分类 3 指定优选 4 指定商品）
-     if (q.type == 1) {
-          CommonWebViewViewController *vc = [CommonWebViewViewController setWebViewController:q.name?:@"" withUrl:q.url];
-          vc.hidesBottomBarWhenPushed = YES;
-          [self.navigationController pushViewController:vc animated:YES];
-     }
-     else if (q.type == 2){
-          ClassifyListViewController *vc = [ClassifyListViewController new];
-          vc.hidesBottomBarWhenPushed = YES;
-          vc.typetId = q.parmaId;
-          vc.parentId = @"";
-          vc.title = q.name;
-          [self.navigationController pushViewController:vc animated:YES];
-     }
-     else if (q.type == 3){
-          OptimizationRecViewController *vc = [OptimizationRecViewController new];
-          vc.hidesBottomBarWhenPushed = YES;
-          vc.ID = q.parmaId;
-          [self.navigationController pushViewController:vc animated:YES];
-     }
-     else if (q.type == 4){
-          GoodsInfoViewController *vc = [GoodsInfoViewController new];
-          vc.hidesBottomBarWhenPushed = YES;
-          vc.ID = q.parmaId;
-          [self.navigationController pushViewController:vc animated:YES];
-     }
-}
+//-(void)tofitflashVC:(BUQuickMenu *)q
+//{
+//     //（0 无 1 链接地址 2 指定分类 3 指定优选 4 指定商品）
+//     if (q.type == 1) {
+//          CommonWebViewViewController *vc = [CommonWebViewViewController setWebViewController:q.name?:@"" withUrl:q.url];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          [self.navigationController pushViewController:vc animated:YES];
+//     }
+//     else if (q.type == 2){
+//          ClassifyListViewController *vc = [ClassifyListViewController new];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          vc.typetId = q.parmaId;
+//          vc.parentId = @"";
+//          vc.title = q.name;
+//          [self.navigationController pushViewController:vc animated:YES];
+//     }
+//     else if (q.type == 3){
+//          OptimizationRecViewController *vc = [OptimizationRecViewController new];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          vc.ID = q.parmaId;
+//          [self.navigationController pushViewController:vc animated:YES];
+//     }
+//     else if (q.type == 4){
+//          GoodsInfoViewController *vc = [GoodsInfoViewController new];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          vc.ID = q.parmaId;
+//          [self.navigationController pushViewController:vc animated:YES];
+//     }
+//}
 
 
--(void)tofitActVC:(BUIndexActivity *)q{
-     if (q.type == 1) {
-          CommonWebViewViewController *vc = [CommonWebViewViewController setWebViewController:q.title?:@"" withUrl:q.url];
-          vc.hidesBottomBarWhenPushed = YES;
-          [self.navigationController pushViewController:vc animated:YES];
-     }
-     else if (q.type == 2){
-          ClassifyListViewController *vc = [ClassifyListViewController new];
-          vc.hidesBottomBarWhenPushed = YES;
-          vc.typetId = q.parmaId;
-          vc.parentId = @"";
-          vc.title = q.title;
-          [self.navigationController pushViewController:vc animated:YES];
-     }
-     else if (q.type == 3){
-          OptimizationRecViewController *vc = [OptimizationRecViewController new];
-          vc.hidesBottomBarWhenPushed = YES;
-          vc.ID = q.parmaId;
-          [self.navigationController pushViewController:vc animated:YES];
-     }
-     else if (q.type == 4){
-          GoodsInfoViewController *vc = [GoodsInfoViewController new];
-          vc.hidesBottomBarWhenPushed = YES;
-          vc.ID = q.parmaId;
-          [self.navigationController pushViewController:vc animated:YES];
-     }
-}
+//-(void)tofitActVC:(BUIndexActivity *)q{
+//     if (q.type == 1) {
+//          CommonWebViewViewController *vc = [CommonWebViewViewController setWebViewController:q.title?:@"" withUrl:q.url];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          [self.navigationController pushViewController:vc animated:YES];
+//     }
+//     else if (q.type == 2){
+//          ClassifyListViewController *vc = [ClassifyListViewController new];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          vc.typetId = q.parmaId;
+//          vc.parentId = @"";
+//          vc.title = q.title;
+//          [self.navigationController pushViewController:vc animated:YES];
+//     }
+//     else if (q.type == 3){
+//          OptimizationRecViewController *vc = [OptimizationRecViewController new];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          vc.ID = q.parmaId;
+//          [self.navigationController pushViewController:vc animated:YES];
+//     }
+//     else if (q.type == 4){
+//          GoodsInfoViewController *vc = [GoodsInfoViewController new];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          vc.ID = q.parmaId;
+//          [self.navigationController pushViewController:vc animated:YES];
+//     }
+//}
 
 -(void)addShoppingCart:(NSString *)productId{
      if (!busiSystem.agent.isLogin) {

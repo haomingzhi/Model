@@ -8,11 +8,11 @@
 
 #import "MyOrderViewController.h"
 #import "BUSystem.h"
-#import "SendBackGoodsViewController.h"
-#import "TimeBackOrderInfoViewController.h"
+//#import "SendBackGoodsViewController.h"
+//#import "TimeBackOrderInfoViewController.h"
 #import "OrderInfoViewController.h"
 //#import "MyOrderHelper.h"
-#import "RentingOrderInfoViewController.h"
+//#import "RentingOrderInfoViewController.h"
 #import "OnlyBottomBtnTableViewCell.h"
 #import "TitleDetailTableViewCell.h"
 #import "ImgAndThreeTitleTableViewCell.h"
@@ -21,13 +21,13 @@
 #import "DoneOrderInfoViewController.h"
 #import "CancelOrderInfoViewController.h"
 #import "OrderTrackingViewController.h"
-#import "GoodsInfoViewController.h"
+
 #import "WatiRecOrderInfoViewController.h"
 #import "PayOrderViewController.h"
-#import "PublishEvaViewController.h"
-#import "ApplySalesReturnViewController.h"
-#import "ShopInfoViewController.h"
-#import "SecondCallViewController.h"
+//#import "PublishEvaViewController.h"
+//#import "ApplySalesReturnViewController.h"
+//#import "ShopInfoViewController.h"
+//#import "SecondCallViewController.h"
 //#import "MyRunViewController.h"
 //#import "CartViewController.h"
 //#import "EvaluateInfoViewController.h"
@@ -112,26 +112,26 @@
 }
 -(void)delOrderData:(NSNotification*)noti
 {
-  BUGetOrder *od =  noti.userInfo[@"order"];
-     [self delOrder:od];
+//  BUGetOrder *od =  noti.userInfo[@"order"];
+//     [self delOrder:od];
 }
 
 -(void)cancelOrderData:(NSNotification*)noti
 {
-     BUGetOrder *od =  noti.userInfo[@"order"];
-     [self orderCancel:od];
+//     BUGetOrder *od =  noti.userInfo[@"order"];
+//     [self orderCancel:od];
 }
 
 -(void)confirmOrderData:(NSNotification*)noti
 {
-     BUGetOrder *od =  noti.userInfo[@"order"];
-     [self orderFinish:od];
+//     BUGetOrder *od =  noti.userInfo[@"order"];
+//     [self orderFinish:od];
 }
 
 -(void)getData
 {
 
-     [busiSystem.getOrderListManager getOrderList:busiSystem.agent.userId withOrderStatus:[NSString stringWithFormat:@"%ld",_currentOrderStatue] observer:self callback:@selector(getOrderListNotification:) extraInfo:@{@"type":@(_currentOrderStatue )}];
+//     [busiSystem.getOrderListManager getOrderList:busiSystem.agent.userId withOrderStatus:[NSString stringWithFormat:@"%ld",_currentOrderStatue] observer:self callback:@selector(getOrderListNotification:) extraInfo:@{@"type":@(_currentOrderStatue )}];
 }
 
 -(void)getOrderListNotification:(BSNotification*)noti
@@ -160,8 +160,8 @@
           {
                _curTableView = _tableViewE;
           }
-          _curTableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.getOrderListManager.dataArr];
-          _curTableView.hasMore = busiSystem.getOrderListManager.pageInfo.hasMore;
+//          _curTableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.getOrderListManager.dataArr];
+//          _curTableView.hasMore = busiSystem.getOrderListManager.pageInfo.hasMore;
           [_curTableView reloadData];
           [[JYNoDataManager manager] addNodataView:_curTableView withTip:@"暂无信息" withImg:@"nodata" withCount:_curTableView.dataArr.count withTag:[NSString stringWithFormat:@"serShop%ld",type]];
           [[JYNoDataManager manager] fitModeY:150];
@@ -281,24 +281,24 @@
 
 -(UITableViewCell *)createOneOrderCell:(NSIndexPath *)indexPath withTableView:(MyTableView *)tableView
 {
-     BUGetOrder *o = tableView.dataArr[indexPath.section];
+//     BUGetOrder *o = tableView.dataArr[indexPath.section];
 //     BUGoods *g = [BUGoods new];
 //     od.goodsList = g;
      UITableViewCell *cell;
      if (indexPath.row == 0) {
           cell = [TitleDetailTableViewCell dequeueReusableCell:tableView];
 //          BUGetOrder *o = tableView.dataArr[indexPath.section];
-          o.indexPath = indexPath;
-          NSDictionary *dic = [o getDicA];//@{@"title":@"订单编号：012345668",@"detail":@"交易关闭"};//[o getDicA];
+//          o.indexPath = indexPath;
+          NSDictionary *dic;// = [o getDicA];//@{@"title":@"订单编号：012345668",@"detail":@"交易关闭"};//[o getDicA];
           [(JYAbstractTableViewCell *)cell setCellData:dic];
           [(TitleDetailTableViewCell *)cell fitMyOrderMode];
           [(TitleDetailTableViewCell *)cell setHandleAction:^(NSDictionary *dic) {
-               NSIndexPath *path = dic[@"indexPath"];
-               BUGetOrder *od = tableView.dataArr[path.section];;
-               ShopInfoViewController *vc = [ShopInfoViewController new];
+//               NSIndexPath *path = dic[@"indexPath"];
+//               BUGetOrder *od = tableView.dataArr[path.section];;
+//               ShopInfoViewController *vc = [ShopInfoViewController new];
 
 //               vc.shopId = od.shopId;
-               [self.navigationController pushViewController:vc animated:YES];
+//               [self.navigationController pushViewController:vc animated:YES];
           }];
           [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(31, 0, 0, 0)];
           
@@ -306,8 +306,8 @@
      else if(indexPath.row == 1)
      {
           cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:tableView];
-          BUGetOrder *o = tableView.dataArr[indexPath.section];
-          NSDictionary *dic = [o getDicB:0];//@{@"title":@"iPhoneX",@"source":[NSString stringWithFormat:@"全网通/黑色/64G/12月"],@"time":[NSString stringWithFormat:@"租金：￥188.00"],@"default":@"default",@"num":@"预授押金：￥6499.00"};;//[o getDicB];
+//          BUGetOrder *o = tableView.dataArr[indexPath.section];
+          NSDictionary *dic ;//= [o getDicB:0];//@{@"title":@"iPhoneX",@"source":[NSString stringWithFormat:@"全网通/黑色/64G/12月"],@"time":[NSString stringWithFormat:@"租金：￥188.00"],@"default":@"default",@"num":@"预授押金：￥6499.00"};;//[o getDicB];
           [(JYAbstractTableViewCell *)cell setCellData:dic];
           [(ImgAndThreeTitleTableViewCell *)cell fitMyOrderMode];
           [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(136, 0, 0, 0)];
@@ -317,13 +317,13 @@
      {
           cell = [OnlyBottomBtnTableViewCell dequeueReusableCell:tableView];
 //          BUGetOrder *o = _tableView.dataArr[indexPath.section];
-          NSDictionary *dic = [o getDicC];
+          NSDictionary *dic;// = [o getDicC];
           [(JYAbstractTableViewCell *)cell setCellData:dic];
 //          BUGetOrder *o = [BUGetOrder new];
 //          o.orderType = 0;
 
           [(OnlyBottomBtnTableViewCell *)cell fitMyOrderMode];
-            [self toFitOption:o withCell:(OnlyBottomBtnTableViewCell *)cell withTableView:tableView];
+//            [self toFitOption:o withCell:(OnlyBottomBtnTableViewCell *)cell withTableView:tableView];
 //           [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(44, 0, 0, 0)];
      }
       cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -332,21 +332,21 @@
 
 -(UITableViewCell *)createTwoOrderCell:(NSIndexPath *)indexPath withTableView:(MyTableView *)tableView
 {
-      BUGetOrder *o = tableView.dataArr[indexPath.section];
+//      BUGetOrder *o = tableView.dataArr[indexPath.section];
      UITableViewCell *cell;
      if (indexPath.row == 0) {
           cell = [TitleDetailTableViewCell dequeueReusableCell:tableView];
           //          BUGetOrder *o = _tableView.dataArr[indexPath.section];
-          NSDictionary *dic = [o getDicA];//@{@"title":@"订单编号：012345668",@"detail":@"交易关闭"};//[o getDicA];
+          NSDictionary *dic;// = [o getDicA];//@{@"title":@"订单编号：012345668",@"detail":@"交易关闭"};//[o getDicA];
           [(JYAbstractTableViewCell *)cell setCellData:dic];
           [(TitleDetailTableViewCell *)cell fitMyOrderMode];
           [(TitleDetailTableViewCell *)cell setHandleAction:^(NSDictionary *dic) {
-               NSIndexPath *path = dic[@"indexPath"];
-               BUGetOrder *od = tableView.dataArr[path.section];;
-               ShopInfoViewController *vc = [ShopInfoViewController new];
+//               NSIndexPath *path = dic[@"indexPath"];
+//               BUGetOrder *od = tableView.dataArr[path.section];;
+//               ShopInfoViewController *vc = [ShopInfoViewController new];
 
 //               vc.shopId = od.shopId;
-               [self.navigationController pushViewController:vc animated:YES];
+//               [self.navigationController pushViewController:vc animated:YES];
           }];
           [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(31, 0, 0, 0)];
           
@@ -355,7 +355,7 @@
      {
           cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:tableView];
           //          BUGetOrder *o = _tableView.dataArr[indexPath.section];
-          NSDictionary *dic = [o getDicB:0];//@{@"title":@"iPhoneX",@"source":[NSString stringWithFormat:@"全网通/黑色/64G/12月"],@"time":[NSString stringWithFormat:@"租金：￥188.00"],@"default":@"default",@"num":@"预授押金：￥6499.00"};;//[o getDicB];
+          NSDictionary *dic;// = [o getDicB:0];//@{@"title":@"iPhoneX",@"source":[NSString stringWithFormat:@"全网通/黑色/64G/12月"],@"time":[NSString stringWithFormat:@"租金：￥188.00"],@"default":@"default",@"num":@"预授押金：￥6499.00"};;//[o getDicB];
           [(JYAbstractTableViewCell *)cell setCellData:dic];
           [(ImgAndThreeTitleTableViewCell *)cell fitMyOrderMode];
           [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(136, 0, 0, 0)];
@@ -365,12 +365,12 @@
      {
           cell = [OnlyBottomBtnTableViewCell dequeueReusableCell:tableView];
           //          BUGetOrder *o = _tableView.dataArr[indexPath.section];
-          NSDictionary *dic = [o getDicC];
+          NSDictionary *dic;// = [o getDicC];
           [(JYAbstractTableViewCell *)cell setCellData:dic];
             [(OnlyBottomBtnTableViewCell *)cell fitMyOrderMode];
 //          BUGetOrder *o = [BUGetOrder new];
 //          o.orderType = 1;
-          [self toFitOption:o withCell:(OnlyBottomBtnTableViewCell *)cell withTableView:tableView];
+//          [self toFitOption:o withCell:(OnlyBottomBtnTableViewCell *)cell withTableView:tableView];
 
 //          [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(44, 0, 0, 0)];
      }
@@ -381,21 +381,21 @@
 
 -(UITableViewCell *)createThreeOrderCell:(NSIndexPath *)indexPath withTableView:(MyTableView *)tableView
 {
-       BUGetOrder *o = tableView.dataArr[indexPath.section];
+//       BUGetOrder *o = tableView.dataArr[indexPath.section];
      UITableViewCell *cell;
      if (indexPath.row == 0) {
           cell = [TitleDetailTableViewCell dequeueReusableCell:tableView];
           //          BUGetOrder *o = _tableView.dataArr[indexPath.section];
-          NSDictionary *dic = [o getDicA];//@{@"title":@"订单编号：012345668",@"detail":@"交易关闭"};//[o getDicA];
+          NSDictionary *dic;// = [o getDicA];//@{@"title":@"订单编号：012345668",@"detail":@"交易关闭"};//[o getDicA];
           [(JYAbstractTableViewCell *)cell setCellData:dic];
           [(TitleDetailTableViewCell *)cell fitMyOrderMode];
           [(TitleDetailTableViewCell *)cell setHandleAction:^(NSDictionary *dic) {
                NSIndexPath *path = dic[@"indexPath"];
-               BUGetOrder *od = tableView.dataArr[path.section];;
-               ShopInfoViewController *vc = [ShopInfoViewController new];
+//               BUGetOrder *od = tableView.dataArr[path.section];;
+//               ShopInfoViewController *vc = [ShopInfoViewController new];
 
 //               vc.shopId = od.shopId;
-               [self.navigationController pushViewController:vc animated:YES];
+//               [self.navigationController pushViewController:vc animated:YES];
           }];
           [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(31, 0, 0, 0)];
           
@@ -404,7 +404,7 @@
      {
           cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:tableView];
           //          BUGetOrder *o = _tableView.dataArr[indexPath.section];
-          NSDictionary *dic = [o getDicB:0];//@{@"title":@"iPhoneX",@"source":[NSString stringWithFormat:@"全网通/黑色/64G/12月"],@"time":[NSString stringWithFormat:@"租金：￥188.00"],@"default":@"default",@"num":@"预授押金：￥6499.00"};;//[o getDicB:0];
+          NSDictionary *dic;// = [o getDicB:0];//@{@"title":@"iPhoneX",@"source":[NSString stringWithFormat:@"全网通/黑色/64G/12月"],@"time":[NSString stringWithFormat:@"租金：￥188.00"],@"default":@"default",@"num":@"预授押金：￥6499.00"};;//[o getDicB:0];
           [(JYAbstractTableViewCell *)cell setCellData:dic];
           [(ImgAndThreeTitleTableViewCell *)cell fitMyOrderMode];
           [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(136, 0, 0, 0)];
@@ -414,12 +414,12 @@
      {
           cell = [OnlyBottomBtnTableViewCell dequeueReusableCell:tableView];
           //          BUGetOrder *o = _tableView.dataArr[indexPath.section];
-          NSDictionary *dic = [o getDicC];
+          NSDictionary *dic;// = [o getDicC];
           [(JYAbstractTableViewCell *)cell setCellData:dic];
 //          BUGetOrder *o = [BUGetOrder new];
 //          o.orderType = 2;
            [(OnlyBottomBtnTableViewCell *)cell fitMyOrderMode];
-          [self toFitOption:o withCell:(OnlyBottomBtnTableViewCell *)cell withTableView:tableView];
+//          [self toFitOption:o withCell:(OnlyBottomBtnTableViewCell *)cell withTableView:tableView];
 
 //          [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(44, 0, 0, 0)];
      }
@@ -431,21 +431,21 @@
 
 -(UITableViewCell *)createFourOrderCell:(NSIndexPath *)indexPath withTableView:(MyTableView *)tableView
 {
-       BUGetOrder *o = tableView.dataArr[indexPath.section];
+//       BUGetOrder *o = tableView.dataArr[indexPath.section];
      UITableViewCell *cell;
      if (indexPath.row == 0) {
           cell = [TitleDetailTableViewCell dequeueReusableCell:tableView];
           //          BUGetOrder *o = _tableView.dataArr[indexPath.section];
-          NSDictionary *dic = [o getDicA];//@{@"title":@"订单编号：012345668",@"detail":@"交易关闭"};//[o getDicA];
+          NSDictionary *dic;// = [o getDicA];//@{@"title":@"订单编号：012345668",@"detail":@"交易关闭"};//[o getDicA];
           [(JYAbstractTableViewCell *)cell setCellData:dic];
           [(TitleDetailTableViewCell *)cell fitMyOrderMode];
           [(TitleDetailTableViewCell *)cell setHandleAction:^(NSDictionary *dic) {
-               NSIndexPath *path = dic[@"indexPath"];
-               BUGetOrder *od = tableView.dataArr[path.section];;
-               ShopInfoViewController *vc = [ShopInfoViewController new];
+//               NSIndexPath *path = dic[@"indexPath"];
+//               BUGetOrder *od = tableView.dataArr[path.section];;
+//               ShopInfoViewController *vc = [ShopInfoViewController new];
 
 //               vc.shopId = od.shopId;
-               [self.navigationController pushViewController:vc animated:YES];
+//               [self.navigationController pushViewController:vc animated:YES];
           }];
           [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(31, 0, 0, 0)];
           
@@ -454,7 +454,7 @@
      {
           cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:tableView];
           //          BUGetOrder *o = _tableView.dataArr[indexPath.section];
-          NSDictionary *dic = [o getDicB:0];//@{@"title":@"iPhoneX",@"source":[NSString stringWithFormat:@"全网通/黑色/64G/12月"],@"time":[NSString stringWithFormat:@"租金：￥188.00"],@"default":@"default",@"num":@"预授押金：￥6499.00"};;//[o getDicB];
+          NSDictionary *dic;// = [o getDicB:0];//@{@"title":@"iPhoneX",@"source":[NSString stringWithFormat:@"全网通/黑色/64G/12月"],@"time":[NSString stringWithFormat:@"租金：￥188.00"],@"default":@"default",@"num":@"预授押金：￥6499.00"};;//[o getDicB];
           [(JYAbstractTableViewCell *)cell setCellData:dic];
           [(ImgAndThreeTitleTableViewCell *)cell fitMyOrderMode];
           [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(136, 0, 0, 0)];
@@ -464,12 +464,12 @@
      {
           cell = [OnlyBottomBtnTableViewCell dequeueReusableCell:tableView];
           //          BUGetOrder *o = _tableView.dataArr[indexPath.section];
-          NSDictionary *dic = [o getDicC];
+          NSDictionary *dic;// = [o getDicC];
           [(JYAbstractTableViewCell *)cell setCellData:dic];
             [(OnlyBottomBtnTableViewCell *)cell fitMyOrderMode];
 //          BUGetOrder *o = [BUGetOrder new];
 //          o.orderType = 3;
-          [self toFitOption:o withCell:(OnlyBottomBtnTableViewCell *)cell withTableView:tableView];
+//          [self toFitOption:o withCell:(OnlyBottomBtnTableViewCell *)cell withTableView:tableView];
 
 //          [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(44, 0, 0, 0)];
      }
@@ -481,12 +481,12 @@
 
 -(UITableViewCell *)createFiveOrderCell:(NSIndexPath *)indexPath withTableView:(MyTableView *)tableView
 {
-       BUGetOrder *o = tableView.dataArr[indexPath.section];
+//       BUGetOrder *o = tableView.dataArr[indexPath.section];
      UITableViewCell *cell;
      if (indexPath.row == 0) {
           cell = [TitleDetailTableViewCell dequeueReusableCell:tableView];
           //          BUGetOrder *o = _tableView.dataArr[indexPath.section];
-          NSDictionary *dic = [o getDicA];//@{@"title":@"订单编号：012345668",@"detail":@"交易关闭"};//[o getDicA];
+          NSDictionary *dic ;//= [o getDicA];//@{@"title":@"订单编号：012345668",@"detail":@"交易关闭"};//[o getDicA];
           [(JYAbstractTableViewCell *)cell setCellData:dic];
           [(TitleDetailTableViewCell *)cell fitMyOrderMode];
           [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(31, 0, 0, 0)];
@@ -496,7 +496,7 @@
      {
           cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:tableView];
           //          BUGetOrder *o = _tableView.dataArr[indexPath.section];
-          NSDictionary *dic = [o getDicB:0];//@{@"title":@"iPhoneX",@"source":[NSString stringWithFormat:@"全网通/黑色/64G/12月"],@"time":[NSString stringWithFormat:@"租金：￥188.00"],@"default":@"default",@"num":@"预授押金：￥6499.00"};;//[o getDicB];
+          NSDictionary *dic;// = [o getDicB:0];//@{@"title":@"iPhoneX",@"source":[NSString stringWithFormat:@"全网通/黑色/64G/12月"],@"time":[NSString stringWithFormat:@"租金：￥188.00"],@"default":@"default",@"num":@"预授押金：￥6499.00"};;//[o getDicB];
           [(JYAbstractTableViewCell *)cell setCellData:dic];
           [(ImgAndThreeTitleTableViewCell *)cell fitMyOrderMode];
           [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(136, 0, 0, 0)];
@@ -506,11 +506,11 @@
      {
           cell = [OnlyBottomBtnTableViewCell dequeueReusableCell:tableView];
           //          BUGetOrder *o = _tableView.dataArr[indexPath.section];
-          NSDictionary *dic = [o getDicC];//@{@"title":@"删除订单",@"bTitle":@"重新购买",@"detail":@"应付金额:￥122"};//[o getDicC];
+          NSDictionary *dic;// = [o getDicC];//@{@"title":@"删除订单",@"bTitle":@"重新购买",@"detail":@"应付金额:￥122"};//[o getDicC];
           [(JYAbstractTableViewCell *)cell setCellData:dic];
 //          BUGetOrder *o = [BUGetOrder new];
 //          o.orderType = 4;
-          [self toFitOption:o withCell:(OnlyBottomBtnTableViewCell *)cell withTableView:tableView];
+//          [self toFitOption:o withCell:(OnlyBottomBtnTableViewCell *)cell withTableView:tableView];
           [(OnlyBottomBtnTableViewCell *)cell fitMyOrderMode];
 //          [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(44, 0, 0, 0)];
      }
@@ -518,11 +518,11 @@
      return  cell;
 }
 
--(void)toFitOption:(BUGetOrder*)order withCell:(OnlyBottomBtnTableViewCell*)cell withTableView:(MyTableView *)tableView
+-(void)toFitOption:(NSString*)order withCell:(OnlyBottomBtnTableViewCell*)cell withTableView:(MyTableView *)tableView
 {
      //      0 待付款 1 待发货 2 已发货 3 租赁中 34租赁中续费 5 到期归还 6 已完成 7 关闭
 //0 待付款 1 待发货 2 已发货 3 租赁中 4租赁中续费 5 到期退还审核 6 已完成 7 关闭 8-评论完成 9-付款超时 10-到期退还
-     if (order.state == 7 || order.state == 8|| order.state == 9 ) {//删除
+     if (7 ) {//删除
           [cell setHandleAction:^(id o){
                [[CommonAPI managerWithVC:self] showAlertView:@"删除订单" withMsg:@"是否确认删除该订单" withBtnTitle:@"确认"   withSel:@selector(toDelProcessResult:) withUserInfo:@{@"order":order}];
           }];
@@ -534,7 +534,7 @@
           }];
      }
     else
-     if (order.state == 0) {//取消 付款
+     if ( 0) {//取消 付款
           [cell setHandleAction:^(id o){
                [self orderPay:order];
           }];
@@ -547,7 +547,7 @@
 
           }];
      }
-     else if (order.state == 2) {
+     else if ( 2) {
           [cell setHandleAction:^(id o){
                NSString *title = @"确认收货后开始计算租赁时间？";
 
@@ -560,7 +560,7 @@
 
           }];
      }
-     else if (order.state == 6) {//删除 评论
+     else if (6) {//删除 评论
 
           [cell setHandleAction:^(id o){
 
@@ -571,22 +571,22 @@
           }];
      }
 
-     else  if (order.state == 4 || order.state == 3){
-            NSInteger d = -[BSUtility numberOfDaysFromTodayByTime:order.expireTime timeStringFormat:@"yyyy-MM-dd HH:mm:ss"];
+     else  if (3){
+          NSInteger d =0;// -[BSUtility numberOfDaysFromTodayByTime:order.expireTime timeStringFormat:@"yyyy-MM-dd HH:mm:ss"];
           NSInteger m = 0;
           if (d <= 2 ) {
                m = 1;
           }
           [cell setHandleAction:^(id o){
-               SecondCallViewController *vc = [SecondCallViewController new];
-               vc.mode = m;
-               vc.orderId = order.orderID;
-               [self.navigationController pushViewController:vc animated:YES];
+//               SecondCallViewController *vc = [SecondCallViewController new];
+//               vc.mode = m;
+//               vc.orderId = order.orderID;
+//               [self.navigationController pushViewController:vc animated:YES];
           }];
 
      }
-     else  if(order.state == 10){
-          if (order.leaseCount > 0) {
+     else  if(10){
+          if ( 0) {
 
           [cell setHandleAction:^(id o){
 //               SendBackGoodsViewController *vc = [SendBackGoodsViewController new];
@@ -595,19 +595,19 @@
                    [[CommonAPI managerWithVC:self] showAlertView:@"提示" withMsg:@"请缴纳剩余租金后退还商品?" withBtnTitle:@"确认"   withSel:@selector(toXuZuProcessResult:) withUserInfo:@{}];
           }];
           [cell setExtrHandleAction:^(id o){
-               SecondCallViewController *vc = [SecondCallViewController new];
-               vc.mode = 1;
-               vc.orderId = order.orderID;
-               [self.navigationController pushViewController:vc animated:YES];
+//               SecondCallViewController *vc = [SecondCallViewController new];
+//               vc.mode = 1;
+//               vc.orderId = order.orderID;
+//               [self.navigationController pushViewController:vc animated:YES];
           }];
           }else
           {
                [cell setHandleAction:^(id o){
-                    SendBackGoodsViewController *vc = [SendBackGoodsViewController new];
-                  BUOrderDetail *oo = [BUOrderDetail new];
-                    oo.orderID = order.orderID;
-                    vc.orderDetail = oo;
-                    [self.navigationController pushViewController:vc animated:YES];
+//                    SendBackGoodsViewController *vc = [SendBackGoodsViewController new];
+//                  BUOrderDetail *oo = [BUOrderDetail new];
+//                    oo.orderID = order.orderID;
+//                    vc.orderDetail = oo;
+//                    [self.navigationController pushViewController:vc animated:YES];
                }];
           }
      }
@@ -622,31 +622,31 @@
 
 -(void)toCancelProcessResult:(NSDictionary *)dic
 {
-     NSInteger tag = [dic[@"tag"] integerValue];
-     if (tag == 100) {
-          NSDictionary *userInfo = dic[@"userInfo"];
-          BUGetOrder *od = userInfo[@"order"];
-          [self orderCancel:od];
-     }
+//     NSInteger tag = [dic[@"tag"] integerValue];
+//     if (tag == 100) {
+//          NSDictionary *userInfo = dic[@"userInfo"];
+//          BUGetOrder *od = userInfo[@"order"];
+//          [self orderCancel:od];
+//     }
 }
 -(void)toProcessResult:(NSDictionary *)dic
 {
-     NSInteger tag = [dic[@"tag"] integerValue];
-     if (tag == 100) {
-          NSDictionary *userInfo = dic[@"userInfo"];
-          BUGetOrder *od = userInfo[@"order"];
-          [self orderFinish:od];
-     }
+//     NSInteger tag = [dic[@"tag"] integerValue];
+//     if (tag == 100) {
+//          NSDictionary *userInfo = dic[@"userInfo"];
+//          BUGetOrder *od = userInfo[@"order"];
+//          [self orderFinish:od];
+//     }
 }
 
 -(void)toDelProcessResult:(NSDictionary *)dic
 {
-     NSInteger tag = [dic[@"tag"] integerValue];
-     if (tag == 100) {
-          NSDictionary *userInfo = dic[@"userInfo"];
-          BUGetOrder *od = userInfo[@"order"];
-          [self delOrder:od];
-     }
+//     NSInteger tag = [dic[@"tag"] integerValue];
+//     if (tag == 100) {
+//          NSDictionary *userInfo = dic[@"userInfo"];
+//          BUGetOrder *od = userInfo[@"order"];
+//          [self delOrder:od];
+//     }
 }
 
 #pragma mark --UITableViewDelegate
@@ -691,56 +691,56 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
      //      0 待付款 1 待发货 2 已发货 3 租赁中 34租赁中续费 5 到期归还 6 已完成 7 关闭
 //0 待付款 1 待发货 2 已发货 3 租赁中 4租赁中续费 5 到期退还审核 6 已完成 7 关闭 8-评论完成 9-付款超时 10-到期退还
-     BUGetOrder *o = tableView.dataArr[indexPath.section];
-//     o.state = 6;
-//     o.orderType = 0;
-     if (o.state == 7 || o.state == 9 ) {
-
-          CancelOrderInfoViewController *vc = [CancelOrderInfoViewController new];
-          vc.order = o;
-          [self.navigationController pushViewController:vc animated:YES];
-
-     }
-     else if(o.state == 0)
-     {
-
-          WaitPayOrderInfoViewController *vc = [WaitPayOrderInfoViewController new];
-          vc.order = o;
-          [self.navigationController pushViewController:vc animated:YES];
-
-     }
-     else if (o.state == 2 ||o.state == 1)
-     {
-
-          WatiRecOrderInfoViewController *vc = [WatiRecOrderInfoViewController new];
-          vc.order = o;
-          [self.navigationController pushViewController:vc animated:YES];
-         
-     }
-
-     else if (o.state == 6 ||o.state == 8)
-     {
-
-          DoneOrderInfoViewController *vc = [DoneOrderInfoViewController new];
-          vc.order = o;
-       [self.navigationController pushViewController:vc animated:YES];
-
-     }
-     else if(o.state == 3 || o.state == 4)
-     {
-          RentingOrderInfoViewController *vc = [RentingOrderInfoViewController new];
-          vc.order = o;
-//            vc.lookMode = [self isKindOfClass:[MyRunViewController class]]?1:0;
-          [self.navigationController pushViewController:vc animated:YES];
-     }
-      else if(o.state == 10 || o.state == 5)
-     {
-
-          TimeBackOrderInfoViewController *vc = [TimeBackOrderInfoViewController new];
-          vc.order = o;
-          //            vc.lookMode = [self isKindOfClass:[MyRunViewController class]]?1:0;
-          [self.navigationController pushViewController:vc animated:YES];
-     }
+//     BUGetOrder *o = tableView.dataArr[indexPath.section];
+////     o.state = 6;
+////     o.orderType = 0;
+//     if (o.state == 7 || o.state == 9 ) {
+//
+//          CancelOrderInfoViewController *vc = [CancelOrderInfoViewController new];
+//          vc.order = o;
+//          [self.navigationController pushViewController:vc animated:YES];
+//
+//     }
+//     else if(o.state == 0)
+//     {
+//
+//          WaitPayOrderInfoViewController *vc = [WaitPayOrderInfoViewController new];
+//          vc.order = o;
+//          [self.navigationController pushViewController:vc animated:YES];
+//
+//     }
+//     else if (o.state == 2 ||o.state == 1)
+//     {
+//
+//          WatiRecOrderInfoViewController *vc = [WatiRecOrderInfoViewController new];
+//          vc.order = o;
+//          [self.navigationController pushViewController:vc animated:YES];
+//
+//     }
+//
+//     else if (o.state == 6 ||o.state == 8)
+//     {
+//
+//          DoneOrderInfoViewController *vc = [DoneOrderInfoViewController new];
+//          vc.order = o;
+//       [self.navigationController pushViewController:vc animated:YES];
+//
+//     }
+//     else if(o.state == 3 || o.state == 4)
+//     {
+//          RentingOrderInfoViewController *vc = [RentingOrderInfoViewController new];
+//          vc.order = o;
+////            vc.lookMode = [self isKindOfClass:[MyRunViewController class]]?1:0;
+//          [self.navigationController pushViewController:vc animated:YES];
+//     }
+//      else if(o.state == 10 || o.state == 5)
+//     {
+//
+//          TimeBackOrderInfoViewController *vc = [TimeBackOrderInfoViewController new];
+//          vc.order = o;
+//          //            vc.lookMode = [self isKindOfClass:[MyRunViewController class]]?1:0;
+//          [self.navigationController pushViewController:vc animated:YES];
+//     }
 
 }
  
@@ -798,35 +798,36 @@
 //     {
 //
 //     }
-     [busiSystem.getOrderListManager getOrderListNextPage:self callback:@selector(getOrderListNotification:)    extraInfo:@{@"type":@(_currentOrderStatue )}];
+//     [busiSystem.getOrderListManager getOrderListNextPage:self callback:@selector(getOrderListNotification:)    extraInfo:@{@"type":@(_currentOrderStatue )}];
 }
 
--(void)toPublishEvaVC:(BUGetOrder*)o
+-(void)toPublishEvaVC:(NSString*)o
 {
-     PublishEvaViewController *vc = [PublishEvaViewController new];
-     vc.order = o;
-     [vc setHandleGoBack:^(id userData) {
-          HUDSHOW(@"加载中");
-          [self getData];
-          busiSystem.agent.isNeedRefreshTabD = YES;
-     }];
-     [self.navigationController pushViewController:vc animated:YES];
+//     PublishEvaViewController *vc = [PublishEvaViewController new];
+//     vc.order = o;
+//     [vc setHandleGoBack:^(id userData) {
+//          HUDSHOW(@"加载中");
+//          [self getData];
+//          busiSystem.agent.isNeedRefreshTabD = YES;
+//     }];
+//     [self.navigationController pushViewController:vc animated:YES];
 }
 
--(void)toApplySalesReturnVC:(BUGetOrder*)o
+-(void)toApplySalesReturnVC:(NSString*)o
 {
-     ApplySalesReturnViewController *vc = [ApplySalesReturnViewController new];
-//     vc.orderId = o.orderId;
-     [vc setHandleGoBack:^(id userData) {
-          [self getData];
-          busiSystem.agent.isNeedRefreshTabD = YES;
-     }];
-     [self.navigationController pushViewController:vc animated:YES];
+//     ApplySalesReturnViewController *vc = [ApplySalesReturnViewController new];
+////     vc.orderId = o.orderId;
+//     [vc setHandleGoBack:^(id userData) {
+//          [self getData];
+//          busiSystem.agent.isNeedRefreshTabD = YES;
+//     }];
+//     [self.navigationController pushViewController:vc animated:YES];
 
 }
--(void)orderCancel:(BUGetOrder *)o
-{  HUDSHOW(@"加载中");
-          [busiSystem.orderManager operOrder:busiSystem.agent.userId?:@"" orderId:o.orderID?:@"" type:@"1" observer:self callback:@selector(orderCancelNotification:)];
+-(void)orderCancel:(NSString *)o
+{
+//     HUDSHOW(@"加载中");
+//          [busiSystem.orderManager operOrder:busiSystem.agent.userId?:@"" orderId:o.orderID?:@"" type:@"1" observer:self callback:@selector(orderCancelNotification:)];
 }
 
 -(void)orderCancelNotification:(BSNotification*)noti
@@ -843,26 +844,26 @@
      }
 }
 
--(void)orderPay:(BUGetOrder *)o
+-(void)orderPay:(NSString *)o
 {
-     BUSubmitOrder *od = [BUSubmitOrder new];
-     od.orderId = o.orderID;
-     od.payMoney = o.payMoney ;
-     PayOrderViewController *vc = [PayOrderViewController new];
-     vc.order = od;
-     vc.mode = 1;
-
-     NSInteger tt = -[BSUtility numberOfSecsFromTodayByTime:o.payEndTime timeStringFormat:@"yyyy-MM-dd HH:mm:ss"];
-     NSInteger minute = tt/60 - 1;
-     NSInteger sec = 60 - tt%60;
-     vc.sec = sec;
-     vc.min = minute;
-     vc.orderType = @"1";
-     vc.typeId = od.orderId;
-     [vc setHandleGoBack:^(id userData) {
-          busiSystem.agent.isNeedRefreshTabD = YES;
-     }];
-     [self.navigationController pushViewController:vc animated:YES];
+//     BUSubmitOrder *od = [BUSubmitOrder new];
+//     od.orderId = o.orderID;
+//     od.payMoney = o.payMoney ;
+//     PayOrderViewController *vc = [PayOrderViewController new];
+//     vc.order = od;
+//     vc.mode = 1;
+//
+//     NSInteger tt = -[BSUtility numberOfSecsFromTodayByTime:o.payEndTime timeStringFormat:@"yyyy-MM-dd HH:mm:ss"];
+//     NSInteger minute = tt/60 - 1;
+//     NSInteger sec = 60 - tt%60;
+//     vc.sec = sec;
+//     vc.min = minute;
+//     vc.orderType = @"1";
+//     vc.typeId = od.orderId;
+//     [vc setHandleGoBack:^(id userData) {
+//          busiSystem.agent.isNeedRefreshTabD = YES;
+//     }];
+//     [self.navigationController pushViewController:vc animated:YES];
 //     PayOrderViewController *vc = [PayOrderViewController new];
 //     vc.order = o;
 ////     NSInteger lmt = 30;//busiSystem.agent.config.payLimit;
@@ -893,10 +894,10 @@
      }
 }
 
--(void)orderFinish:(BUGetOrder *)o
+-(void)orderFinish:(NSString *)o
 {
-       HUDSHOW(@"加载中");
-       [busiSystem.orderManager operOrder:busiSystem.agent.userId?:@"" orderId:o.orderID?:@"" type:@"3" observer:self callback:@selector(orderCancelNotification:)];
+//       HUDSHOW(@"加载中");
+//       [busiSystem.orderManager operOrder:busiSystem.agent.userId?:@"" orderId:o.orderID?:@"" type:@"3" observer:self callback:@selector(orderCancelNotification:)];
 }
 
 -(void)orderFinishNotification:(BSNotification*)noti
@@ -905,7 +906,7 @@
 //          HUDDISMISS;
           [self getData];
            busiSystem.agent.isNeedRefreshTabD = YES;
-          BUGetOrder *o = noti.extraInfo[@"order"];
+//          BUGetOrder *o = noti.extraInfo[@"order"];
 //          if (o.orderType == 3) {
 //        [[NSNotificationCenter defaultCenter] postNotificationName:@"refresSecHandData" object:nil];
 //          }
@@ -917,9 +918,9 @@
      }
 }
 
--(void)delOrder:(BUGetOrder *)o
+-(void)delOrder:(NSString *)o
 {
-       [busiSystem.orderManager operOrder:busiSystem.agent.userId?:@"" orderId:o.orderID?:@"" type:@"2" observer:self callback:@selector(orderCancelNotification:)];
+//       [busiSystem.orderManager operOrder:busiSystem.agent.userId?:@"" orderId:o.orderID?:@"" type:@"2" observer:self callback:@selector(orderCancelNotification:)];
 }
 -(void)orderDelNotification:(BSNotification*)noti
 {
@@ -934,10 +935,10 @@
           HUDCRY(noti.error.domain, 1);
      }
 }
--(void)confirmOrder:(BUGetOrder *)o
+-(void)confirmOrder:(NSString *)o
 {
-     HUDSHOW(@"加载中");
-    [busiSystem.orderManager operOrder:busiSystem.agent.userId?:@"" orderId:o.orderID?:@"" type:@"3" observer:self callback:@selector(orderCancelNotification:)];
+//     HUDSHOW(@"加载中");
+//    [busiSystem.orderManager operOrder:busiSystem.agent.userId?:@"" orderId:o.orderID?:@"" type:@"3" observer:self callback:@selector(orderCancelNotification:)];
 }
 
 -(void)orderConfirmNotification:(BSNotification*)noti

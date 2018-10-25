@@ -22,7 +22,7 @@
 #import "TitleAndTextBtnTableViewCell.h"
 #import "ThreeBtnTableViewCell.h"
 #import "FiveBtnTableViewCell.h"
-#import "BuyOutServerViewController.h"
+//#import "BuyOutServerViewController.h"
 #import "TitleDetailTableViewCell.h"
 #import "SeverCenterViewController.h"
 #import "MySecHandViewController.h"
@@ -35,11 +35,11 @@
 #import "MyCouponViewController.h"
 #import "MsgViewController.h"
 #import "JYShareManager.h"
-#import "SelledSeverViewController.h"
+//#import "SelledSeverViewController.h"
 #import "BindPhoneViewController.h"
 #import "MyEvaViewController.h"
-#import "NoCashApproveViewController.h"
-#import "ReletServerViewController.h"
+//#import "NoCashApproveViewController.h"
+//#import "ReletServerViewController.h"
 @interface MineViewController ()
 {
     UIImage *_navLineImg;
@@ -391,33 +391,33 @@ if( __IPHONEX)
     switch (row) {
         case 0:
         {
-             BuyOutServerViewController * vc = [BuyOutServerViewController new];
-             vc.hidesBottomBarWhenPushed = YES;
-             [self.navigationController pushViewController:vc animated:YES];
+//             BuyOutServerViewController * vc = [BuyOutServerViewController new];
+//             vc.hidesBottomBarWhenPushed = YES;
+//             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 1:
         {
-             ReletServerViewController * vc = [ReletServerViewController new];
-             vc.hidesBottomBarWhenPushed = YES;
-             [self.navigationController pushViewController:vc animated:YES];
+//             ReletServerViewController * vc = [ReletServerViewController new];
+//             vc.hidesBottomBarWhenPushed = YES;
+//             [self.navigationController pushViewController:vc animated:YES];
         }
 
             break;
 
         case 2:
          {
-              SelledSeverViewController * vc = [SelledSeverViewController new];
-              vc.hidesBottomBarWhenPushed = YES;
-              [self.navigationController pushViewController:vc animated:YES];
+//              SelledSeverViewController * vc = [SelledSeverViewController new];
+//              vc.hidesBottomBarWhenPushed = YES;
+//              [self.navigationController pushViewController:vc animated:YES];
 
         }
             break;
          case 3:
          {
-              SeverCenterViewController *vc = [SeverCenterViewController new];
-              vc.hidesBottomBarWhenPushed = YES;
-              [self.navigationController pushViewController:vc animated:YES];
+//              SeverCenterViewController *vc = [SeverCenterViewController new];
+//              vc.hidesBottomBarWhenPushed = YES;
+//              [self.navigationController pushViewController:vc animated:YES];
 
          }
               break;
@@ -506,9 +506,9 @@ if( __IPHONEX)
                     }
                     else
                     {
-                         NoCashApproveViewController *vc = [NoCashApproveViewController new];
-                         vc.hidesBottomBarWhenPushed = YES;
-                         [self.navigationController pushViewController:vc animated:YES];
+//                         NoCashApproveViewController *vc = [NoCashApproveViewController new];
+//                         vc.hidesBottomBarWhenPushed = YES;
+//                         [self.navigationController pushViewController:vc animated:YES];
                     }
                }
                     break;

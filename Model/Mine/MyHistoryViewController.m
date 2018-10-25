@@ -10,8 +10,8 @@
 #import "ImgAndThreeTitleTableViewCell.h"
 #import "OnlyBottomBtnTableViewCell.h"
 #import "MenuOneBtnView.h"
-#import "GoodsInfoViewController.h"
-#import "SimilarityGoodsViewController.h"
+//#import "GoodsInfoViewController.h"
+//#import "SimilarityGoodsViewController.h"
 @interface MyHistoryViewController ()
 {
      BOOL _isEdit;
@@ -244,8 +244,8 @@
      }
      else
      {
-          GoodsInfoViewController *vc = [GoodsInfoViewController new];
-          [self.navigationController pushViewController:vc animated:YES];
+//          GoodsInfoViewController *vc = [GoodsInfoViewController new];
+//          [self.navigationController pushViewController:vc animated:YES];
      }
 }
 
@@ -295,8 +295,8 @@
      [(ImgAndThreeTitleTableViewCell *)cell fitMyHisMode:isEidt];
       [(ImgAndThreeTitleTableViewCell *)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(112, 0, 0, 0)];
      [(ImgAndThreeTitleTableViewCell *)cell setHandleAction:^(id o){
-          SimilarityGoodsViewController *vc = [SimilarityGoodsViewController new];
-          [self.navigationController pushViewController:vc animated:YES];
+//          SimilarityGoodsViewController *vc = [SimilarityGoodsViewController new];
+//          [self.navigationController pushViewController:vc animated:YES];
      }];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

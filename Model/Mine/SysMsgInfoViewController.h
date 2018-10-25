@@ -9,6 +9,6 @@
 #import <UniversalFramework/UniversalFramework.h>
 #import "BUSystem.h"
 @interface SysMsgInfoViewController : BaseTableViewController
-@property(nonatomic,strong)BUGetUserMsg *msg;
+//@property(nonatomic,strong)BUGetUserMsg *msg;
 @property(nonatomic,strong)NSString *msgId;
 @end

@@ -43,14 +43,14 @@
 -(void)getData
 {
 //     [busiSystem.sysManager.sysHelpTypeListManager getList:@"" observer:self callback:@selector(getListNotification:)];
-     [busiSystem.myPathManager getServiceList:@"" withUserid:@"" observer:self callback:@selector(getListNotification:)];
+//     [busiSystem.myPathManager getServiceList:@"" withUserid:@"" observer:self callback:@selector(getListNotification:)];
 }
 
 -(void)getListNotification:(BSNotification*)noti
 {
      if (noti.error.code == 0) {
           HUDDISMISS;
-          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.serviceList];
+//          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.serviceList];
 //          _tableView.hasMore = busiSystem.sysManager.sysHelpTypeListManager.pageInfo.hasMore;
           [_tableView reloadData];
      }
@@ -187,9 +187,9 @@
      }
      else
      {
-          BUServiceList *t = _tableView.dataArr[indexPath.row];
+//          BUServiceList *t = _tableView.dataArr[indexPath.row];
           cell = [TitleAndImageTableViewCell dequeueReusableCell:_tableView];
-          [(TitleAndImageTableViewCell*)cell setCellData:[t getDic]];
+//          [(TitleAndImageTableViewCell*)cell setCellData:[t getDic]];
           [(TitleAndImageTableViewCell*)cell fitSeverCenterMode];
              [(TitleAndImageTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(45, 0, 0, 0)];
      }
@@ -206,10 +206,10 @@
 //          [[UIApplication sharedApplication] openURL:[NSURL URLWithString:num]]; //拨号
      }else
      if (indexPath.section == 1) {
-  BUServiceList *t = _tableView.dataArr[indexPath.row];
-          [self toRead:t.helpId?:@""];
+//  BUServiceList *t = _tableView.dataArr[indexPath.row];
+//          [self toRead:t.helpId?:@""];
           QuestionViewController *vc = [QuestionViewController new];
-          vc.content = t.content;
+//          vc.content = t.content;
           [self.navigationController pushViewController:vc animated:YES];
      }
 }

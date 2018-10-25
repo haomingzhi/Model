@@ -8,8 +8,8 @@
 
 #import "PaySuccessViewController.h"
 #import "MyOrderViewController.h"
-#import "BuyOutServerViewController.h"
-#import "ReletServerViewController.h"
+//#import "BuyOutServerViewController.h"
+//#import "ReletServerViewController.h"
 
 @interface PaySuccessViewController ()
 
@@ -125,14 +125,14 @@
 //     [self.navigationController popToRootViewControllerAnimated:YES];
 //     self.tabBarController.tabBarController.selectedIndex = 4;
      if ([_orderType isEqualToString:@"2"]) {//续租
-          ReletServerViewController *vc = [ReletServerViewController new];
-          vc.hidesBottomBarWhenPushed = YES;
-          [self.navigationController pushViewController:vc animated:YES];
+//          ReletServerViewController *vc = [ReletServerViewController new];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          [self.navigationController pushViewController:vc animated:YES];
      }
      else if ([_orderType isEqualToString:@"3"]){//买断
-          BuyOutServerViewController *vc = [BuyOutServerViewController new];
-          vc.hidesBottomBarWhenPushed = YES;
-          [self.navigationController pushViewController:vc animated:YES];
+//          BuyOutServerViewController *vc = [BuyOutServerViewController new];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          [self.navigationController pushViewController:vc animated:YES];
      }else{
           MyOrderViewController *vc = [MyOrderViewController new];
           vc.hidesBottomBarWhenPushed = YES;

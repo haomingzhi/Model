@@ -50,7 +50,7 @@
 {
      if (noti.error.code == 0) {
           HUDDISMISS;
-          self.orderDetail = busiSystem.getOrderListManager.orderDetail;
+//          self.orderDetail = busiSystem.getOrderListManager.orderDetail;
           [self.stateCell setCellData:@{@"title":@"交易关闭",@"detail":@"",@"img":@"icon_order_cancel"}];
           [self.stateCell fitOrderInfoModeA];
 
@@ -119,10 +119,10 @@
 
 -(void)toDeleteOrder:(NSDictionary *)dic{
      if ([dic[@"code"] integerValue] == 0) {
-           BUGetOrder *od = [BUGetOrder new];
-          od.orderID = self.orderDetail.orderID;
-          [[NSNotificationCenter defaultCenter] postNotificationName:@"delOrderData" object:nil userInfo:@{@"order":od}];
-          [self.navigationController popViewControllerAnimated:YES];
+//           BUGetOrder *od = [BUGetOrder new];
+//          od.orderID = self.orderDetail.orderID;
+//          [[NSNotificationCenter defaultCenter] postNotificationName:@"delOrderData" object:nil userInfo:@{@"order":od}];
+//          [self.navigationController popViewControllerAnimated:YES];
 //          [self operOrder:@"2" orderId:self.order.orderID];
      }
 }

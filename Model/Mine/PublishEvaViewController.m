@@ -212,11 +212,11 @@
 //     [busiSystem.getCommentListManager addComment:@"" withOrderid:_order.orderId withCommentList:commentList observer:self callback:@selector(addCommentNotification:)];
      if(_imgArr.count == 0)
      {
-          [busiSystem.myPathManager addOrderMsg:_textViewCell.textView.text withOrderid:_order.orderID withUserid:busiSystem.agent.userId observer:self callback:@selector(addCommentNotification:)];
+//          [busiSystem.myPathManager addOrderMsg:_textViewCell.textView.text withOrderid:_order.orderID withUserid:busiSystem.agent.userId observer:self callback:@selector(addCommentNotification:)];
      }
      else
      {
-          [busiSystem.myPathManager addOrderMsg:_textViewCell.textView.text withImg:_imgArr withOrderid:_order.orderID withUserid:busiSystem.agent.userId observer:self callback:@selector(addCommentNotification:)];
+//          [busiSystem.myPathManager addOrderMsg:_textViewCell.textView.text withImg:_imgArr withOrderid:_order.orderID withUserid:busiSystem.agent.userId observer:self callback:@selector(addCommentNotification:)];
      }
 }
 

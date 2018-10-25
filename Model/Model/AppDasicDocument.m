@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         self.deserializationMap = @{@"List":@"BUInstruction,instructionList"};
-        _notice =[BUInstruction new];
+//        _notice =[BUInstruction new];
     }
     return self;
 }
@@ -54,7 +54,7 @@
 -(NSError *)noticeDetailOutput:(NSData *)recvData ok:(BOOL)ok input:(NSInvocation *)input
 {
     UNPACKETOUTPUTHEAD(recvData, ok);
-    [([(BSJSON *)[jsonObj objectForKey:@"Data"] objectForKey:@"List"][0])  deserialization:_notice];
+//    [([(BSJSON *)[jsonObj objectForKey:@"Data"] objectForKey:@"List"][0])  deserialization:_notice];
      [RequestStatus setRequestResultStatus:jsonObj];
     return SuccessedError;
 }

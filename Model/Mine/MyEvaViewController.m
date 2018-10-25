@@ -54,10 +54,10 @@
 -(void)getData
 {
      if (currentOrderStatue == 0) {
-           [busiSystem.myPathManager orderMsgList:@"0" withUserid:busiSystem.agent.userId observer:self callback:@selector(orderMsgListNotification:)  extraInfo:@{@"tabv":_tableViewA}];
+//           [busiSystem.myPathManager orderMsgList:@"0" withUserid:busiSystem.agent.userId observer:self callback:@selector(orderMsgListNotification:)  extraInfo:@{@"tabv":_tableViewA}];
      }else
      {
-[busiSystem.myPathManager orderMsgList:@"1" withUserid:busiSystem.agent.userId observer:self callback:@selector(orderMsgListNotification:)  extraInfo:@{@"tabv":_tableViewB}];
+//[busiSystem.myPathManager orderMsgList:@"1" withUserid:busiSystem.agent.userId observer:self callback:@selector(orderMsgListNotification:)  extraInfo:@{@"tabv":_tableViewB}];
      }
 
 }
@@ -69,13 +69,13 @@
           MyTableView *tableView = noti.extraInfo[@"tabv"];
           NSString *tag = @"xxcc1";
           if (tableView == _tableViewA) {
-               tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.orderMsgList];
+//               tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.orderMsgList];
 //               tableView.hasMore = busiSystem.getOrderListManager.pageInfo.hasMore;
           }
           else
           {
                tag = @"xxcc2";
-               tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.orderMsgList];
+//               tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.orderMsgList];
 //               tableView.hasMore = busiSystem.getAfterSaleListManager.pageInfo.hasMore;
           }
           [tableView reloadData];
@@ -117,7 +117,7 @@
      self.title = @"我的评价";
      HUDSHOW(@"加载中");
      [self getData];
-     [busiSystem.myPathManager orderMsgList:@"1" withUserid:busiSystem.agent.userId observer:self callback:@selector(orderMsgListNotification:)  extraInfo:@{@"tabv":_tableViewB}];
+//     [busiSystem.myPathManager orderMsgList:@"1" withUserid:busiSystem.agent.userId observer:self callback:@selector(orderMsgListNotification:)  extraInfo:@{@"tabv":_tableViewB}];
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshMyEvaData) name:@"refreshMyEvaData" object:nil];
 //     [self setNavigateRightButton:@"nav_que"];
      //    self.dataModel.currentMyOrder = NULL;
@@ -278,20 +278,20 @@
 -(UITableViewCell *)createOrderCell:(NSIndexPath *)indexPath withTableView:(MyTableView *)tableView
 {
      UITableViewCell *cell;
-     BUOrderMsg *om = tableView.dataArr[indexPath.section];
+//     BUOrderMsg *om = tableView.dataArr[indexPath.section];
      cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:tableView];
      //          BUGetOrder *o = _tableView.dataArr[indexPath.section];
-     NSDictionary *dic = [om getDic];//@{@"title":@"日式色织水洗棉床笠",@"source":[NSString stringWithFormat:@"128G/黑红色"],@"time":[NSString stringWithFormat:@"500.00元/月"],@"default":@"default"};;//[o getDicB];
-     [(JYAbstractTableViewCell *)cell setCellData:dic];
+//     NSDictionary *dic = [om getDic];//@{@"title":@"日式色织水洗棉床笠",@"source":[NSString stringWithFormat:@"128G/黑红色"],@"time":[NSString stringWithFormat:@"500.00元/月"],@"default":@"default"};;//[o getDicB];
+//     [(JYAbstractTableViewCell *)cell setCellData:dic];
      [(ImgAndThreeTitleTableViewCell *)cell fitMyEvaMode];
      [(ImgAndThreeTitleTableViewCell*)cell setHandleAction:^(id o){
           PublishEvaViewController *vc= [PublishEvaViewController new];
-          BUGetOrder *ow = [BUGetOrder new];
-          ow.orderID = om.orderId;
-          vc.order = ow;
-          [vc setHandleGoBack:^(id userData) {
-               [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshMyEvaData" object:nil];
-          }];
+//          BUGetOrder *ow = [BUGetOrder new];
+//          ow.orderID = om.orderId;
+//          vc.order = ow;
+//          [vc setHandleGoBack:^(id userData) {
+//               [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshMyEvaData" object:nil];
+//          }];
           [self.navigationController pushViewController:vc animated:YES];
      }];
 //     [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(135, 0, 0, 0)];
@@ -336,35 +336,35 @@ return nil;
 }
 -(UITableViewCell *)createEvaCell:(NSIndexPath *)indexPath withTableView:(MyTableView *)tableView
 {
-       BUOrderMsg *om = tableView.dataArr[indexPath.section];
+//       BUOrderMsg *om = tableView.dataArr[indexPath.section];
      UITableViewCell *cell;
      if (indexPath.row == 0) {
           cell =[ImgAndThreeTitleTableViewCell dequeueReusableCell:tableView];
-          NSDictionary *dic = [om getDic:indexPath.row];//@{@"title":@"winder",@"source":@"学生/深圳",@"img":@"icon_header_eva"}
-          [(ImgAndThreeTitleTableViewCell *)cell setCellData:dic];
+//          NSDictionary *dic = [om getDic:indexPath.row];//@{@"title":@"winder",@"source":@"学生/深圳",@"img":@"icon_header_eva"}
+//          [(ImgAndThreeTitleTableViewCell *)cell setCellData:dic];
          [(ImgAndThreeTitleTableViewCell *)cell   fitMyEvaModeC];
      }
      else if (indexPath.row == 2)
      {
-           NSDictionary *dic = [om getDic:indexPath.row];//@{@"arr":@[@"dog",@"dog",@"dog"]}
+//           NSDictionary *dic = [om getDic:indexPath.row];//@{@"arr":@[@"dog",@"dog",@"dog"]}
           cell = [ImgsTableViewCell dequeueReusableCell:tableView];
-          [(ImgsTableViewCell *)cell setCellData:dic];
+//          [(ImgsTableViewCell *)cell setCellData:dic];
           [(ImgsTableViewCell *)cell fitTopicMode];
         
      }
      else if(indexPath.row == 3)
      {
-         NSDictionary *dic = [om getDic:indexPath.row];// @{@"title":@"拿来看也没看就洗了，发现有些不对劲，吊牌都没有，洗的时 候还有泡沫，细看领口有一处缝补的痕迹，虽然是特价买的……"}
+//         NSDictionary *dic = [om getDic:indexPath.row];// @{@"title":@"拿来看也没看就洗了，发现有些不对劲，吊牌都没有，洗的时 候还有泡沫，细看领口有一处缝补的痕迹，虽然是特价买的……"}
           cell = [OnlyTitleTableViewCell dequeueReusableCell:tableView];
-          [(OnlyTitleTableViewCell *)cell setCellData:dic];
+//          [(OnlyTitleTableViewCell *)cell setCellData:dic];
           [(OnlyTitleTableViewCell *)cell fitEvaModeD];
 //            [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(52, 0, 0, 0)];
      }
      else if(indexPath.row == 1)
      {
-          NSDictionary *dic = [om getDic:indexPath.row];// @{@"title":@"银色银色进行奖学金",@"source":@"肤色/M",@"time":@"已好评，供货50优币",@"img":@"dog"}
+//          NSDictionary *dic = [om getDic:indexPath.row];// @{@"title":@"银色银色进行奖学金",@"source":@"肤色/M",@"time":@"已好评，供货50优币",@"img":@"dog"}
           cell = [ImgAndThreeTitleTableViewCell dequeueReusableCell:tableView];
-          [(ImgAndThreeTitleTableViewCell*)cell setCellData:dic ];
+//          [(ImgAndThreeTitleTableViewCell*)cell setCellData:dic ];
              [(ImgAndThreeTitleTableViewCell*)cell fitMyEvaModeB];
 //           [(JYAbstractTableViewCell*)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(101, 0, 0, 0)];
      }
@@ -416,10 +416,10 @@ return nil;
           }
           else if (indexPath.row == 2)
           {
-               BUOrderMsg *om = tableView.dataArr[indexPath.section];
-                CGFloat cheight = 100;
-               NSInteger count = om.imgList.count;
-               height = ((cheight + 10) * ((count + 2)/3));
+//               BUOrderMsg *om = tableView.dataArr[indexPath.section];
+//                CGFloat cheight = 100;
+//               NSInteger count = om.imgList.count;
+//               height = ((cheight + 10) * ((count + 2)/3));
           }
           else if(indexPath.row == 3)
           {

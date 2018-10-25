@@ -29,15 +29,15 @@
 
 -(void)getData
 {
-     [busiSystem.myPathManager.getUserMsgManager getUserMsg:self callback:@selector(getUserMsgNotification:)];
+//     [busiSystem.myPathManager.getUserMsgManager getUserMsg:self callback:@selector(getUserMsgNotification:)];
 }
 
 -(void)getUserMsgNotification:(BSNotification *)noti
 {
      if (noti.error.code == 0) {
           HUDDISMISS;
-          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.getUserMsgManager.getUserMsgArr];
-                    _tableView.hasMore = busiSystem.myPathManager.getUserMsgManager.pageInfo.hasMore;
+//          _tableView.dataArr = [NSMutableArray arrayWithArray:busiSystem.myPathManager.getUserMsgManager.getUserMsgArr];
+//                    _tableView.hasMore = busiSystem.myPathManager.getUserMsgManager.pageInfo.hasMore;
           [_tableView reloadData];
           [[JYNoDataManager manager] addNodataView:_tableView withTip:@"暂无信息" withImg:@"nodata" withCount:_tableView.dataArr.count withTag:@"serShop"];
           [[JYNoDataManager manager] fitModeY:150];
@@ -113,25 +113,25 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
      UITableViewCell *cell;
-     BUGetUserMsg *m = _tableView.dataArr[indexPath.section];
-     NSDictionary *dic = [m getDic:indexPath.row];
+//     BUGetUserMsg *m = _tableView.dataArr[indexPath.section];
+//     NSDictionary *dic = [m getDic:indexPath.row];
      if (indexPath.row == 0) {
           cell = [OnlyTitleTableViewCell dequeueReusableCell:_tableView];
-          [(OnlyTitleTableViewCell*)cell setCellData:dic];
+//          [(OnlyTitleTableViewCell*)cell setCellData:dic];
           [(OnlyTitleTableViewCell*)cell  fitSysMsgModeA];
           [(JYAbstractTableViewCell *)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(30, 0, 0, 0)];
      }
      else
           if (indexPath.row == 1) {
                cell = [TitleDetailTableViewCell dequeueReusableCell:_tableView];
-               [(TitleDetailTableViewCell*)cell setCellData:dic];
+//               [(TitleDetailTableViewCell*)cell setCellData:dic];
                [(TitleDetailTableViewCell*)cell  fitSysMsgMode];
                [(JYAbstractTableViewCell *)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(80, 0, 0, 0)];
           }
           else
           {
                cell = [OnlyTitleTableViewCell dequeueReusableCell:_tableView withTag:@"ff"];
-               [(OnlyTitleTableViewCell*)cell setCellData:dic];
+//               [(OnlyTitleTableViewCell*)cell setCellData:dic];
                [(OnlyTitleTableViewCell*)cell  fitSysMsgModeB];
                [(JYAbstractTableViewCell *)cell showCustomSeparatorView:kUIColorFromRGB(color_lineColor) withInsets:UIEdgeInsetsMake(30, 0, 0, 0)];
           }
@@ -141,12 +141,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     BUGetUserMsg *m = _tableView.dataArr[indexPath.section];
-     m.isRead = 1;
-     [self toRead:m.informationId?:@""];
-     SysMsgInfoViewController *vc = [SysMsgInfoViewController new];
-     vc.msg = m;
-     [self.navigationController pushViewController:vc animated:YES];
+//     BUGetUserMsg *m = _tableView.dataArr[indexPath.section];
+//     m.isRead = 1;
+//     [self toRead:m.informationId?:@""];
+//     SysMsgInfoViewController *vc = [SysMsgInfoViewController new];
+//     vc.msg = m;
+//     [self.navigationController pushViewController:vc animated:YES];
      [self.tableView reloadData];
 }
 
@@ -157,7 +157,7 @@
 
 -(void)loadNextPage
 {
-     [busiSystem.myPathManager.getUserMsgManager getUserMsg:self callback:@selector(getUserMsgNotification:)];
+//     [busiSystem.myPathManager.getUserMsgManager getUserMsg:self callback:@selector(getUserMsgNotification:)];
 }
 /*
  #pragma mark - Navigation
