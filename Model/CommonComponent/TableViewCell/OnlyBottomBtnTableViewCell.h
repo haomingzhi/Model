@@ -78,4 +78,5 @@
 -(void)fitReplacementConfirmMode;
 -(void)fitZhiMaAuthMode;
 -(void)fitZhiMaAuthMode;
+-(void)fitMineMode;
 @end

@@ -23,7 +23,7 @@
 //#import "OrderTrackingViewController.h"
 
 #import "WatiRecOrderInfoViewController.h"
-#import "PayOrderViewController.h"
+//#import "PayOrderViewController.h"
 //#import "PublishEvaViewController.h"
 //#import "ApplySalesReturnViewController.h"
 //#import "ShopInfoViewController.h"

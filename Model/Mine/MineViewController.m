@@ -8,36 +8,22 @@
 
 #import "MineViewController.h"
 #import "UIView+NTES.h"
-//#import "DDGoodAtView.h"
 #import "DDExDialogView.h"
 #import "DDMyTableViewCell.h"
-#import "DDMyIntroTableViewCell.h"
-//#import "DDMyActivityViewController.h"
-//#import "DDIMWeexViewController.h"
-//#import "DDMyFavViewController.h"
-//#import "DDMsgNotificationViewController.h"
+#import "JYMineHeadTableViewCell.h"
 #import "DDSysSettingViewController.h"
-//#import "WJ_MyAttentionVC.h"
-//#import "UserInfoModel.h"
-//#import "DDJYApi.h"
-//#import "DDJYRequest.h"
-//#import "DDEditPersonInfoViewController.h"
-//#import "DDSignTipView.h"
 #import "DDMyViewModel.h"
 //#import <JYLibrary/JYLibrary.h>
 //#import <SVProgressHUD.h>
 #import "SV_DDLoading.h"
 #import "UIScrollView+MJRefresh.h"
 #import "CustomRefreshGifHeader.h"
-//#import "UIView+Toast.h"
-//#import "WJ_GlobalVar.h"
-//#import "NoCashApproveViewController.h"
-//#import "ReletServerViewController.h"
+#import "DDTwoBtnTableViewCell.h"
+#import "OnlyBottomBtnTableViewCell.h"
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UIView *titleView;
 @property(nonatomic,strong)UIButton *signBtn;
-//@property(nonatomic,strong)DDExDialogView *dialogView;
-//@property(nonatomic,strong)DDExDialogView *signTipDialogView;
+
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)DDMyViewModel *viewModel;
 @property(nonatomic,assign)BOOL hasInit;
@@ -51,15 +37,12 @@
      // Do any additional setup after loading the view.
      [self.view setBackgroundColor:UIColorFromRGB(0xffffff)];
      [self.view addSubview:[UIView new]];
+     [self.tableView registerClass:[JYMineHeadTableViewCell class] forCellReuseIdentifier:@"JYMineHeadTableViewCell"];
      [self.tableView registerClass:[DDMyTableViewCell class] forCellReuseIdentifier:@"DDMyTableViewCell"];
-     [self.tableView registerClass:[DDMyIntroTableViewCell class] forCellReuseIdentifier:@"DDMyIntroTableViewCell"];
+     [self.tableView registerClass:[DDTwoBtnTableViewCell class] forCellReuseIdentifier:@"DDTwoBtnTableViewCell"];
+     [self.tableView registerNib:[UINib nibWithNibName:@"OnlyBottomBtnTableViewCell" bundle:nil] forCellReuseIdentifier:@"OnlyBottomBtnTableViewCell"];
      [self.view addSubview:self.tableView];
-     //        [self.navigationController.navigationBar addSubview:self.titleView];
-     //    [self.navigationController.navigationBar addSubview:self.signBtn];
-//     [self.dialogView addToWindow];
-//     [self.signTipDialogView addToWindow];
-//     self.dialogView.hidden = YES;
-     [self setTable];
+//     [self setTable];
      
 }
 
@@ -189,20 +172,20 @@
      return _titleView;
 }
 
--(UIButton *)signBtn
-{
-     if (!_signBtn) {
-          _signBtn = [UIButton new];
-          _signBtn.width = 30;
-          _signBtn.height = 30;
-          _signBtn.top = 16;
-          _signBtn.left = UIScreenWidth - 18 - _signBtn.width;
-          _signBtn.imageEdgeInsets = UIEdgeInsetsMake(13, 13, 0, 0);
-          [_signBtn setImage:[UIImage imageNamed:@"签到统计 copy"] forState:UIControlStateNormal];
-          [_signBtn addTarget:self action:@selector(signHandle:) forControlEvents:UIControlEventTouchUpInside];
-     }
-     return _signBtn;
-}
+//-(UIButton *)signBtn
+//{
+//     if (!_signBtn) {
+//          _signBtn = [UIButton new];
+//          _signBtn.width = 30;
+//          _signBtn.height = 30;
+//          _signBtn.top = 16;
+//          _signBtn.left = UIScreenWidth - 18 - _signBtn.width;
+//          _signBtn.imageEdgeInsets = UIEdgeInsetsMake(13, 13, 0, 0);
+//          [_signBtn setImage:[UIImage imageNamed:@"签到统计 copy"] forState:UIControlStateNormal];
+//          [_signBtn addTarget:self action:@selector(signHandle:) forControlEvents:UIControlEventTouchUpInside];
+//     }
+//     return _signBtn;
+//}
 -(void)signHandle:(UIButton *)btn
 {
 //     [self sign];
@@ -234,10 +217,10 @@
 -(UITableView *)tableView
 {
      if (!_tableView) {
-          _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, NavHeight, self.view.width, self.view.height - NavHeight) style:UITableViewStylePlain];
-          _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+          _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) style:UITableViewStylePlain];
+          _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
           CGFloat contentInsetTop = 0.f;
-          _tableView.contentInset = UIEdgeInsetsMake(contentInsetTop, 0, 50, 0);
+          _tableView.contentInset = UIEdgeInsetsMake(contentInsetTop, 0, 0, 0);
           _tableView.backgroundColor  = [UIColor clearColor];
           _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
           _tableView.dataSource = self;
@@ -259,7 +242,22 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
      if (indexPath.section == 0) {
-          return 239;
+          if (indexPath.row == 0) {
+              return 180;
+          }
+          else
+          {
+               return 55;
+          }
+          
+     }
+     else if (indexPath.section == 1)
+     {
+          return 50;
+     }
+     else
+     {
+          return 80;
      }
      return 55.f;
 }
@@ -269,37 +267,20 @@
      [tableView deselectRowAtIndexPath:indexPath animated:NO];
      if(indexPath.section == 0)
      {
-//          DDEditPersonInfoViewController *vc = [DDEditPersonInfoViewController new];
-//          vc.mode = EditPersonInfoModeEdit;
-//          vc.hidesBottomBarWhenPushed = YES;
-//          [self.navigationController pushViewController:vc animated:YES];
+
      }
      else
      if (indexPath.section == 1) {
           if (indexPath.row == 0) {
-//               DDMsgNotificationViewController *vc = [DDMsgNotificationViewController new];
-//               vc.hidesBottomBarWhenPushed = YES;
-//               [self.navigationController pushViewController:vc animated:YES];
+
           }
           else
           if (indexPath.row == 1) {
-//               DDMyActivityViewController *vc = [DDMyActivityViewController new];
-//               vc.hidesBottomBarWhenPushed = YES;
-//               [self.navigationController pushViewController:vc animated:YES];
+
           }
           else if (indexPath.row == 2)
           {
-//               DDIMWeexViewController *vc = [DDIMWeexViewController new];
-//               vc.title = @"学生评价";
-//               NSMutableDictionary *dic = [NSMutableDictionary new];
-//               dic[@"token"] = [UserInfoModel sharedUserInfoModel].token;
-//               dic[@"user_id"] = [UserInfoModel sharedUserInfoModel].user_id;
-//               dic[@"fromim"] = @1;
-//               dic[@"time"] = [DDJYRequest backTimeinterval];
-//               vc.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@?token=%@&user_id=%@&fromim=1&time=%@&sign=%@",weexDev_Url,apiMypj,[UserInfoModel sharedUserInfoModel].token,[UserInfoModel sharedUserInfoModel].user_id,dic[@"time"],[DDJYRequest backSign:@"" andDic:dic]]];//,[NSString stringWithFormat:@"%ld",[[UserInfoModel sharedUserInfoModel].utype integerValue]]]];
-//               vc.hidesBottomBarWhenPushed = YES;
-//
-//               [self.navigationController pushViewController:vc animated:YES];
+
           }
           else if(indexPath.row == 3)
           {
@@ -335,14 +316,18 @@
 #pragma mark - UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-     return 2;
+     return 3;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
      if (section == 0) {
-          return 1;
+          return 2;
      }
-     return 6;
+     else if(section == 1)
+     {
+          return 4;
+     }
+     return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -350,54 +335,61 @@
      __weak typeof(self) weak_self = self;
      UITableViewCell *cell;
      if (indexPath.section == 0) {
-          cell = [tableView dequeueReusableCellWithIdentifier:@"DDMyIntroTableViewCell"];
+          if (indexPath.row == 0) {
+             
+          cell = [tableView dequeueReusableCellWithIdentifier:@"JYMineHeadTableViewCell"];
 //          NSDictionary *member = [self.viewModel getHeadDic];
 //          [(DDMyIntroTableViewCell*)cell refresh:member];
-          [(DDMyIntroTableViewCell *)cell setGoodAtCallBack:^{
-//               [((DDGoodAtView *)weak_self.dialogView.view) animateShow];
-//               ((DDGoodAtView *)weak_self.dialogView.view).dataArr = [self.viewModel getTypeArr];
-          }];
-          
-          [(DDMyIntroTableViewCell*)cell setMyPointCallBack:^{
-//               DDIMWeexViewController *vc = [DDIMWeexViewController new];
-//               vc.title = @"我的积分";
-//               vc.url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%ld",weexDev_Url,@"/dist/myIntegral.js?fee=",[UserInfoModel.sharedUserInfoModel.fee integerValue]]];
-//               vc.hidesBottomBarWhenPushed = YES;
-//               [self.navigationController pushViewController:vc animated:YES];
-               
-          }];
-     }
-     else
-     {
-          cell = [tableView dequeueReusableCellWithIdentifier:@"DDMyTableViewCell"];
-          NSDictionary *member;
-          if (indexPath.row == 0)
-          {
-               member = @{@"mark":@"",@"title":@"消息通知",@"img":@"消息通知2"};
-          }
-          else if (indexPath.row == 1)
-          {
-               member = @{@"title":@"我的活动",@"img":@"我的活动"};
-          }
-          else if (indexPath.row == 2)
-          {
-               member = @{@"title":@"学生评价",@"img":@"学会评价"};
-          }
-          else if(indexPath.row == 3)
-          {
-               member = @{@"title":@"我的关注",@"img":@"我的关注"};
-          }
-          else if (indexPath.row == 4)
-          {
-               member = @{@"title":@"我的收藏",@"img":@"我的收藏"};
           }
           else
           {
-               member = @{@"title":@"设置",@"img":@"设置2"};
+               cell = [tableView dequeueReusableCellWithIdentifier:@"DDTwoBtnTableViewCell"];
+               NSDictionary *member = @{@"aTitle":[NSString stringWithFormat:@"余额￥%@",@"234"],@"aImg":@"",@"bTitle":@"快速充值",@"bImg":@""};
+               [(DDTwoBtnTableViewCell*)cell refresh:member];
           }
+          
+
+     }
+     else  if (indexPath.section == 1)
+     {
+          cell = [tableView dequeueReusableCellWithIdentifier:@"DDMyTableViewCell"];
+          NSDictionary *member;
+//          if (indexPath.row == 0)
+//          {
+//               member = @{@"mark":@"",@"title":@"消息通知",@"img":@"消息通知2"};
+//          }
+//          else
+               if (indexPath.row == 0)
+          {
+               member = @{@"title":@"我的订单",@"img":@"我的订单"};
+          }
+          else if (indexPath.row == 1)
+          {
+               member = @{@"title":@"手机号绑定",@"img":@"手机号绑定"};
+          }
+          else if(indexPath.row == 2)
+          {
+               member = @{@"title":@"问题反馈",@"img":@"问题反馈"};
+          }
+          else //if (indexPath.row == 3)
+          {
+               member = @{@"title":@"分享",@"img":@"分享"};
+          }
+//          else
+//          {
+//               member = @{@"title":@"退出"};
+//          }
           
           //self.members[indexPath.row];
           [(DDMyTableViewCell*)cell refresh:member];
+     }
+     else
+     {
+          cell = [tableView dequeueReusableCellWithIdentifier:@"OnlyBottomBtnTableViewCell"];
+          NSDictionary *member = @{@"title":@"退出"};
+          [(OnlyBottomBtnTableViewCell*)cell setCellData:member];
+          [(OnlyBottomBtnTableViewCell*)cell fitMineMode];
+          cell.separatorInset = UIEdgeInsetsMake(0, 9999999, 0, 0);
      }
      cell.selectionStyle = UITableViewCellSelectionStyleNone;
      return cell;

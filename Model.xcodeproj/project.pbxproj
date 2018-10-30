@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		180EAF2A2187F52D00E434DC /* JYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EAF292187F52D00E434DC /* JYLoginViewController.m */; };
+		180EAF312187FE1300E434DC /* JYCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EAF2F2187FE1300E434DC /* JYCourseViewController.m */; };
+		180EAF342187FE7800E434DC /* JYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EAF332187FE7800E434DC /* JYHomeViewController.m */; };
+		180EAF372187FEA300E434DC /* JYStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EAF362187FEA300E434DC /* JYStudyViewController.m */; };
+		180EAF3A218826E700E434DC /* JYMineHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EAF39218826E700E434DC /* JYMineHeadTableViewCell.m */; };
+		180EAF3D2188395A00E434DC /* JYBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 180EAF3C2188395A00E434DC /* JYBaseViewModel.m */; };
 		181DA9672181AF9E000498FC /* DDExDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DA9622181AF9E000498FC /* DDExDialogView.m */; };
 		181DA96D2181B001000498FC /* UIView+NTES.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DA96C2181B001000498FC /* UIView+NTES.m */; };
 		181DA9D52181B16C000498FC /* DDTwoBtnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DA9712181B16B000498FC /* DDTwoBtnTableViewCell.m */; };
@@ -64,7 +69,6 @@
 		181DAA262181B7B9000498FC /* CustomRefreshGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DAA232181B7B9000498FC /* CustomRefreshGifFooter.m */; };
 		181DAA272181B7B9000498FC /* CustomRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DAA242181B7B9000498FC /* CustomRefreshGifHeader.m */; };
 		181DAA2A2181B80E000498FC /* SV_DDLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DAA282181B80D000498FC /* SV_DDLoading.m */; };
-		181DAA302181C48F000498FC /* JYCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181DAA2F2181C48F000498FC /* JYCourseViewController.m */; };
 		1846E8AC21806F9000F06395 /* UIImage+ZLPhotoLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 1846E86D21806F8F00F06395 /* UIImage+ZLPhotoLib.m */; };
 		1846E8AD21806F9000F06395 /* UIView+ZLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1846E86F21806F8F00F06395 /* UIView+ZLExtension.m */; };
 		1846E8AE21806F9000F06395 /* ZLCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 1846E87221806F8F00F06395 /* ZLCamera.m */; };
@@ -1205,6 +1209,16 @@
 /* Begin PBXFileReference section */
 		180EAF282187F52D00E434DC /* JYLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYLoginViewController.h; sourceTree = "<group>"; };
 		180EAF292187F52D00E434DC /* JYLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYLoginViewController.m; sourceTree = "<group>"; };
+		180EAF2F2187FE1300E434DC /* JYCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCourseViewController.m; sourceTree = "<group>"; };
+		180EAF302187FE1300E434DC /* JYCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCourseViewController.h; sourceTree = "<group>"; };
+		180EAF322187FE7800E434DC /* JYHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYHomeViewController.h; sourceTree = "<group>"; };
+		180EAF332187FE7800E434DC /* JYHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYHomeViewController.m; sourceTree = "<group>"; };
+		180EAF352187FEA300E434DC /* JYStudyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYStudyViewController.h; sourceTree = "<group>"; };
+		180EAF362187FEA300E434DC /* JYStudyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYStudyViewController.m; sourceTree = "<group>"; };
+		180EAF38218826E700E434DC /* JYMineHeadTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMineHeadTableViewCell.h; sourceTree = "<group>"; };
+		180EAF39218826E700E434DC /* JYMineHeadTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYMineHeadTableViewCell.m; sourceTree = "<group>"; };
+		180EAF3B2188395A00E434DC /* JYBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYBaseViewModel.h; sourceTree = "<group>"; };
+		180EAF3C2188395A00E434DC /* JYBaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYBaseViewModel.m; sourceTree = "<group>"; };
 		181DA95F2181AF9E000498FC /* DDExDialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDExDialogView.h; sourceTree = "<group>"; };
 		181DA9622181AF9E000498FC /* DDExDialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDExDialogView.m; sourceTree = "<group>"; };
 		181DA96B2181B001000498FC /* UIView+NTES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NTES.h"; sourceTree = "<group>"; };
@@ -1318,8 +1332,6 @@
 		181DAA242181B7B9000498FC /* CustomRefreshGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRefreshGifHeader.m; sourceTree = "<group>"; };
 		181DAA282181B80D000498FC /* SV_DDLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SV_DDLoading.m; sourceTree = "<group>"; };
 		181DAA292181B80D000498FC /* SV_DDLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SV_DDLoading.h; sourceTree = "<group>"; };
-		181DAA2E2181C48F000498FC /* JYCourseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYCourseViewController.h; sourceTree = "<group>"; };
-		181DAA2F2181C48F000498FC /* JYCourseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYCourseViewController.m; sourceTree = "<group>"; };
 		1846E86C21806F8F00F06395 /* UIImage+ZLPhotoLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZLPhotoLib.h"; sourceTree = "<group>"; };
 		1846E86D21806F8F00F06395 /* UIImage+ZLPhotoLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZLPhotoLib.m"; sourceTree = "<group>"; };
 		1846E86E21806F8F00F06395 /* UIView+ZLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZLExtension.h"; sourceTree = "<group>"; };
@@ -2831,6 +2843,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180EAF2C2187FDAF00E434DC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				180EAF322187FE7800E434DC /* JYHomeViewController.h */,
+				180EAF332187FE7800E434DC /* JYHomeViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		180EAF2D2187FDB600E434DC /* Study */ = {
+			isa = PBXGroup;
+			children = (
+				180EAF352187FEA300E434DC /* JYStudyViewController.h */,
+				180EAF362187FEA300E434DC /* JYStudyViewController.m */,
+			);
+			path = Study;
+			sourceTree = "<group>";
+		};
+		180EAF2E2187FE1300E434DC /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				180EAF302187FE1300E434DC /* JYCourseViewController.h */,
+				180EAF2F2187FE1300E434DC /* JYCourseViewController.m */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
 		181DA95A2181AF95000498FC /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -2985,6 +3024,8 @@
 		181DAA1B2181B65D000498FC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				180EAF3B2188395A00E434DC /* JYBaseViewModel.h */,
+				180EAF3C2188395A00E434DC /* JYBaseViewModel.m */,
 				181DAA1C2181B6B7000498FC /* DDMyViewModel.h */,
 				181DAA1D2181B6B7000498FC /* DDMyViewModel.m */,
 			);
@@ -3000,15 +3041,6 @@
 				181DAA242181B7B9000498FC /* CustomRefreshGifHeader.m */,
 			);
 			path = "自定义gif刷新";
-			sourceTree = "<group>";
-		};
-		181DAA2D2181C45F000498FC /* Course */ = {
-			isa = PBXGroup;
-			children = (
-				181DAA2E2181C48F000498FC /* JYCourseViewController.h */,
-				181DAA2F2181C48F000498FC /* JYCourseViewController.m */,
-			);
-			path = Course;
 			sourceTree = "<group>";
 		};
 		1846E8592180124600F06395 /* ViewController */ = {
@@ -4392,6 +4424,8 @@
 				45D10C6F1F2B0B55000EE32A /* ImgTitleAndThreeBtnTableViewCell.h */,
 				45D10C701F2B0B55000EE32A /* ImgTitleAndThreeBtnTableViewCell.m */,
 				45D10C711F2B0B55000EE32A /* ImgTitleAndThreeBtnTableViewCell.xib */,
+				180EAF38218826E700E434DC /* JYMineHeadTableViewCell.h */,
+				180EAF39218826E700E434DC /* JYMineHeadTableViewCell.m */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -4426,7 +4460,9 @@
 		787E1D701B5604E5006BC65C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				181DAA2D2181C45F000498FC /* Course */,
+				180EAF2E2187FE1300E434DC /* Course */,
+				180EAF2D2187FDB600E434DC /* Study */,
+				180EAF2C2187FDAF00E434DC /* Home */,
 				45E87DC81C1904CA00E25BAC /* CommonComponent */,
 				78DEC15C1B0AD08900187411 /* Welcome */,
 				45DFA2D21B54E82A0064E1BC /* Mine */,
@@ -5814,6 +5850,7 @@
 				453C45D61DAA188A00D6DEAD /* JYNetErrorManager.m in Sources */,
 				45A48D081DD449E0000708F9 /* AddImgTableViewCell.m in Sources */,
 				45A48CC41DD1EE85000708F9 /* MsgTableViewCell.m in Sources */,
+				180EAF312187FE1300E434DC /* JYCourseViewController.m in Sources */,
 				181DA9D72181B16C000498FC /* DDZxSafeguardTableViewCell.m in Sources */,
 				181DA9E82181B16C000498FC /* DDSettingTableViewCell.m in Sources */,
 				AA1458872091A0EF00791972 /* FourTabsTableViewCell.m in Sources */,
@@ -5836,6 +5873,7 @@
 				1846E8B621806F9000F06395 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
 				45D10AF61F21D3D3000EE32A /* FeedbackViewController.m in Sources */,
 				4584589C1F205F1300E00B68 /* GrayPageControl.m in Sources */,
+				180EAF3A218826E700E434DC /* JYMineHeadTableViewCell.m in Sources */,
 				45E87EC61C1904CB00E25BAC /* OnlyTitleTableViewCell.m in Sources */,
 				450B8D491C27FA5A00024406 /* MoreOptionTableViewCell.m in Sources */,
 				78DEC0651B0ACE1A00187411 /* AppDelegate.m in Sources */,
@@ -5980,7 +6018,6 @@
 				459166961FEA100300B201DD /* BindPhoneViewController.m in Sources */,
 				45E87E981C1904CB00E25BAC /* BtnAndTitleTableViewCell.m in Sources */,
 				1846E8AE21806F9000F06395 /* ZLCamera.m in Sources */,
-				181DAA302181C48F000498FC /* JYCourseViewController.m in Sources */,
 				787E1D771B5605F7006BC65C /* UIKitHook.m in Sources */,
 				454B38DB2051304300494EDB /* JECalourseCell.m in Sources */,
 				1846E8B421806F9000F06395 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
@@ -6051,6 +6088,7 @@
 				45E87ED21C1904CB00E25BAC /* TipImgAndTitleTableViewCell.m in Sources */,
 				4515A9CB1E08C07A005DA92D /* DealPasswordViewController.m in Sources */,
 				450B8D561C29357200024406 /* ContentTableViewCell.m in Sources */,
+				180EAF3D2188395A00E434DC /* JYBaseViewModel.m in Sources */,
 				45A48CBA1DD1E1F0000708F9 /* MySendTableViewCell.m in Sources */,
 				45E87ED41C1904CB00E25BAC /* TitleAndDetailWithImgTableViewCell.m in Sources */,
 				457B96EE1FD62C5B00612693 /* RecycleRecordViewController.m in Sources */,
@@ -6160,6 +6198,7 @@
 				45E87EB71C1904CB00E25BAC /* InviteMemberWithQuestionTableViewCell.m in Sources */,
 				45A48CE31DD3199D000708F9 /* ForgetPwdNextViewController.m in Sources */,
 				454B43E91C50C8C300F163C7 /* JYDebugHelper.m in Sources */,
+				180EAF342187FE7800E434DC /* JYHomeViewController.m in Sources */,
 				181DA9D92181B16C000498FC /* DDWorkNumberTableViewCell.m in Sources */,
 				45E87E801C1904CB00E25BAC /* TipImgAndImgsCollectionViewCell.m in Sources */,
 				8CEAD0DE1C40B8F100C25B33 /* HanyuPinyinOutputFormat.m in Sources */,
@@ -6173,6 +6212,7 @@
 				450F445D1E456B490011D22E /* ImgTitleAndImgTableViewCell.m in Sources */,
 				8C60D8AB1C3504F900EBEDF8 /* AppDasicDocument.m in Sources */,
 				45D10B7D1F283642000EE32A /* CancelOrderInfoViewController.m in Sources */,
+				180EAF372187FEA300E434DC /* JYStudyViewController.m in Sources */,
 				181DA9F92181B16C000498FC /* DDTeacherHeaderTableViewCell.m in Sources */,
 				8CA717EE1C3E527B009780D6 /* pinyin.c in Sources */,
 				453A052E1E84C79500044E06 /* BUBaseDataManager.m in Sources */,

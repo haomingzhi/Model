@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "JYBaseViewModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DDMyViewModel : NSObject
+@interface DDMyViewModel : JYBaseViewModel
 
 @end
 

@@ -7,7 +7,7 @@
 //
 
 #import "WaitPayOrderInfoViewController.h"
-#import "PayOrderViewController.h"
+//#import "PayOrderViewController.h"
 //#import "GoodsInfoViewController.h"
 #import "CancelOrderViewController.h"
 

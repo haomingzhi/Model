@@ -40,14 +40,14 @@
 {
     [super layoutSubviews];
     _abtn.width = (UIScreenWidth - 48) /2.0;
-    _abtn.height = 162/324.0 *_abtn.width;
+     _abtn.height = 37;//162/324.0 *_abtn.width;
     _abtn.left = 18;
-    _abtn.top = 18;
+    _abtn.top = 9;
     
     _bbtn.width = _abtn.width;
-    _bbtn.height = 162/324.0 *_bbtn.width;
+     _bbtn.height = 37;//162/324.0 *_bbtn.width;
     _bbtn.left = UIScreenWidth - 18 - _abtn.width;
-    _bbtn.top = 18;
+    _bbtn.top = 9;
 }
 
 -(DDImgTextBtn *)abtn

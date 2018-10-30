@@ -426,6 +426,20 @@
         btn.backgroundColor = kUIColorFromRGB(color_3);
 }
 
+-(void)fitMineMode
+{
+     self.height = 90;
+     btn.width = __SCREEN_SIZE.width - 60;
+     btn.height = 40;
+     btn.x = 30;
+     btn.y = 40;
+     btn.layer.cornerRadius = 3;
+     btn.layer.masksToBounds = YES;
+     [btn setTitleColor:kUIColorFromRGB(color_2) forState:UIControlStateNormal];
+     self.backgroundColor = kUIColorFromRGB(color_2);
+     btn.backgroundColor = kUIColorFromRGB(color_3);
+}
+
 -(void)fitModiPwdMode:(id)target withSel:(SEL)sel
 {
     [self fitRegMode];
