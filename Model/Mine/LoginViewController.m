@@ -18,7 +18,7 @@
 #import "ForgetPwdViewController.h"
 //#import <UniversalFramework/UMSocial.h>
 //#import <UniversalFramework/WXApi.h>
-#import "FindInfoViewController.h"
+//#import "FindInfoViewController.h"
 
 @interface LoginViewController ()<UserRegisterDelegate,MyTextFieldDelegate,ZLPhotoPickerViewControllerDelegate,UIActionSheetDelegate>
 {
@@ -301,10 +301,10 @@
 }
 
 -(void)showAgreeMentAction{
-     FindInfoViewController *vc = [FindInfoViewController new];
-     vc.name = @"app服务协议";
-     vc.content = busiSystem.agent.config.userAgreement?:@"";
-     [self.navigationController pushViewController:vc animated:YES];
+//     FindInfoViewController *vc = [FindInfoViewController new];
+//     vc.name = @"app服务协议";
+//     vc.content = busiSystem.agent.config.userAgreement?:@"";
+//     [self.navigationController pushViewController:vc animated:YES];
 }
 
 

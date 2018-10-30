@@ -15,7 +15,7 @@
 #import "TabViewControllerManager.h"
 //#import "BUSerArea.h"
 #import "BUArea.h"
-#import "NoOpenCityViewController.h"
+//#import "NoOpenCityViewController.h"
 
 @interface CityChoiceViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,CLLocationManagerDelegate>
 {
@@ -307,9 +307,9 @@ NSMutableArray *addressBookTemp;
                     return;
                 }
             }
-            NoOpenCityViewController *vc = [NoOpenCityViewController new];
-            vc.title = _cityName;
-            [self.navigationController pushViewController:vc animated:YES];
+//            NoOpenCityViewController *vc = [NoOpenCityViewController new];
+//            vc.title = _cityName;
+//            [self.navigationController pushViewController:vc animated:YES];
             return;
         }
     }else{
@@ -323,9 +323,9 @@ NSMutableArray *addressBookTemp;
                 return;
             }
         }
-        NoOpenCityViewController *vc = [NoOpenCityViewController new];
-        vc.title = _cityName;
-        [self.navigationController pushViewController:vc animated:YES];
+//        NoOpenCityViewController *vc = [NoOpenCityViewController new];
+//        vc.title = _cityName;
+//        [self.navigationController pushViewController:vc animated:YES];
         return;
     }
     _cityName =str1;
@@ -348,9 +348,9 @@ NSMutableArray *addressBookTemp;
                 return;
             }
         }
-        NoOpenCityViewController *vc = [NoOpenCityViewController new];
-        vc.title = _cityName;
-        [self.navigationController pushViewController:vc animated:YES];
+//        NoOpenCityViewController *vc = [NoOpenCityViewController new];
+//        vc.title = _cityName;
+//        [self.navigationController pushViewController:vc animated:YES];
 //        NSString *str1 =[cityName.text substringToIndex:cityName.text.length-1];//截取掉下标2之前的字符串
 //        for (int i=0; i<_cityArr.count; i++){
 //            BUAreaManager * area =[BUAreaManager new];
@@ -614,9 +614,9 @@ NSMutableArray *addressBookTemp;
             return;
         }
     }
-    NoOpenCityViewController *vc = [NoOpenCityViewController new];
-    vc.title = cell.textLabel.text;
-    [self.navigationController pushViewController:vc animated:YES];
+//    NoOpenCityViewController *vc = [NoOpenCityViewController new];
+//    vc.title = cell.textLabel.text;
+//    [self.navigationController pushViewController:vc animated:YES];
     return;
 //    NSLog(@"---->%@",[[self.letterResultArr objectAtIndex:indexPath.section]objectAtIndex:indexPath.row]);
 //    NSString * cityName1;
