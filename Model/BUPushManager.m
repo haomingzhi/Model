@@ -19,7 +19,7 @@
 //#import "BuyOutServerViewController.h"
 //#import "ReletServerViewController.h"
 //#import "SelledSeverViewController.h"
-#import "MyCouponViewController.h"
+//#import "MyCouponViewController.h"
 @implementation BUPushManager
 -(void)pushToWhich:(NSDictionary *)Data
 {
@@ -67,10 +67,10 @@
      }
      else if(noticeType == 6)
      {
-          MyCouponViewController *vc = [MyCouponViewController new];
+//          MyCouponViewController *vc = [MyCouponViewController new];
           //        vc.userInfo = Data[@"entityId"];
-          vc.hidesBottomBarWhenPushed = YES;
-          [cnav pushViewController:vc animated:YES];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          [cnav pushViewController:vc animated:YES];
      }
      //    NSString *msgId = Data[@"msgId"];
      //    switch (noticeType) {

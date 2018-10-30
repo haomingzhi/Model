@@ -24,7 +24,7 @@
 #import "SecKillTableViewCell.h"
 #import "ImgTableViewCell.h"
 #import "ScrollerTableViewCell.h"
-#import "SignViewController.h"
+//#import "SignViewController.h"
 //#import "OddsRecViewController.h"
 #import "SearchViewController.h"
 #import "MsgViewController.h"
@@ -35,8 +35,8 @@
 #import "ScrollerTableViewCell.h"
 #import "JECalourseTableViewCell.h"
 //#import "OptimizationRecViewController.h"
-#import "SignViewController.h"
-#import "ShowCodeViewController.h"
+//#import "SignViewController.h"
+//#import "ShowCodeViewController.h"
 //#import "ClassifyListViewController.h"
 #import "SysMsgViewController.h"
 
@@ -355,9 +355,9 @@
                busiSystem.agent.isNeedRefreshTabA = NO;
           }
           busiSystem.agent.isDaySigin = 1;
-          SignViewController *vc = [SignViewController new];
-          vc.hidesBottomBarWhenPushed = YES;
-          [self.navigationController pushViewController:vc animated:YES];
+//          SignViewController *vc = [SignViewController new];
+//          vc.hidesBottomBarWhenPushed = YES;
+//          [self.navigationController pushViewController:vc animated:YES];
      }
      else
      {
@@ -552,7 +552,7 @@
           return;
      }
 //     if (busiSystem.agent.isDaySigin == 0 ) {
-          [self createSignView];
+//          [self createSignView];
 //     }else{
 //          SignViewController *vc = [SignViewController new];
 //          vc.hidesBottomBarWhenPushed = YES;
@@ -576,28 +576,28 @@
 }
 
 
--(void)createSignView{
-     NSMutableDictionary *dic = [NSMutableDictionary new];
-     [dic addEntriesFromDictionary:[self getNowDate]];
-     [dic setObject:@(busiSystem.agent.isDaySigin == 1) forKey:@"hasSign"];
-     [dic setObject:busiSystem.agent.config.signPicture?:@"" forKey:@"img"];
-     ShowCodeViewController *vc = [ShowCodeViewController toCreateVC:dic];
-     __weak HeadViewController *weakSelf = self;
-     [vc setHandleGoBack:^(NSDictionary *dic) {
-          NSInteger index = [dic[@"index"] integerValue];
-          //1:退出 2:签到 3:点击背景
-          if (index == 2) {
-               if (busiSystem.agent.isDaySigin == 0) {
-                    [self addSign];
-               }else{
-                    SignViewController *vc = [SignViewController new];
-                    vc.hidesBottomBarWhenPushed = YES;
-                    [weakSelf.navigationController pushViewController:vc animated:YES];
-               }
-               
-          }
-     }];
-}
+//-(void)createSignView{
+//     NSMutableDictionary *dic = [NSMutableDictionary new];
+//     [dic addEntriesFromDictionary:[self getNowDate]];
+//     [dic setObject:@(busiSystem.agent.isDaySigin == 1) forKey:@"hasSign"];
+//     [dic setObject:busiSystem.agent.config.signPicture?:@"" forKey:@"img"];
+//     ShowCodeViewController *vc = [ShowCodeViewController toCreateVC:dic];
+//     __weak HeadViewController *weakSelf = self;
+//     [vc setHandleGoBack:^(NSDictionary *dic) {
+//          NSInteger index = [dic[@"index"] integerValue];
+//          //1:退出 2:签到 3:点击背景
+//          if (index == 2) {
+//               if (busiSystem.agent.isDaySigin == 0) {
+//                    [self addSign];
+//               }else{
+//                    SignViewController *vc = [SignViewController new];
+//                    vc.hidesBottomBarWhenPushed = YES;
+//                    [weakSelf.navigationController pushViewController:vc animated:YES];
+//               }
+//
+//          }
+//     }];
+//}
 
 -(void)handleDidRightButton:(id)sender
 {
