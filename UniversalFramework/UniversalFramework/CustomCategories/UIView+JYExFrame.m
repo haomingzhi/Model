@@ -58,9 +58,20 @@
     self.frame = rect;
     [self didChangeValueForKey:@"x"];
 }
+
 -(CGFloat)y
 {
     return self.frame.origin.y;
+}
+
+-(void)setTop:(CGFloat)top
+{
+    [self setY:top];
+}
+
+-(CGFloat)top
+{
+ return self.frame.origin.y;
 }
 
 -(CGFloat)borderWidth

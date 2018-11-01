@@ -13,6 +13,8 @@
 @property(nonatomic)CGFloat width;
 @property(nonatomic)CGFloat x;
 @property(nonatomic)CGFloat y;
+@property(nonatomic)CGFloat left;
+@property(nonatomic)CGFloat top;
 @property(nonatomic) UIColor * borderColor;
 @property(nonatomic) CGFloat borderWidth;
 

@@ -1207,6 +1207,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18078CE3218AA6350028AA81 /* JYNetWorkDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYNetWorkDelegate.h; sourceTree = "<group>"; };
 		180EAF282187F52D00E434DC /* JYLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYLoginViewController.h; sourceTree = "<group>"; };
 		180EAF292187F52D00E434DC /* JYLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYLoginViewController.m; sourceTree = "<group>"; };
 		180EAF2F2187FE1300E434DC /* JYCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCourseViewController.m; sourceTree = "<group>"; };
@@ -2843,6 +2844,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18078CE1218AA5A10028AA81 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				18078CE3218AA6350028AA81 /* JYNetWorkDelegate.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		180EAF2C2187FDAF00E434DC /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -4523,6 +4532,7 @@
 		78DEC05E1B0ACE1A00187411 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18078CE1218AA5A10028AA81 /* Protocol */,
 				181DAA1B2181B65D000498FC /* ViewModel */,
 				181DA96E2181B06F000498FC /* Macros */,
 				181DA96A2181AFF1000498FC /* ExObj */,
