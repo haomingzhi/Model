@@ -6262,106 +6262,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		455183401EE65A55003B09B6 /* Debug copy */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_BITCODE = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "c02c11df-c06a-4d83-9709-c171b9cbbc0c";
-				SDKROOT = iphoneos;
-			};
-			name = "Debug copy";
-		};
-		455183411EE65A55003B09B6 /* Debug copy */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CC4BA4FA2B443B688B4005C /* Pods-Model.debug copy.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: TianEn Lin (AKVN6W36T8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = YDMR8ARQ28;
-				ENABLE_BITCODE = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/$(TARGET_NAME)/ThirdLib/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/$(TARGET_NAME)/ThirdLib/selectStreet",
-					"$(PROJECT_DIR)/$(TARGET_NAME)/ThirdLib",
-				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/$(TARGET_NAME)/PrefixHeader.pch";
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "$(SRCROOT)/$(TARGET_NAME)/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/$(TARGET_NAME)/ThirdLib",
-					"$(PROJECT_DIR)/$(TARGET_NAME)/ThirdLib/lame",
-					"$(PROJECT_DIR)/$(TARGET_NAME)/ThirdLib",
-					"$(PROJECT_DIR)/$(TARGET_NAME)/ThirdLib/JPUSH",
-				);
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-				);
-				"OTHER_LDFLAGS[sdk=*]" = "$(inherited)";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dadaodata.model107;
-				PRODUCT_NAME = Model;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(TARGET_NAME)/Model/$(TARGET_NAME)-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				VALID_ARCHS = "arm64 armv7 armv7s";
-			};
-			name = "Debug copy";
-		};
 		78DEC07D1B0ACE1A00187411 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -6494,7 +6394,6 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				"OTHER_LDFLAGS[sdk=*]" = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dadaodata.model107;
 				PRODUCT_NAME = Model;
@@ -6548,7 +6447,6 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				"OTHER_LDFLAGS[sdk=*]" = "$(inherited)";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dadaodata.model107;
 				PRODUCT_NAME = Model;
@@ -6567,7 +6465,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78DEC07D1B0ACE1A00187411 /* Debug */,
-				455183401EE65A55003B09B6 /* Debug copy */,
 				78DEC07E1B0ACE1A00187411 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -6577,7 +6474,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78DEC0801B0ACE1A00187411 /* Debug */,
-				455183411EE65A55003B09B6 /* Debug copy */,
 				78DEC0811B0ACE1A00187411 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
